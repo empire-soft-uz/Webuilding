@@ -1,0 +1,39 @@
+.container{
+    display: grid;
+    width: 310px;
+    height: 500px;
+    grid-template-rows: 2.3fr 1fr 1fr 1fr 1fr;
+    padding: 10px 0;
+}
+.img{
+    width: 100%;
+    height: 100%;
+}
+.topBox{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 0 20px;
+}
+.centerBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px 20px;
+}
+.bottomBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px 20px;
+}
+.btnBox{
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+.sizeBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px 0px;
+}

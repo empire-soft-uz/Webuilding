@@ -1,0 +1,12 @@
+.container {
+    display: flex;
+    height: 100%;
+    padding: 0 3vw;
+    background-color: #EFF3F9;
+}
+.dashboard {
+    width: 18vw;
+}
+.rightContainer{
+    width: 76vw;
+}

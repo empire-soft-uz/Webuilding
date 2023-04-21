@@ -1,0 +1,51 @@
+.container {
+    background-color: #fff;
+    width: 100%;
+    border-radius: 10px;
+}
+.topBox {
+    padding: 20px 0 0 20px;
+}
+.depositItemBox{
+    width: 100%;
+    padding: 10px 20px;
+    border-bottom: 1px solid #EEF3F9;
+}
+.boxBottom{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+.featureBox{
+    border-bottom: 1px solid #EEF3F9;
+}
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 30px;
+    padding: 5px 20px;
+}
+.more{
+    padding: 5px 20px 20px 20px;
+}
+.priceBox{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    height: 45px; 
+    width: 100%;
+}
+.price{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+.btnBox {
+    display: flex;
+    gap: 20px;
+}
+.bottom{
+    width: 220px;
+}

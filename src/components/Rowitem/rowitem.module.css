@@ -1,0 +1,12 @@
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.iconBox {
+    margin-right: 6px;
+}
+.img{
+    width: 20px;
+    height: 20px;
+}

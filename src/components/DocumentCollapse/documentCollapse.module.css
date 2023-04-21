@@ -1,0 +1,38 @@
+.container{
+    width: 100%;
+    height: 100%;
+}
+.triggerBox{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    gap: 6px;
+    cursor: pointer;
+    padding: 0 20px;
+}
+.triggerBoxTwo{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    gap: 6px;
+    cursor: pointer;
+    padding: 0 20px;
+    background-color: #EFF3F9;
+}
+.collapseBox{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.collapse{
+    padding: 8px 20px;
+}
+.line{
+    width: 80%;
+    height: 1.5px;
+    background-color: #EFF3F9;
+    display: flex;
+}

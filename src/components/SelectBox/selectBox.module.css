@@ -1,0 +1,15 @@
+.container{
+    width: 250px;
+    height: 48px;
+    background: #FFFFFF;
+    border: 1px solid rgba(129, 130, 133, 0.8);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.select{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+}

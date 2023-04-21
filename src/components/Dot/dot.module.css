@@ -1,0 +1,11 @@
+.seven {
+    width: 7px;
+    height: 7px;
+}
+.ten {
+    width: 10px;
+    height: 10px;
+}
+.fifty{
+    border-radius: 50%;
+}

@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    /* height: 7vh; */
+    padding: 0 0 0 3vw;
+}
+.leftBox{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+}
+
+.rightBox{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 35%;
+}
+
+.btnBox {
+    display: flex;
+}

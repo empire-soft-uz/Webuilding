@@ -1,0 +1,18 @@
+.outline{
+    padding: 13px 18px;
+    border: 1px solid rgba(129, 130, 133, 0.8); 
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.primary{
+    padding: 13px 18px;
+    background-color: #8A3FFC;
+    border: 1px solid rgba(129, 130, 133, 0.8);
+    border-radius: 10px;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+}

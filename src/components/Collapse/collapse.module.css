@@ -1,0 +1,11 @@
+.container{
+    margin: 0;
+}
+.summary{
+    /* background-color: #EFF3F9 !important; */
+    border-radius: 10px 10px 0 0;
+}
+.accordionDetails{
+    /* border-bottom: none;
+    margin: 0; */
+}

@@ -1,0 +1,14 @@
+.container {
+    height: 6vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #EEF3F9;
+    padding: 0 3vw;
+}
+.rightBox {
+    display: flex;
+    width: 38%;
+    justify-content: space-between;
+    align-items: center;
+}

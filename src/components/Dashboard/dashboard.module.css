@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 110vh;
+    padding: 20px 0;
+}
+.categoryBox {
+    margin-top: 20px;
+}
+.textBox {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+    gap: 10px;
+}
+.emptyPlace{
+    width: 7px;
+}
+.btnLocation{
+    margin-top: 30px;
+}
+.topBox{
+
+}
+.bottomBox{
+    /* gap: 10px; */
+}

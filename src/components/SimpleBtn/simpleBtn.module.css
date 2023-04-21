@@ -1,0 +1,25 @@
+.primary{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 5px 10px;
+    background-color: #EFF3F9;
+    border: 1px solid #D2E0F2;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.outline{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 5px 10px;
+    background-color: #fff;
+    border: 1px solid #EFF3F9;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.minut{
+    font-size: 12px;
+    margin-left: 5px;
+    color: #818EAA;
+}

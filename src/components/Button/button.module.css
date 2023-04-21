@@ -1,0 +1,81 @@
+.large {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    width: 240px;
+    height: 7vh;
+    cursor: pointer;
+}
+.middle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 25px 0 20px;
+    height: 7vh;
+    max-width: 210px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.small{
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    height: 3vh;
+}
+.avarage{
+    display: flex;
+    max-width: 160px;
+    min-width: 110px;
+    align-items: center;
+    padding: 0 25px 0 20px;
+    height: 35px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.outline{
+    border: 1px solid rgba(138, 63, 252, 1);
+    background-color: #fff;
+}
+.ten {
+    border-radius: 10px;
+}
+.five{
+    border-radius: 5px;
+}
+.thirty{
+    border-radius: 30px;
+}
+.purple{
+    background-color: rgba(138, 63, 252, 1);
+}
+.lightPurple{
+    background-color: rgba(237, 228, 255, 1);
+}
+.btn {
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+}
+.textWhite{
+    color: #fff;
+}
+.textPurple{
+    color: rgba(138, 63, 252, 1);
+}
+.green{
+    color: rgba(38, 194, 25, 1);
+}
+.red{
+    color: rgba(225, 75, 70, 1);
+}
+.iconBox {
+    margin-right: 5px;
+}
+.sixteen{
+    font-size: 16px;
+}
+.fourteen{
+    font-size: 14px;
+}
