@@ -9,8 +9,8 @@ interface Props {
     name?: string;
     near?: string;
     nearTime?: string;
-    price?: string;
-    homeCount?: string;
+    price?: string | number;
+    homeCount?: string | number;
     symbolDotColor: string;
     symbolDotIcon?: any;
     onPress?: () => void;

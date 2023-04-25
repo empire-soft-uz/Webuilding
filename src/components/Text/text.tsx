@@ -1,7 +1,7 @@
 import React, { CSSProperties } from 'react'
 import styles from "./text.module.css"
 interface Props {
-    text?: string;
+    text?: string | number;
     style?: CSSProperties;
     textType: 'bold' | 'middle' | 'thin';
     textSize: 'fifty' | 'thirtyFive' | 'thirty' | 'twentyFour' | 'twenty' | 'sixteen' | 'fourteen' | 'twelve' | 'ten';

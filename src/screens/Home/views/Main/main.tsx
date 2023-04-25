@@ -48,7 +48,7 @@ const Main = () => {
                             <ProductItem
                                 key={index}
                                 symbolDotColor={COLORS.orange}
-                                image={e.image}
+                                image={e.images[0].image}
                                 company={e.company}
                                 name={e.name}
                                 homeCount={e.homeCount}
