@@ -25,17 +25,23 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 6px;
     width: 60%;
 }
 
 .item{
     font-size: 12px;
-}
-.itemThree{
     padding: 6px 10px;
+    transition: all 0.2s ease;
     border-radius: 8px;
-    font-size: 12px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+.item:checked{
     background-color: rgba(138, 63, 252, 1);
-    color: #fff;
+}
+
+.item:hover{
+    background-color: rgba(138, 63, 252, 1) !important;
+    color: #fff !important;
 }

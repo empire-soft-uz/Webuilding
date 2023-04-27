@@ -313,7 +313,7 @@ export const ProductData: ProductDataType[] = [
                 ]
             }
         ],
-        minExpense: "",
+        minExpense: "Minimal xarajat, ming $",
         location: "Toshkent sh, Yangi hayot t, O’zar ko’chasi 72 uy 47",
         howManyBuilding: "56",
         nearGoingTime: [

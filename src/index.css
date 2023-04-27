@@ -4,7 +4,18 @@
   box-sizing: border-box;
   font-family: "Montserrat4";
 }
-
+.swiper-button-prev, .swiper-rtl .swiper-button-next {
+  position: absolute;
+  top: var(--swiper-navigation-top-offset,80%);
+  background-color: red;
+}
+.swiper-nav-btns{
+  position: absolute;
+  /* bottom: 10px; */
+}
+span.MuiSlider-root.MuiSlider-colorPrimary.MuiSlider-sizeSmall.css-53tbrc-MuiSlider-root {
+    padding:  0px;
+}
 @font-face {
   font-family: "Montserrat1";
   src: url("./assets/fonts/Montserrat-ExtraLight.ttf") format("truetype");

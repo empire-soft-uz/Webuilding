@@ -1,10 +1,22 @@
 .container{
+    display: flex;
+    gap: 30px;
+}
+
+.button{
     width: 40px;
     height: 40px;
-    background-color: rgba(255, 255, 255, 1);
+    background-color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 7px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+}
+.container .button:hover{
+    opacity: 0.8;
+    /* background-color: #8a3ffc !important; */
     cursor: pointer;
 }

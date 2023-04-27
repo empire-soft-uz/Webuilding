@@ -14,6 +14,13 @@ interface Props {
     symbolDotColor: string;
     symbolDotIcon?: any;
     onPress?: () => void;
+    minexpense?: string | number;
+    studios?: string;
+    oneRoom?: string;
+    twoRooms?: string;
+    threeRooms?: string;
+    fourRooms?: string;
+    fiveRooms?: string;
 }
 
 const ProductItem: React.FC<Props> = ({
@@ -27,28 +34,76 @@ const ProductItem: React.FC<Props> = ({
     time,
     symbolDotColor,
     symbolDotIcon,
-    onPress
+    onPress,
+    oneRoom,
+    twoRooms,
+    threeRooms,
+    fourRooms,
+    studios,
+    minexpense,
+    fiveRooms
 }) => {
     return (
         <div className={styles.container} onClick={onPress}>
             <div className={styles.imageBox}>
                 <img className={styles.image} src={image} alt="" />
             </div>
-            <div className={styles.nameBox}>
+            <div className={styles.firstBox}>
+                <div className={styles.nameBox}>
+                    <div className={styles.time}>
+                        <Text textType={'middle'} textSize={'twelve'} textColor={'black'} cursor={'none'} text={time} />
+                        <Text textType={'middle'} textSize={'twelve'} textColor={'purple'} cursor={'none'} text={company} />
+                    </div>
+                    <Text textType={'middle'} textSize={'twenty'} textColor={'black'} cursor={'none'} text={name} />
+                </div>
+                <div className={styles.priceBox}>
+                    <div className={styles.near}>
+                        <SymbolItem dotColor={symbolDotColor} dot text={near} />
+                        <SymbolItem dotColor={symbolDotColor} icon={symbolDotIcon} text={nearTime} />
+                    </div>
+                    <div className={styles.price}>
+                        <Text textType={'middle'} textSize={'sixteen'} textColor={'black'} cursor={'none'} text={price} />
+                        <Text textType={'middle'} textSize={'twelve'} textColor={'darkGrey'} cursor={'none'} text={homeCount} />
+                    </div>
+                </div>
+            </div>
+            <div className={styles.secondBox}>
                 <div className={styles.time}>
                     <Text textType={'middle'} textSize={'twelve'} textColor={'black'} cursor={'none'} text={time} />
                     <Text textType={'middle'} textSize={'twelve'} textColor={'purple'} cursor={'none'} text={company} />
                 </div>
-                <Text textType={'middle'} textSize={'twenty'} textColor={'black'} cursor={'none'} text={name} />
-            </div>
-            <div className={styles.priceBox}>
-                <div className={styles.near}>
-                    <SymbolItem dotColor={symbolDotColor} dot text={near} />
-                    <SymbolItem dotColor={symbolDotColor} icon={symbolDotIcon} text={nearTime} />
+                <div className={styles.time}>
+                    <Text textType={'middle'} textSize={'twelve'} textColor={'black'} cursor={'none'} text={minexpense} />
                 </div>
-                <div className={styles.price}>
-                    <Text textType={'middle'} textSize={'sixteen'} textColor={'black'} cursor={'none'} text={price} />
-                    <Text textType={'middle'} textSize={'twelve'} textColor={'darkGrey'} cursor={'none'} text={homeCount} />
+                <div className={styles.time}>
+                    <div className={styles.item}>
+                        <Text style={{ marginRight: "3px" }} textType={'middle'} textSize={'twelve'} textColor={'grey'} cursor={'none'} text="Studiyalar" />
+                        <Text textType={'middle'} textSize={'twelve'} textColor={'black'} cursor={'none'} text={studios} />
+                    </div>
+                    <div className={styles.item}>
+                        <Text style={{ marginRight: "3px" }} textType={'middle'} textSize={'twelve'} textColor={'grey'} cursor={'none'} text="1 xonali" />
+                        <Text textType={'middle'} textSize={'twelve'} textColor={'black'} cursor={'none'} text={oneRoom} />
+                    </div>
+                </div>
+                <div className={styles.time}>
+                    <div className={styles.item}>
+                        <Text style={{ marginRight: "3px" }} textType={'middle'} textSize={'twelve'} textColor={'grey'} cursor={'none'} text="2-xonali" />
+                        <Text textType={'middle'} textSize={'twelve'} textColor={'black'} cursor={'none'} text={twoRooms} />
+                    </div>
+                    <div className={styles.item}>
+                        <Text style={{ marginRight: "3px" }} textType={'middle'} textSize={'twelve'} textColor={'grey'} cursor={'none'} text="3-xonali" />
+                        <Text textType={'middle'} textSize={'twelve'} textColor={'black'} cursor={'none'} text={twoRooms} />
+                    </div>
+                </div>
+                <div className={styles.time}>
+                    <div className={styles.item}>
+                        <Text style={{ marginRight: "3px" }} textType={'middle'} textSize={'twelve'} textColor={'grey'} cursor={'none'} text="4-xonali" />
+                        <Text textType={'middle'} textSize={'twelve'} textColor={'black'} cursor={'none'} text={fourRooms} />
+                    </div>
+                    <div className={styles.item}>
+                        <Text style={{ marginRight: "3px" }} textType={'middle'} textSize={'twelve'} textColor={'grey'} cursor={'none'} text="5-xonali" />
+                        <Text textType={'middle'} textSize={'twelve'} textColor={'black'} cursor={'none'} text={fiveRooms} />
+                    </div>
                 </div>
             </div>
         </div>
