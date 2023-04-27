@@ -1,11 +1,25 @@
-.container{
+.container {
     display: flex;
     justify-content: space-between;
     height: 100%;
 }
 
-.line{
+.carousel {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.line {
     height: 500px;
     width: 1.5px;
     background-color: #EFF3F9 !important;
+}
+
+.drawer {
+    background-color: red;
 }

@@ -6,13 +6,53 @@ import RowItem from '../Rowitem/rowItem'
 import SimpleBtn from '../SimpleBtn/simpleBtn'
 import Text from '../Text/text'
 import styles from "./commentBox.module.css"
+import DrawerComponent from '../Drawer/DrawerComponent'
 
 const CommentBox = () => {
+    const [open, setOpen] = React.useState(false);
+    const [renderDrawer, setRenderDrawer] = React.useState<any>(null);
+
+    const handleToggel = () => {
+        setOpen(prev => !prev);
+    }
+
+    const handleOpenMoreComment = () => {
+        setRenderDrawer(renderMoreComment);
+        setOpen(true);
+    }
+
+    const handleOpenMoreFooterText = () => {
+        setRenderDrawer(renderMoreFooterText);
+        setOpen(true);
+    }
+
+    const renderMoreComment = (
+        <div className={styles.moreComment}>
+            <Text
+                textType={'middle'}
+                textSize={'fourteen'}
+                textColor={'black'}
+                cursor={'none'}
+                text='Eng foydali sharh'
+            />
+            <Comment more comment="Idrok gomeostazni yoritadi, Xobbs bu muammoni birinchilardan bo'lib yoritib berdi psixologiya nuqtai nazaridan nima deyish mumkin? Bu muammoni birinchilardan bo'lib yoritib berdi psixologiya nuqtai nazaridan nima deyish mumkin? Bu muammoni birinchilardan bo'lib yoritib berdi psixologiya nuqtai nazaridan nima deyish mumkin?" />
+        </div>
+    )
+
+    const renderMoreFooterText = (
+        <div className={styles.moreFooterText}>
+            <Text textType={'middle'} textSize={'fourteen'} textColor={'black'} cursor={'none'} text='Joylashuv, transportga kirish imkoniyati' />
+            <div className={styles.info}>
+                <Text textType={'middle'} textSize={'fourteen'} textColor={'grey'} cursor={'none'} text="'Sohil parki' turar joy majmuasi paxra daryosi sohilida, Pavlovskoye qishlog'i va yam qishlog'i yonida, 9-uyda qurilgan. ' Sohil parki' turar joy majmuasi joylashuv, transportga kirish imkoniyati" />
+            </div>
+        </div>
+    )
+
     return (
         <div className={styles.container}>
             <Text
                 textType={'middle'}
-                textSize={'twentyFour'}
+                textSize={'twenty'}
                 textColor={'black'}
                 cursor={'none'}
                 text='JK “Yangi choshtepa” ishlab chiqaruvchidan 56 ta xonadon'
@@ -53,15 +93,20 @@ const CommentBox = () => {
                     cursor={'none'}
                     text='Eng foydali sharh'
                 />
-                <Comment comment="drok gomeostazni yoritadi, Xobbs bu muammoni birinchilardan bo'lib yoritib berdi psixologiya nuqtai nazaridan ..." />
+                <Comment comment="drok gomeostazni yoritadi, Xobbs bu muammoni birinchilardan bo'lib yoritib berdi psixologiya nuqtai nazaridan ..." showMore={handleOpenMoreComment} />
             </div>
             <div className={styles.transport}>
                 <Text textType={'middle'} textSize={'fourteen'} textColor={'black'} cursor={'none'} text='Joylashuv, transportga kirish imkoniyati' />
                 <div className={styles.info}>
                     <Text textType={'middle'} textSize={'fourteen'} textColor={'grey'} cursor={'none'} text="'Sohil parki' turar joy majmuasi paxra daryosi sohilida, Pavlovskoye qishlog'i va yam qishlog'i yonida, 9-uyda qurilgan. ' Sohil parki' turar joy majmuasi" />
                 </div>
-                <Text textType={'middle'} textSize={'fourteen'} textColor={'purple'} cursor={'none'} text="Ko' proq o'qing" />
+                <button onClick={handleOpenMoreFooterText} style={{ border: 0, outline: 'none', background: 'transparent' }}>
+                    <Text textType={'middle'} textSize={'fourteen'} textColor={'purple'} cursor={'Cursor'} text="Ko' proq o'qing" />
+                </button>
             </div>
+            <DrawerComponent open={open} openDrawer={handleToggel}>
+                {renderDrawer}
+            </DrawerComponent>
         </div>
     )
 }

@@ -3350,13 +3350,6 @@ caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001449, caniuse-lite@^1.0.30001464:
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001478.tgz#0ef8a1cf8b16be47a0f9fc4ecfc952232724b32a"
   integrity sha512-gMhDyXGItTHipJj2ApIvR+iVB5hd0KP3svMWWXDvZOmjzJJassGLMfxRkQCSYgGd2gtdL/ReeiyvMSFD1Ss6Mw==
 
-carousel-react-rcdev@^0.0.5:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/carousel-react-rcdev/-/carousel-react-rcdev-0.0.5.tgz#493c81a989943762ed0f75a4e63a227225325cf9"
-  integrity sha512-WsF9XMW/aV3dQiZR98cHWfnCWMqkGW4FtnsRH2dj6SeBu0ecNUATHmnozF51CA1WEHJtFXbKkU7bg4VlBkKDtw==
-  dependencies:
-    styled-components "^5.3.5"
-
 case-sensitive-paths-webpack-plugin@^2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/case-sensitive-paths-webpack-plugin/-/case-sensitive-paths-webpack-plugin-2.4.0.tgz#db64066c6422eed2e08cc14b986ca43796dbc6d4"
@@ -8936,7 +8929,7 @@ style-loader@^3.3.1:
   resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-3.3.2.tgz#eaebca714d9e462c19aa1e3599057bc363924899"
   integrity sha512-RHs/vcrKdQK8wZliteNK4NKzxvLBzpuHMqYmUVWeKa6MkaIQ97ZTOS0b+zapZhy6GcrgWnvWYCMHRirC3FsUmw==
 
-styled-components@^5.3.5, styled-components@^5.3.9:
+styled-components@^5.3.9:
   version "5.3.9"
   resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-5.3.9.tgz#641af2a8bb89904de708c71b439caa9633e8f0ba"
   integrity sha512-Aj3kb13B75DQBo2oRwRa/APdB5rSmwUfN5exyarpX+x/tlM/rwZA2vVk2vQgVSP6WKaZJHWwiFrzgHt+CLtB4A==

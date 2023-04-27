@@ -4,9 +4,21 @@ import { ASSETS } from '../../constants/requireAssets'
 import Text from '../Text/text'
 import styles from "./collapseItem.module.css"
 
-const CollapseItem = () => {
+type PropsData = {
+    data?: {
+        id: number;
+        img: string;
+        text: string;
+        price: string;
+        area: string;
+        finish: boolean;
+    },
+    end?: boolean;
+}
+
+const CollapseItem = ({ end }: PropsData) => {
     return (
-        <div className={styles.container}>
+        <div className={`${styles.container} ${end ? styles.notBorderBottom : ""}`}>
             <div className={styles.leftBox}>
                 <img className={styles.img} src={ASSETS.room} alt="" />
                 <Text

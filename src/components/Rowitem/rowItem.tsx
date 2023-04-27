@@ -17,7 +17,7 @@ const RowItem: React.FC<Props> = ({
             <div className={styles.iconBox}>
                 {imgUrl ? <img className={styles.img} src={imgUrl} alt='person' /> : iconUrl}
             </div>
-            <Text cursor='Cursor' text={text} textColor="black" textSize='twelve' textType='middle' />
+            <Text cursor='Cursor' text={text} textColor="purple" textSize='twelve' textType='middle' />
         </div>
     )
 }

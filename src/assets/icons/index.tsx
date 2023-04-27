@@ -7,7 +7,7 @@ interface Props {
 export const HeartWithCircle: React.FC<Props> = ({ }) => {
     return (
         <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g clip-path="url(#clip0_133_841)">
+            <g clipPath="url(#clip0_133_841)">
                 <path d="M20.8401 5.10987C20.3294 4.59888 19.7229 4.19352 19.0555 3.91696C18.388 3.64039 17.6726 3.49805 16.9501 3.49805C16.2276 3.49805 15.5122 3.64039 14.8448 3.91696C14.1773 4.19352 13.5709 4.59888 13.0601 5.10987L12.0001 6.16987L10.9401 5.10987C9.90843 4.07818 8.50915 3.49858 7.05012 3.49858C5.59109 3.49858 4.19181 4.07818 3.16012 5.10987C2.12843 6.14156 1.54883 7.54084 1.54883 8.99987C1.54883 10.4589 2.12843 11.8582 3.16012 12.8899L4.22012 13.9499L12.0001 21.7299L19.7801 13.9499L20.8401 12.8899C21.3511 12.3791 21.7565 11.7727 22.033 11.1052C22.3096 10.4378 22.4519 9.72236 22.4519 8.99987C22.4519 8.27738 22.3096 7.56198 22.033 6.89452C21.7565 6.22706 21.3511 5.62063 20.8401 5.10987Z" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 <circle cx="20.5" cy="5" r="3.25" fill="#E14B46" stroke="white" strokeWidth="1.5" />
             </g>
@@ -40,7 +40,7 @@ export const FinishOneIcon: React.FC<Props> = ({ }) => {
 export const ArrowLeftIcon: React.FC<Props> = ({ color, }) => {
     return (
         <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6.5 11L1.5 6L6.5 1" stroke={COLORS.black} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M6.5 11L1.5 6L6.5 1" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
     )
 }
@@ -48,7 +48,7 @@ export const ArrowLeftIcon: React.FC<Props> = ({ color, }) => {
 export const MapIcon: React.FC<Props> = ({ }) => {
     return (
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g clip-path="url(#clip0_133_806)">
+            <g clipPath="url(#clip0_133_806)">
                 <path d="M17.5 8.33301C17.5 14.1663 10 19.1663 10 19.1663C10 19.1663 2.5 14.1663 2.5 8.33301C2.5 6.34388 3.29018 4.43623 4.6967 3.02971C6.10322 1.62318 8.01088 0.833008 10 0.833008C11.9891 0.833008 13.8968 1.62318 15.3033 3.02971C16.7098 4.43623 17.5 6.34388 17.5 8.33301Z" stroke="#22365F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 <path d="M10 10.833C11.3807 10.833 12.5 9.71372 12.5 8.33301C12.5 6.9523 11.3807 5.83301 10 5.83301C8.61929 5.83301 7.5 6.9523 7.5 8.33301C7.5 9.71372 8.61929 10.833 10 10.833Z" stroke="#22365F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </g>
@@ -102,6 +102,8 @@ export const BellIcon: React.FC<Props> = ({ }) => {
         </svg>
     )
 }
+
+
 export const LineIcon: React.FC<Props> = ({ color }) => {
     return (
         <svg width="2" height="23" viewBox="0 0 2 23" fill={color} xmlns="http://www.w3.org/2000/svg">
@@ -109,6 +111,19 @@ export const LineIcon: React.FC<Props> = ({ color }) => {
         </svg>
     )
 }
+
+export const TableIcon: React.FC<Props> = ({ }) => {
+    return (
+        <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="19" height="19" rx="3" stroke="black" strokeWidth="2" />
+            <line x1="1" y1="9" x2="21.0455" y2="9" stroke="black" strokeWidth="2" />
+            <line x1="7.68164" y1="15" x2="21.0453" y2="15" stroke="black" strokeWidth="2" />
+            <line x1="8.68164" y1="9" x2="8.68164" y2="21" stroke="black" strokeWidth="2" />
+        </svg>
+    )
+}
+
+
 export const AreaIcon: React.FC<Props> = ({ }) => {
     return (
         <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -116,14 +131,14 @@ export const AreaIcon: React.FC<Props> = ({ }) => {
             <path d="M22.5 18H25.5V10.5H18V13.5H22.5V18ZM18 22.5H13.5V18H10.5V25.5H18V22.5Z" fill="url(#paint1_linear_39_622)" />
             <defs>
                 <linearGradient id="paint0_linear_39_622" x1="4" y1="4" x2="31" y2="31" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#3D4E73" stop-opacity="0" />
-                    <stop offset="0.494792" stop-color="#3D4E73" />
-                    <stop offset="1" stop-color="#3D4E73" stop-opacity="0" />
+                    <stop stopColor="#3D4E73" stopOpacity="0" />
+                    <stop offset="0.494792" stopColor="#3D4E73" />
+                    <stop offset="1" stopColor="#3D4E73" stopOpacity="0" />
                 </linearGradient>
                 <linearGradient id="paint1_linear_39_622" x1="10.2222" y1="10.2222" x2="25.2222" y2="25.2222" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#3D4E73" stop-opacity="0" />
-                    <stop offset="0.494792" stop-color="#3D4E73" />
-                    <stop offset="1" stop-color="#3D4E73" stop-opacity="0" />
+                    <stop stopColor="#3D4E73" stopOpacity="0" />
+                    <stop offset="0.494792" stopColor="#3D4E73" />
+                    <stop offset="1" stopColor="#3D4E73" stopOpacity="0" />
                 </linearGradient>
             </defs>
         </svg>
@@ -132,20 +147,20 @@ export const AreaIcon: React.FC<Props> = ({ }) => {
 export const BuildingIcon: React.FC<Props> = ({ }) => {
     return (
         <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g clip-path="url(#clip0_39_612)">
+            <g clipPath="url(#clip0_39_612)">
                 <path d="M31 8H22V33H33V10C33 9.46957 32.7893 8.96086 32.4142 8.58579C32.0391 8.21071 31.5304 8 31 8ZM26 25H24V23H26V25ZM26 20H24V18H26V20ZM26 15H24V13H26V15ZM30 25H28V23H30V25ZM30 20H28V18H30V20ZM30 15H28V13H30V15Z" fill="url(#paint0_linear_39_612)" />
                 <path d="M17.88 3H6.12C5.55774 3 5.01851 3.22336 4.62093 3.62093C4.22336 4.01851 4 4.55774 4 5.12V33H9V30H15V33H20V5.12C20 4.55774 19.7766 4.01851 19.3791 3.62093C18.9815 3.22336 18.4423 3 17.88 3ZM9 25H7V23H9V25ZM9 20H7V18H9V20ZM9 15H7V13H9V15ZM9 10H7V8H9V10ZM13 25H11V23H13V25ZM13 20H11V18H13V20ZM13 15H11V13H13V15ZM13 10H11V8H13V10ZM17 25H15V23H17V25ZM17 20H15V18H17V20ZM17 15H15V13H17V15ZM17 10H15V8H17V10Z" fill="url(#paint1_linear_39_612)" />
             </g>
             <defs>
                 <linearGradient id="paint0_linear_39_612" x1="21.7963" y1="7.53704" x2="40.2279" y2="15.647" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#3D4E73" stop-opacity="0" />
-                    <stop offset="0.494792" stop-color="#3D4E73" />
-                    <stop offset="1" stop-color="#3D4E73" stop-opacity="0" />
+                    <stop stopColor="#3D4E73" stopOpacity="0" />
+                    <stop offset="0.494792" stopColor="#3D4E73" />
+                    <stop offset="1" stopColor="#3D4E73" stopOpacity="0" />
                 </linearGradient>
                 <linearGradient id="paint1_linear_39_612" x1="3.7037" y1="2.44444" x2="28.6172" y2="15.7316" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#3D4E73" stop-opacity="0" />
-                    <stop offset="0.494792" stop-color="#3D4E73" />
-                    <stop offset="1" stop-color="#3D4E73" stop-opacity="0" />
+                    <stop stopColor="#3D4E73" stopOpacity="0" />
+                    <stop offset="0.494792" stopColor="#3D4E73" />
+                    <stop offset="1" stopColor="#3D4E73" stopOpacity="0" />
                 </linearGradient>
                 <clipPath id="clip0_39_612">
                     <rect width="36" height="36" fill="white" />
@@ -182,8 +197,8 @@ export const Organizator: React.FC<Props> = ({ }) => {
                 <path d="M20.5 8.5L24.7398 16.9795C24.8488 17.1976 25.1586 17.2014 25.273 16.9861L33.5 1.5" stroke="#22365F" strokeWidth="3" strokeLinecap="round" />
             </g>
             <defs>
-                <filter id="filter0_d_218_1253" x="0.5" y="1.35645" width="25" height="28.644" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <filter id="filter0_d_218_1253" x="0.5" y="1.35645" width="25" height="28.644" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
                     <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
                     <feOffset dy="4" />
                     <feGaussianBlur stdDeviation="2" />
@@ -192,8 +207,8 @@ export const Organizator: React.FC<Props> = ({ }) => {
                     <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_218_1253" />
                     <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_218_1253" result="shape" />
                 </filter>
-                <filter id="filter1_d_218_1253" x="15" y="-0.000488281" width="24" height="26.646" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <filter id="filter1_d_218_1253" x="15" y="-0.000488281" width="24" height="26.646" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
                     <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
                     <feOffset dy="4" />
                     <feGaussianBlur stdDeviation="2" />
@@ -212,9 +227,9 @@ export const CalendarIcon: React.FC<Props> = ({ }) => {
             <path d="M18 21C17.575 21 17.2185 20.856 16.9305 20.568C16.6425 20.28 16.499 19.924 16.5 19.5C16.5 19.075 16.644 18.7185 16.932 18.4305C17.22 18.1425 17.576 17.999 18 18C18.425 18 18.7815 18.144 19.0695 18.432C19.3575 18.72 19.501 19.076 19.5 19.5C19.5 19.925 19.356 20.2815 19.068 20.5695C18.78 20.8575 18.424 21.001 18 21ZM12 21C11.575 21 11.2185 20.856 10.9305 20.568C10.6425 20.28 10.499 19.924 10.5 19.5C10.5 19.075 10.644 18.7185 10.932 18.4305C11.22 18.1425 11.576 17.999 12 18C12.425 18 12.7815 18.144 13.0695 18.432C13.3575 18.72 13.501 19.076 13.5 19.5C13.5 19.925 13.356 20.2815 13.068 20.5695C12.78 20.8575 12.424 21.001 12 21ZM24 21C23.575 21 23.2185 20.856 22.9305 20.568C22.6425 20.28 22.499 19.924 22.5 19.5C22.5 19.075 22.644 18.7185 22.932 18.4305C23.22 18.1425 23.576 17.999 24 18C24.425 18 24.7815 18.144 25.0695 18.432C25.3575 18.72 25.501 19.076 25.5 19.5C25.5 19.925 25.356 20.2815 25.068 20.5695C24.78 20.8575 24.424 21.001 24 21ZM18 27C17.575 27 17.2185 26.856 16.9305 26.568C16.6425 26.28 16.499 25.924 16.5 25.5C16.5 25.075 16.644 24.7185 16.932 24.4305C17.22 24.1425 17.576 23.999 18 24C18.425 24 18.7815 24.144 19.0695 24.432C19.3575 24.72 19.501 25.076 19.5 25.5C19.5 25.925 19.356 26.2815 19.068 26.5695C18.78 26.8575 18.424 27.001 18 27ZM12 27C11.575 27 11.2185 26.856 10.9305 26.568C10.6425 26.28 10.499 25.924 10.5 25.5C10.5 25.075 10.644 24.7185 10.932 24.4305C11.22 24.1425 11.576 23.999 12 24C12.425 24 12.7815 24.144 13.0695 24.432C13.3575 24.72 13.501 25.076 13.5 25.5C13.5 25.925 13.356 26.2815 13.068 26.5695C12.78 26.8575 12.424 27.001 12 27ZM24 27C23.575 27 23.2185 26.856 22.9305 26.568C22.6425 26.28 22.499 25.924 22.5 25.5C22.5 25.075 22.644 24.7185 22.932 24.4305C23.22 24.1425 23.576 23.999 24 24C24.425 24 24.7815 24.144 25.0695 24.432C25.3575 24.72 25.501 25.076 25.5 25.5C25.5 25.925 25.356 26.2815 25.068 26.5695C24.78 26.8575 24.424 27.001 24 27ZM7.5 33C6.675 33 5.9685 32.706 5.3805 32.118C4.7925 31.53 4.499 30.824 4.5 30V9C4.5 8.175 4.794 7.46851 5.382 6.88051C5.97 6.29251 6.676 5.99901 7.5 6.00001H9V4.50001C9 4.07501 9.144 3.71851 9.432 3.43051C9.72 3.14251 10.076 2.99901 10.5 3.00001C10.925 3.00001 11.2815 3.14401 11.5695 3.43201C11.8575 3.72001 12.001 4.07601 12 4.50001V6.00001H24V4.50001C24 4.07501 24.144 3.71851 24.432 3.43051C24.72 3.14251 25.076 2.99901 25.5 3.00001C25.925 3.00001 26.2815 3.14401 26.5695 3.43201C26.8575 3.72001 27.001 4.07601 27 4.50001V6.00001H28.5C29.325 6.00001 30.0315 6.29401 30.6195 6.88201C31.2075 7.47001 31.501 8.176 31.5 9V30C31.5 30.825 31.206 31.5315 30.618 32.1195C30.03 32.7075 29.324 33.001 28.5 33H7.5ZM7.5 30H28.5V15H7.5V30Z" fill="url(#paint0_linear_39_620)" />
             <defs>
                 <linearGradient id="paint0_linear_39_620" x1="4" y1="2.44444" x2="33.8343" y2="29.2953" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#3D4E73" stop-opacity="0" />
-                    <stop offset="0.494792" stop-color="#3D4E73" />
-                    <stop offset="1" stop-color="#3D4E73" stop-opacity="0" />
+                    <stop stopColor="#3D4E73" stopOpacity="0" />
+                    <stop offset="0.494792" stopColor="#3D4E73" />
+                    <stop offset="1" stopColor="#3D4E73" stopOpacity="0" />
                 </linearGradient>
             </defs>
         </svg>
@@ -226,9 +241,9 @@ export const ShiftIcon: React.FC<Props> = ({ }) => {
             <path d="M9 0.5V3.5H13.5V11.405C12.57 11.945 12 12.935 12 14V15.5H18V14C18 12.935 17.43 11.945 16.5 11.405V3.5H21V0.5H9ZM6 14C2.685 14 0 15.005 0 16.25C0 17.495 2.685 18.5 6 18.5C9.315 18.5 12 17.495 12 16.25C12 15.005 9.315 14 6 14ZM24 14C20.685 14 18 15.005 18 16.25C18 17.495 20.685 18.5 24 18.5C27.315 18.5 30 17.495 30 16.25C30 15.005 27.315 14 24 14ZM12 17V18.5C12 19.58 12.57 20.57 13.5 21.095C14.43 21.635 15.57 21.635 16.5 21.095C17.43 20.57 18 19.565 18 18.5V17H12Z" fill="url(#paint0_linear_39_611)" />
             <defs>
                 <linearGradient id="paint0_linear_39_611" x1="-0.555556" y1="0.111111" x2="19.176" y2="28.299" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#3D4E73" stop-opacity="0" />
-                    <stop offset="0.494792" stop-color="#3D4E73" />
-                    <stop offset="1" stop-color="#3D4E73" stop-opacity="0" />
+                    <stop stopColor="#3D4E73" stopOpacity="0" />
+                    <stop offset="0.494792" stopColor="#3D4E73" />
+                    <stop offset="1" stopColor="#3D4E73" stopOpacity="0" />
                 </linearGradient>
             </defs>
         </svg>
@@ -240,9 +255,9 @@ export const HomeTypeIcon: React.FC<Props> = ({ }) => {
             <path d="M16.125 6.9375H29.0625C29.2117 6.9375 29.3548 6.87824 29.4602 6.77275C29.5657 6.66726 29.625 6.52418 29.625 6.375V1.875C29.625 1.57663 29.5065 1.29048 29.2955 1.07951C29.0845 0.868527 28.7984 0.75 28.5 0.75H16.6875C16.5383 0.75 16.3952 0.809263 16.2898 0.914753C16.1843 1.02024 16.125 1.16332 16.125 1.3125V6.9375ZM22.875 15.375H29.0625C29.2117 15.375 29.3548 15.3157 29.4602 15.2102C29.5657 15.1048 29.625 14.9617 29.625 14.8125V9.75C29.625 9.60082 29.5657 9.45774 29.4602 9.35225C29.3548 9.24676 29.2117 9.1875 29.0625 9.1875H22.875V15.375ZM9.375 9.1875H20.625V15.375H9.375V9.1875ZM7.125 9.1875H0.9375C0.788316 9.1875 0.645242 9.24676 0.539753 9.35225C0.434263 9.45774 0.375 9.60082 0.375 9.75V14.8125C0.375 14.9617 0.434263 15.1048 0.539753 15.2102C0.645242 15.3157 0.788316 15.375 0.9375 15.375H7.125V9.1875ZM16.125 17.625V22.6875C16.125 22.8367 16.1843 22.9798 16.2898 23.0852C16.3952 23.1907 16.5383 23.25 16.6875 23.25H28.5C28.7984 23.25 29.0845 23.1315 29.2955 22.9205C29.5065 22.7095 29.625 22.4234 29.625 22.125V18.1875C29.625 18.0383 29.5657 17.8952 29.4602 17.7898C29.3548 17.6843 29.2117 17.625 29.0625 17.625H16.125ZM13.875 6.9375V1.3125C13.875 1.16332 13.8157 1.02024 13.7102 0.914753C13.6048 0.809263 13.4617 0.75 13.3125 0.75H1.5C1.20163 0.75 0.915483 0.868527 0.704505 1.07951C0.493526 1.29048 0.375 1.57663 0.375 1.875V6.375C0.375 6.52418 0.434263 6.66726 0.539753 6.77275C0.645242 6.87824 0.788316 6.9375 0.9375 6.9375H13.875ZM13.875 17.625H0.9375C0.788316 17.625 0.645242 17.6843 0.539753 17.7898C0.434263 17.8952 0.375 18.0383 0.375 18.1875V22.125C0.375 22.4234 0.493526 22.7095 0.704505 22.9205C0.915483 23.1315 1.20163 23.25 1.5 23.25H13.3125C13.4617 23.25 13.6048 23.1907 13.7102 23.0852C13.8157 22.9798 13.875 22.8367 13.875 22.6875V17.625Z" fill="url(#paint0_linear_39_609)" />
             <defs>
                 <linearGradient id="paint0_linear_39_609" x1="-0.166667" y1="0.333333" x2="21.5805" y2="28.6047" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#3D4E73" stop-opacity="0" />
-                    <stop offset="0.494792" stop-color="#3D4E73" />
-                    <stop offset="1" stop-color="#3D4E73" stop-opacity="0" />
+                    <stop stopColor="#3D4E73" stopOpacity="0" />
+                    <stop offset="0.494792" stopColor="#3D4E73" />
+                    <stop offset="1" stopColor="#3D4E73" stopOpacity="0" />
                 </linearGradient>
             </defs>
         </svg>
@@ -254,23 +269,33 @@ export const FloorNumberIcon: React.FC<Props> = ({ }) => {
             <path d="M12 1.5C6.201 1.5 1.5 6.408 1.5 12V27C1.5 27.3978 1.65804 27.7794 1.93934 28.0607C2.22064 28.342 2.60218 28.5 3 28.5H21C21.3978 28.5 21.7794 28.342 22.0607 28.0607C22.342 27.7794 22.5 27.3978 22.5 27V12C22.5 6.408 17.799 1.5 12 1.5ZM12 1.5V28.5M1.5 16.5H22.5" stroke="url(#paint0_linear_39_617)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             <defs>
                 <linearGradient id="paint0_linear_39_617" x1="1.11111" y1="1" x2="27.2803" y2="21.3538" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#3D4E73" stop-opacity="0" />
-                    <stop offset="0.494792" stop-color="#3D4E73" />
-                    <stop offset="1" stop-color="#3D4E73" stop-opacity="0" />
+                    <stop stopColor="#3D4E73" stopOpacity="0" />
+                    <stop offset="0.494792" stopColor="#3D4E73" />
+                    <stop offset="1" stopColor="#3D4E73" stopOpacity="0" />
                 </linearGradient>
             </defs>
         </svg>
     )
 }
+
+export const ArrowBlackIcon: React.FC<Props> = ({ }) => {
+    return (
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 9.31836L10 14.3184L15 9.31836" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+    )
+}
+
+
 export const HomeIcon: React.FC<Props> = ({ }) => {
     return (
         <svg width="36" height="31" viewBox="0 0 36 31" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M33.75 26.6871H32.0625V14.2488C32.0619 13.8605 31.9811 13.4765 31.8253 13.1208C31.6695 12.7651 31.4419 12.4454 31.1569 12.1817L19.9139 1.56869L19.8914 1.5476C19.3747 1.07475 18.6997 0.8125 17.9993 0.8125C17.2989 0.8125 16.6239 1.07475 16.1072 1.5476L16.0833 1.56869L4.84312 12.1817C4.55808 12.4454 4.33052 12.7651 4.17469 13.1208C4.01887 13.4765 3.93812 13.8605 3.9375 14.2488V26.6871H2.25C1.80245 26.6871 1.37322 26.8649 1.05676 27.1814C0.74029 27.4979 0.5625 27.9271 0.5625 28.3746C0.5625 28.8222 0.74029 29.2514 1.05676 29.5679C1.37322 29.8843 1.80245 30.0621 2.25 30.0621H33.75C34.1976 30.0621 34.6268 29.8843 34.9432 29.5679C35.2597 29.2514 35.4375 28.8222 35.4375 28.3746C35.4375 27.9271 35.2597 27.4979 34.9432 27.1814C34.6268 26.8649 34.1976 26.6871 33.75 26.6871ZM7.3125 14.4921L18 4.40228L28.6875 14.4921V26.6871H23.0625V20.4996C23.0625 20.1303 22.9898 19.7646 22.8484 19.4233C22.7071 19.0821 22.4999 18.7721 22.2387 18.5109C21.9776 18.2497 21.6675 18.0426 21.3263 17.9012C20.9851 17.7599 20.6193 17.6871 20.25 17.6871H15.75C15.0041 17.6871 14.2887 17.9834 13.7613 18.5109C13.2338 19.0383 12.9375 19.7537 12.9375 20.4996V26.6871H7.3125V14.4921ZM19.6875 26.6871H16.3125V21.0621H19.6875V26.6871Z" fill="url(#paint0_linear_39_619)" />
             <defs>
                 <linearGradient id="paint0_linear_39_619" x1="-0.0833334" y1="0.27084" x2="28.7195" y2="34.6132" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#3D4E73" stop-opacity="0" />
-                    <stop offset="0.494792" stop-color="#3D4E73" />
-                    <stop offset="1" stop-color="#3D4E73" stop-opacity="0" />
+                    <stop stopColor="#3D4E73" stopOpacity="0" />
+                    <stop offset="0.494792" stopColor="#3D4E73" />
+                    <stop offset="1" stopColor="#3D4E73" stopOpacity="0" />
                 </linearGradient>
             </defs>
         </svg>
@@ -282,9 +307,9 @@ export const FinishIcon: React.FC<Props> = ({ }) => {
             <path d="M22.955 8.22741L19.5057 11.6767C19.2947 11.8877 19.1762 12.1738 19.1762 12.4722C19.1762 12.7705 19.2947 13.0567 19.5057 13.2677C19.7167 13.4786 20.0028 13.5972 20.3012 13.5972C20.5995 13.5972 20.8857 13.4786 21.0967 13.2677L24.5459 9.8184L25.6066 10.8791L21.0977 15.3879C20.8868 15.5989 20.7682 15.8851 20.7682 16.1834C20.7682 16.4818 20.8868 16.7679 21.0977 16.9789C21.3087 17.1899 21.5949 17.3084 21.8932 17.3084C22.1916 17.3084 22.4777 17.1899 22.6887 16.9789L27.1976 12.4701L29.0537 14.3262C29.2647 14.5372 29.3833 14.8233 29.3833 15.1217C29.3833 15.4201 29.2647 15.7062 29.0537 15.9172L20.3033 24.6676L5.45406 9.8184L14.2045 1.06796C14.4155 0.856978 14.7016 0.738451 15 0.738451C15.2984 0.738451 15.5845 0.856978 15.7955 1.06796L22.955 8.22741ZM3.86307 11.4094L2.00479 13.2677C1.37186 13.9006 1.01628 14.759 1.01628 15.6542C1.01628 16.5493 1.37186 17.4077 2.00479 18.0406L4.92161 20.9575L1.21142 24.6676C0.648811 25.2303 0.332741 25.9933 0.332742 26.789C0.332742 27.5846 0.648811 28.3477 1.21142 28.9103C1.77403 29.4729 2.53709 29.789 3.33274 29.789C4.12839 29.789 4.89145 29.4729 5.45406 28.9103L9.16425 25.2001L12.0811 28.1169C12.3945 28.4303 12.7665 28.6789 13.176 28.8485C13.5855 29.0181 14.0243 29.1054 14.4676 29.1054C14.9108 29.1054 15.3496 29.0181 15.7591 28.8485C16.1686 28.6789 16.5406 28.4303 16.854 28.1169L18.7123 26.2586L3.86307 11.4094Z" fill="url(#paint0_linear_40_666)" />
             <defs>
                 <linearGradient id="paint0_linear_40_666" x1="15.1179" y1="-0.395362" x2="21.0974" y2="33.4888" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#3D4E73" stop-opacity="0" />
-                    <stop offset="0.494792" stop-color="#3D4E73" />
-                    <stop offset="1" stop-color="#3D4E73" stop-opacity="0" />
+                    <stop stopColor="#3D4E73" stopOpacity="0" />
+                    <stop offset="0.494792" stopColor="#3D4E73" />
+                    <stop offset="1" stopColor="#3D4E73" stopOpacity="0" />
                 </linearGradient>
             </defs>
         </svg>
@@ -499,10 +524,22 @@ export const ArrowUpIcon: React.FC<Props> = ({ }) => {
     )
 }
 
+export const MenuIcon = () => {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="rgba(0, 0, 0, 1)" transform="msFilter"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path></svg>
+    )
+}
+
+export const CloseIcon = () => {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="rgba(0, 0, 0, 1)" transform="msFilter"><path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path></svg>
+    )
+}
+
 export const DownloaderIcon: React.FC<Props> = ({ }) => {
     return (
         <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g clip-path="url(#clip0_290_1917)">
+            <g clipPath="url(#clip0_290_1917)">
                 <path d="M8.01758 17L12.0176 21L16.0176 17" stroke="#8A3FFC" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 <path d="M12.0176 12V21" stroke="#8A3FFC" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 <path d="M20.8978 18.0901C21.7671 17.4787 22.4191 16.6062 22.759 15.5992C23.099 14.5922 23.1092 13.5031 22.7882 12.4899C22.4671 11.4767 21.8316 10.5921 20.9738 9.96462C20.116 9.33709 19.0806 8.99922 18.0178 9.00006H16.7578C16.457 7.82793 15.8942 6.7393 15.1119 5.81614C14.3295 4.89297 13.3479 4.15932 12.241 3.67041C11.134 3.1815 9.9306 2.95008 8.72128 2.99357C7.51196 3.03706 6.32827 3.35433 5.25931 3.92148C4.19035 4.48864 3.26398 5.2909 2.54994 6.26788C1.83591 7.24487 1.35281 8.3711 1.13702 9.5618C0.921225 10.7525 0.978365 11.9767 1.30414 13.1421C1.6299 14.3075 2.21581 15.3838 3.01776 16.2901" stroke="#8A3FFC" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -535,15 +572,5 @@ export const DisLike: React.FC<Props> = ({ }) => {
         <svg width="20" height="23" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fillRule="evenodd" clipRule="evenodd" d="M9.56192 20.722C9.70642 20.7681 9.86306 20.7574 9.99992 20.692C10.0677 20.6606 10.1279 20.6149 10.1763 20.5579C10.2246 20.5009 10.26 20.4341 10.2799 20.362L10.7559 18.528C10.9222 17.8871 11.1639 17.2681 11.4759 16.684C11.9609 15.777 12.6939 15.08 13.3739 14.494L14.8119 13.254C14.9219 13.1591 15.0078 13.0395 15.0626 12.905C15.1174 12.7704 15.1394 12.6248 15.1269 12.48L14.3149 3.08704C14.2952 2.8589 14.1907 2.64643 14.0221 2.49151C13.8534 2.33658 13.6329 2.25043 13.4039 2.25004H8.75492C5.61892 2.25004 2.97592 4.43204 2.46892 7.36304L1.76392 11.443C1.74105 11.5745 1.74718 11.7094 1.78189 11.8383C1.8166 11.9671 1.87906 12.0869 1.96488 12.1891C2.0507 12.2913 2.15782 12.3735 2.27874 12.43C2.39966 12.4865 2.53146 12.5158 2.66492 12.516H7.84592C8.82292 12.516 9.56592 13.392 9.40792 14.356L8.74492 18.4C8.6541 18.9539 8.67998 19.5207 8.82092 20.064C8.86069 20.2079 8.93619 20.3393 9.04039 20.4461C9.1446 20.553 9.27412 20.6317 9.41692 20.675L9.56192 20.722ZM10.6519 22.043C10.1683 22.2757 9.61391 22.314 9.10292 22.15L8.95792 22.103C8.18092 21.853 7.57492 21.233 7.36892 20.441C7.17592 19.695 7.13992 18.917 7.26492 18.157L7.92792 14.113C7.92996 14.1011 7.92937 14.0889 7.92619 14.0772C7.92301 14.0655 7.91731 14.0547 7.9095 14.0455C7.90168 14.0362 7.89195 14.0288 7.88096 14.0237C7.86998 14.0186 7.85802 14.016 7.84592 14.016H2.66592C1.16592 14.016 0.0299206 12.664 0.285921 11.187L0.990921 7.10704C1.62892 3.41904 4.92892 0.750036 8.75492 0.750036H13.4039C14.0083 0.750544 14.5906 0.977575 15.0358 1.38633C15.481 1.79509 15.7569 2.35588 15.8089 2.95804L16.6219 12.351C16.655 12.7325 16.597 13.1164 16.4527 13.471C16.3084 13.8257 16.0819 14.141 15.7919 14.391L14.3519 15.631C13.6969 16.195 13.1459 16.742 12.7999 17.391C12.543 17.8703 12.3443 18.3786 12.2079 18.905L11.7319 20.738C11.6575 21.0209 11.5223 21.2842 11.3358 21.5096C11.1493 21.735 10.9159 21.917 10.6519 22.043ZM19.0319 14.015C18.8387 14.0235 18.6496 13.9569 18.5043 13.8293C18.3589 13.7016 18.2685 13.5228 18.2519 13.33L17.2819 2.09404C17.2655 1.92672 17.2833 1.7578 17.3344 1.59761C17.3854 1.43742 17.4686 1.28931 17.5788 1.16234C17.689 1.03536 17.8239 0.932186 17.9753 0.859108C18.1267 0.78603 18.2915 0.744583 18.4594 0.737301C18.6274 0.730019 18.7951 0.757053 18.9522 0.816753C19.1094 0.876453 19.2528 0.967566 19.3735 1.08453C19.4943 1.20149 19.59 1.34184 19.6547 1.49701C19.7194 1.65218 19.7518 1.81892 19.7499 1.98704L19.7499 13.266C19.7501 13.4595 19.6755 13.6456 19.5417 13.7854C19.4079 13.9251 19.2252 14.0068 19.0319 14.015Z" fill="#818285" fillOpacity="0.8" />
         </svg>
-    )
-}
-export const CloseIcon = () => {
-    return (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="rgba(0, 0, 0, 1)" transform="msFilter"><path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path></svg>
-    )
-}
-export const MenuIcon = () => {
-    return (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="rgba(0, 0, 0, 1)" transform="msFilter"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path></svg>
     )
 }

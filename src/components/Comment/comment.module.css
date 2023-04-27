@@ -1,8 +1,9 @@
-.container{
+.container {
     width: 330px;
     height: 140px;
     position: relative;
 }
+
 .commentBox {
     display: flex;
     flex-direction: column;
@@ -11,13 +12,24 @@
     width: 330px;
     height: 120px;
     background-color: #EFF3F9;
-    border-radius: 17px;    
+    border-radius: 17px;
     padding: 10px 30px 10px 15px;
     margin: 15px 0;
 }
-.likeBox{
+
+
+.commentMoreBox {
+    width: 330px;
+    height: auto;
+}
+
+.likeBox {
     position: absolute;
     top: 0;
     right: -15px;
     z-index: 1;
+}
+
+.comment {
+    margin-bottom: 15px;
 }

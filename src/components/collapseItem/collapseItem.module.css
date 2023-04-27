@@ -1,4 +1,4 @@
-.container{
+.container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -6,21 +6,28 @@
     padding: 15px 0;
 }
 
-.leftBox{
+.notBorderBottom {
+    border-bottom: none !important;
+    padding-bottom: 0;
+}
+
+.leftBox {
     display: flex;
     align-items: center;
     gap: 20px;
 }
-.rightBox{
+
+.rightBox {
     display: flex;
     gap: 40px;
 }
-.img{
+
+.img {
     width: 95px;
     height: 70px;
 }
 
-.finishBox{
+.finishBox {
     display: flex;
     gap: 5px;
 }

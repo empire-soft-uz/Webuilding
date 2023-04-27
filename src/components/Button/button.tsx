@@ -10,6 +10,7 @@ interface Props {
     borderRadius: 'ten' | 'none' | 'five' | 'thirty';
     onPress?: () => void;
     style?: CSSProperties;
+    children?: React.ReactNode;
 }
 
 const Button: React.FC<Props> = ({
@@ -21,7 +22,8 @@ const Button: React.FC<Props> = ({
     onPress,
     textSize,
     borderRadius,
-    style
+    style,
+    children
 }) => {
     return (
         <div style={{ ...style }} className={`${styles[btnSize]} ${styles[btnColor]} ${styles[borderRadius]}`} onClick={onPress}>
@@ -30,7 +32,7 @@ const Button: React.FC<Props> = ({
                     {iconUrl}
                 </div> : null
             }
-            <button className={`${styles.btn} ${styles[textColor]} ${styles[textSize]}`}>{title}</button>
+            <button className={`${styles.btn} ${styles[textColor]} ${styles[textSize]}`}>{title || children}</button>
         </div>
     )
 }

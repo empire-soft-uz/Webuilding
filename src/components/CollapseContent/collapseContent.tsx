@@ -14,12 +14,12 @@ const CollapseContent = () => {
                 textColor={'black'}
                 cursor={'none'}
                 text={'JK “Yangi choshtepa” ishlab chiqaruvchidan 56 ta xonadon'}
-                style={{ marginBottom: "15px" }}
+                style={{ marginBottom: "20px" }}
             />
-            <DropdownMenu option='Barcha korpus' textColor={COLORS.purple} textSize='20px' />
+            <DropdownMenu option='Barcha korpus' textColor={COLORS.purple} textSize='16px' />
             <Text
                 textType={'middle'}
-                textSize={'sixteen'}
+                textSize={'fourteen'}
                 textColor={'black'}
                 cursor={'none'}
                 text={'2023-yil II-B da yetkazish'}

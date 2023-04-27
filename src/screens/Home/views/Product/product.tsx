@@ -1,4 +1,3 @@
-import React from 'react'
 import AboutProducer from '../../../../components/AboutProducer/aboutProducer'
 import CollapseContent from '../../../../components/CollapseContent/collapseContent'
 import CommentBox from '../../../../components/CommentBox/commentBox'
@@ -12,7 +11,6 @@ import Procedure from '../../../../components/Procedure/procedure'
 import ProcessBuilding from '../../../../components/ProcessBuilding/processBuilding'
 // import Header from '../../components/Header/header'
 import ProductContent from '../../../../components/ProductContent/productContent'
-import Top from '../../../../components/Top/top'
 import styles from "./product.module.css"
 
 const ProductPage = () => {

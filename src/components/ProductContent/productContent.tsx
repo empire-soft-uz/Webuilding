@@ -24,10 +24,10 @@ const ProductContent = () => {
                         <Text cursor='none' textColor='white' textSize='ten' textType='middle' text='Toshkent shahar, Yangi Hayot tumani, O’zar ko’chasi  72-uy 47' />
                     </div>
                 </div>
-                <div className={styles.btnBox}>
+                {/* <div className={styles.btnBox}>
                     <Button iconUrl={<FinishOneIcon color={COLORS.purple} />} btnSize='avarage' btnColor='lightPurple' textSize='fourteen' title='Tugatish' borderRadius='five' textColor='textPurple' />
                     <Button iconUrl={<CameraIcon color={COLORS.purple} />} btnSize='avarage' btnColor='lightPurple' textSize='fourteen' title='Suratlar' borderRadius='five' textColor='textPurple' />
-                </div>
+                </div> */}
             </div>
             <div className={styles.imgBox}>
                 <img src={ASSETS.pr1} alt="" />

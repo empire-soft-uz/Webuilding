@@ -29,7 +29,7 @@ const Item: React.FC<Props> = ({
                 }
                 {greyText ?
                     <Text textSize='twelve' textColor='darkGrey' textType='middle' cursor='none' text={text} /> :
-                    <Text textSize='twelve' textColor='black' textType='middle' cursor='none' text={text} />
+                    <Text textSize='twelve' textColor='black' textType='semiBold' cursor='none' text={text} />
                 }
             </div>
         </div>

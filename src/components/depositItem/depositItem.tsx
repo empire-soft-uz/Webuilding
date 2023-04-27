@@ -16,12 +16,12 @@ const DepositItem: React.FC<Props> = ({
     return (
         <div className={styles.priceBox}>
             <div className={styles.price}>
-                <Text textColor="black" textSize='twenty' textType='middle' cursor='none' text='4.4 - 11.5 mln $ dan' />
-                <Text textColor="darkGrey" textSize='twelve' textType='middle' cursor='none' text='128 352 - 218 038 $/m2' />
+                <Text textColor="black" textSize='twenty' textType='bold' cursor='none' text='4.4 - 11.5 mln $ dan' />
+                <Text textColor="darkGrey" textSize='twelve' textType='semiBold' cursor='none' text='128 352 - 218 038 $/m2' />
             </div>
-            <div>
+            {/* <div>
                 <HeartWithCircle />
-            </div>
+            </div> */}
         </div>
     )
 }

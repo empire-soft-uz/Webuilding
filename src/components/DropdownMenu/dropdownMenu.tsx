@@ -1,5 +1,6 @@
 import React, { CSSProperties } from 'react'
 import styles from "./dropdownMenu.module.css"
+import { ArrowBlackIcon } from '../../assets/icons';
 interface Props {
     option?: string;
     value?: string;
@@ -17,11 +18,14 @@ const DropdownMenu: React.FC<Props> = ({
 }) => {
 
     return (
-        <select style={{ ...style, fontSize: textSize, color: textColor }} className={styles.select}>
-            <option value={value}>{option}</option>
-            <option value={value}>{option}</option>
-            <option value={value}>{option}</option>
-        </select>
+        <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+            <select style={{ ...style, fontSize: textSize, color: textColor }} className={styles.select}>
+                <option value={value}>{option}</option>
+                <option value={value}>{option}</option>
+                <option value={value}>{option}</option>
+            </select>
+            <ArrowBlackIcon />
+        </div>
     )
 }
 

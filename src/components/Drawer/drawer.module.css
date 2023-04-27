@@ -1,0 +1,41 @@
+.drawerContainer {
+    height: 100%;
+    width: 100%;
+}
+
+.drawerHeader {
+    margin-bottom: 20px;
+}
+
+.btnContainer {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+
+.drawer {
+    padding: 35px;
+    height: 100%;
+    width: 400px;
+}
+
+.closeBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 10;
+    background-color: #fff;
+    box-shadow: 0 0 15px #ddd;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.closeBtn:hover {
+    background-color: #8A3FFC;
+    transition: ease-in-out 0.25s;
+    color: #fff;
+}

@@ -3,11 +3,13 @@ import styles from "./text.module.css"
 interface Props {
     text?: string | number;
     style?: CSSProperties;
-    textType: 'bold' | 'middle' | 'thin';
+    textType: 'bold' | 'middle' | 'thin' | 'semiBold' | 'light';
     textSize: 'fifty' | 'thirtyFive' | 'thirty' | 'twentyFour' | 'twenty' | 'sixteen' | 'fourteen' | 'twelve' | 'ten';
     textColor: 'black' | 'purple' | 'darkGrey' | 'grey' | 'white' | 'blue' | 'darkBlue';
-    cursor: 'Cursor' | 'none'
+    cursor?: 'Cursor' | 'none'
     onPress?: () => void;
+    children?: React.ReactNode;
+    className?: string;
 }
 
 const Text: React.FC<Props> = ({
@@ -17,14 +19,17 @@ const Text: React.FC<Props> = ({
     textSize,
     textColor,
     onPress,
-    cursor
+    cursor,
+    children,
+    className,
 }) => {
     return (
         <p
             onClick={onPress} style={{ ...style }}
-            className={`${styles[textType]} ${styles[textSize]} ${styles[textColor]} ${styles[cursor]}`}
+            className={`${styles[textType]} ${styles[textSize]} ${styles[textColor]} ${styles[cursor || 'none']} ${className || ''}`}
         >
             {text}
+            {children}
         </p>
     )
 }

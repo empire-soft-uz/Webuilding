@@ -1,9 +1,11 @@
-.container{
+.container {
     display: flex;
     justify-content: space-between;
-    padding: 10px 0;
+    align-items: center;
+    margin-bottom: 15px;
 }
-.box{
+
+.box {
     display: flex;
     gap: 20px;
 }
