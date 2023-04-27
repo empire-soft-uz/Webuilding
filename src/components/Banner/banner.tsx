@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { ArrowLeftIcon, ArrowRightIcon, PersonIcon } from '../../assets/icons'
 import { COLORS } from '../../constants/color'
 import ArrowBtn from '../ArrowBtn/arrowBtn'
@@ -8,34 +8,49 @@ import Text from '../Text/text'
 import styles from "./banner.module.css"
 interface Props {
     imgUrl?: any
+    onPrev?: () => void;
+    onNext?: () => void;
+    cc?: string,
+    name?: string;
+    housesSale?: string;
+    price?: string;
+    countFlat?: string;
+    station?: string;
+    stationTime?: string;
 }
 
 const Banner: React.FC<Props> = ({
-    imgUrl
+    imgUrl,
+    onNext,
+    onPrev,
+    price,
+    cc,
+    countFlat,
+    housesSale,
+    name,
+    station,
+    stationTime
 }) => {
+
     return (
         <div className={styles.container}>
             <div className={styles.aboveBox}>
                 <div className={styles.blurBox}>
                     <div>
-                        <Button textSize={'sixteen'} btnSize={'avarage'} btnColor={'lightPurple'} textColor={'textPurple'} borderRadius={'thirty'} title={'GC "Monarx"'} />
-                        <Text style={{ marginTop: "10px" }} textType={'middle'} textSize={'thirty'} textColor={'white'} cursor={'Cursor'} text='«Bizning uylar» MCHJ' />
+                        <Button textSize={'fourteen'} btnSize={'avarage'} btnColor={'lightPurple'} textColor={'textPurple'} borderRadius={'thirty'} title={cc} />
+                        <Text style={{ marginTop: "10px" }} textType={'middle'} textSize={'thirty'} textColor={'white'} cursor={'Cursor'} text={name} />
                         <div className={styles.simpleInfo}>
-                            <SymbolItem dot={true} dotColor={COLORS.orange} text='1-bekat' textColor={COLORS.white} />
-                            <SymbolItem icon={<PersonIcon />} dotColor={COLORS.orange} text='8 min.' textType='Montserrat3' textColor={COLORS.white} textSize='12px' />
+                            <SymbolItem dot={true} dotColor={COLORS.orange} text={station} textColor={COLORS.white} />
+                            <SymbolItem icon={<PersonIcon />} dotColor={COLORS.orange} text={stationTime} textType='Montserrat3' textColor={COLORS.white} textSize='12px' />
                         </div>
                         <div className={styles.advertising}>
-                            <Text textType={'thin'} textSize={'fourteen'} textColor={'white'} cursor={'Cursor'} text='Uylar sotiladi!' />
+                            <Text textType={'thin'} textSize={'fourteen'} textColor={'white'} cursor={'Cursor'} text={housesSale} />
                             <div className={styles.roomCount}>
-                                <Text textType={'middle'} textSize={'sixteen'} textColor={'white'} cursor={'Cursor'} text='35 000 $ dan boshlab' />
-                                <Text textType={'thin'} textSize={'fourteen'} textColor={'white'} cursor={'Cursor'} text='5 ta kvartira' />
+                                <Text textType={'middle'} textSize={'sixteen'} textColor={'white'} cursor={'Cursor'} text={price} />
+                                <Text textType={'thin'} textSize={'fourteen'} textColor={'white'} cursor={'Cursor'} text={countFlat} />
                             </div>
                             <Button textSize={'fourteen'} btnSize={'middle'} btnColor={'purple'} textColor={'textWhite'} borderRadius={'five'} title='Kvartirani tanlang' />
                         </div>
-                    </div>
-                    <div className={styles.prevBox}>
-                        <ArrowBtn icon={<ArrowLeftIcon />} />
-                        <ArrowBtn icon={<ArrowRightIcon />} />
                     </div>
                 </div>
             </div>

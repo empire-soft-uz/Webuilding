@@ -1,12 +1,18 @@
 .container {
     display: flex;
     height: 100%;
-    padding: 0 3vw;
     background-color: #EFF3F9;
 }
 .dashboard {
     width: 18vw;
+    height: 100vh;
 }
 .rightContainer{
-    width: 76vw;
+    width: 82vw;
+    height: 100vh;
+}
+@media(max-width: 768px){
+    .rightContainer{
+        width: 100%;
+    }
 }

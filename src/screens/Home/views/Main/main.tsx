@@ -2,9 +2,14 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import Banner from '../../../../components/Banner/banner'
 import Button from '../../../../components/Button/button'
+import FinishTimeFilter from '../../../../components/FinishTimeFilter/finishTimeFilter'
+import FloorFilter from '../../../../components/FloorFilter/floorFilter'
 import InfoCardItem from '../../../../components/InfoCardItem/infoCardItem'
+import PriceFilter from '../../../../components/PriceFilter/priceFilter'
 import ProductItem from '../../../../components/ProductItem/productItem'
 import RoomsSelect from '../../../../components/RoomsSelect/roomsSelect'
+import SizeFilter from '../../../../components/SizeFilter/sizeFilter'
+import SwiperComp from '../../../../components/Swiper/swiper'
 import ViewMap from '../../../../components/ViewMap/viewMap'
 import { COLORS } from '../../../../constants/color'
 import { ProductData } from '../../../../constants/productData'
@@ -17,14 +22,15 @@ const Main = () => {
     return (
         <div className={styles.container}>
             <div className={styles.banner}>
-                <Banner imgUrl={ASSETS.tashkent1} />
+                {/* <Banner imgUrl={ASSETS.tashkent1} /> */}
+                <SwiperComp />
                 <div className={styles.infoBox}>
                     <div className={styles.infoCard}>
                         <RoomsSelect />
-                        <InfoCardItem label='Narxi, ming $' from='14.2 dan' to='14.2 gacha' />
-                        <InfoCardItem label='Maydoni, m²' from='10.5 dan' to='164.9 gacha' />
-                        <InfoCardItem label='Topshirish muddati' from='Tugagan' to='2-chorak 2026' />
-                        <InfoCardItem label='Qavat' from='1' to='100' />
+                        <PriceFilter label='Narxi, ming $' />
+                        <SizeFilter label='Maydoni, m²' />
+                        <FinishTimeFilter from={new Date()} to={new Date("Thu Dec 27 2025")} label='Topshirish muddati' />
+                        <FloorFilter label='Qavat' />
                         <Button
                             textSize={'fourteen'}
                             btnSize={'large'}
@@ -58,6 +64,13 @@ const Main = () => {
                                 time={e.process}
                                 symbolDotIcon={e.symbolDotIcon}
                                 onPress={() => navigation(APP_ROUTES.PRODUCT)}
+                                minexpense={e.minExpense}
+                                studios={e.studios}
+                                oneRoom={e.oneRoom}
+                                twoRooms={e.twoRooms}
+                                threeRooms={e.threeRooms}
+                                fourRooms={e.fourRooms}
+                                fiveRooms={e.fiveRooms}
                             />
                         )
                     })

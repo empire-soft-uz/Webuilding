@@ -25,10 +25,12 @@
     width: 48%;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 .to{
     width: 48%;
     display: flex;
+    align-items: center;
     justify-content: center;
 }
 .bottomLineBox{
@@ -36,7 +38,7 @@
     display: flex;
     align-items: center;
     width: 248px;
-    bottom: -17px;
+    bottom: -5px;
     left: 12px;
     background-color: #EFF3F9;
 }
@@ -56,4 +58,14 @@
     width: 1px;
     height: 22px;
     background-color: rgba(129, 130, 133, 0.8);
+}
+.item{
+    width: 40%;
+    font-size: 12px;
+    padding: 6px 5px;
+    transition: all 0.2s ease;
+    border-radius: 8px;
+    border: none;
+    background-color: transparent;
+    outline: none;
 }

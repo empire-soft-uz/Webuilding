@@ -1,9 +1,13 @@
 .container {
+    position: sticky;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 110vh;
-    padding: 20px 0;
+    height: 100vh;
+    width: 100%;
+    padding: 30px 0 30px 3vw;
+    background-color: transparent;
+    top: 0;
 }
 .categoryBox {
     margin-top: 20px;
@@ -20,9 +24,59 @@
 .btnLocation{
     margin-top: 30px;
 }
-.topBox{
-
+.close{
+    display: none;
 }
-.bottomBox{
-    /* gap: 10px; */
+@media(min-width: 120px) {
+    .container{
+        position: fixed;
+        width: 100%;
+        z-index: 10;
+        background-color: rgba(239, 243, 249, 1);
+        transition: all 0.3s ease;
+        padding-left: 5vw;
+    }
+    .close{
+        display: flex;
+        position: absolute;
+        z-index: 11;
+        transition: all 0.3s ease;
+        padding: 15px;
+    }
+}
+@media(min-width: 576px){
+    .container{
+        position: fixed;
+    }
+}
+@media(min-width: 920px){
+    .container {
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    width: 100%;
+    padding: 30px 0 30px 3vw;
+    background-color: transparent;
+    top: 0;
+}
+.categoryBox {
+    margin-top: 20px;
+}
+.textBox {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+    gap: 10px;
+}
+.emptyPlace{
+    width: 7px;
+}
+.btnLocation{
+    margin-top: 30px;
+}
+.close{
+    display: none;
+}
 }
