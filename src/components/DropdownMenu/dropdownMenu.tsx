@@ -24,7 +24,7 @@ const DropdownMenu: React.FC<Props> = ({
                 <option value={value}>{option}</option>
                 <option value={value}>{option}</option>
             </select>
-            <ArrowBlackIcon />
+            <ArrowBlackIcon color='rgba(129, 130, 133, 0.8)' />
         </div>
     )
 }

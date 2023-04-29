@@ -7,78 +7,88 @@ interface Props {
     style?: CSSProperties;
 }
 
-const mainTrigger = (
-    <div className={`${styles.triggerBox} ${styles.triggerBoxTwo}`}>
-        <FileIcon />
-        <p>
-            3 deklaratsiyalar
-        </p>
-        <ArrowDownIcon />
-    </div>
-)
-const mainTriggerTwo = (
-    <div className={styles.triggerBox}>
-        <FileIcon />
-        <p>
-            3 deklaratsiyalar
-        </p>
-        <ArrowDownIcon />
-    </div>
-)
+const data = [
+    {
+        id: 1,
+        title: '3 deklaratsiyalar',
+        files: [
+            {
+                id: 1,
+                title: 'Loyiha deklaratsiyasi (5.1 va 5.2-holatlar)',
+                date: '27.07.2021 (5.1 va 5.2-binolar)'
+            },
+            {
+                id: 2,
+                title: 'Loyiha deklaratsiyasi (5.1 va 5.2-holatlar)',
+                date: '27.07.2021 (5.1 va 5.2-binolar)'
+            },
+            {
+                id: 3,
+                title: 'Loyiha deklaratsiyasi (5.1 va 5.2-holatlar)',
+                date: '27.07.2021 (5.1 va 5.2-binolar)'
+            }
+        ]
+    },
+    {
+        id: 2,
+        title: '3 deklaratsiyalar',
+        files: [
+            {
+                id: 1,
+                title: 'Loyiha deklaratsiyasi (5.1 va 5.2-holatlar)',
+                date: '27.07.2021 (5.1 va 5.2-binolar)'
+            },
+            {
+                id: 2,
+                title: 'Loyiha deklaratsiyasi (5.1 va 5.2-holatlar)',
+                date: '27.07.2021 (5.1 va 5.2-binolar)'
+            },
+            {
+                id: 3,
+                title: 'Loyiha deklaratsiyasi (5.1 va 5.2-holatlar)',
+                date: '27.07.2021 (5.1 va 5.2-binolar)'
+            }
+        ]
+    }
+]
 
 const DocumentCollapse: React.FC<Props> = ({
     style
 }) => {
+
+    const [active, setActive] = React.useState(1)
+
+    const mainTrigger = (title: string, id: number) => (
+        <div className={`${styles.triggerBox} ${active === id ? styles.triggerBoxTwo : ''}`}>
+            <FileIcon />
+            <p>
+                {title}
+            </p>
+            <ArrowDownIcon className={active === id ? styles.iconActive : styles.icon} />
+        </div>
+    )
+
     return (
         <div className={styles.container} style={{ ...style }}>
-            <Collapsible className={styles.collapseBox} trigger={mainTrigger}>
-                <div className={styles.collapse}>
-                    <Item
-                        icon={<DownloaderIcon />}
-                        title='Loyiha deklaratsiyasi (5.1 va 5.2-holatlar) '
-                        greyText
-                        text='27.07.2021 (5.1 va 5.2-binolar)' />
-                </div>
-                <div className={styles.collapse}>
-                    <Item
-                        icon={<DownloaderIcon />}
-                        title='Loyiha deklaratsiyasi (5.1 va 5.2-holatlar) '
-                        greyText
-                        text='27.07.2021 (5.1 va 5.2-binolar)' />
-                </div>
-                <div className={styles.collapse}>
-                    <Item
-                        icon={<DownloaderIcon />}
-                        title='Loyiha deklaratsiyasi (5.1 va 5.2-holatlar) '
-                        greyText
-                        text='27.07.2021 (5.1 va 5.2-binolar)' />
-                </div>
-                <span className={styles.line}></span>
-            </Collapsible>
-            <Collapsible trigger={mainTriggerTwo}>
-                <div className={styles.collapse}>
-                    <Item
-                        icon={<DownloaderIcon />}
-                        title='Loyiha deklaratsiyasi (5.1 va 5.2-holatlar) '
-                        greyText
-                        text='27.07.2021 (5.1 va 5.2-binolar)' />
-                </div>
-                <div className={styles.collapse}>
-                    <Item
-                        icon={<DownloaderIcon />}
-                        title='Loyiha deklaratsiyasi (5.1 va 5.2-holatlar) '
-                        greyText
-                        text='27.07.2021 (5.1 va 5.2-binolar)' />
-                </div>
-                <div className={styles.collapse}>
-                    <Item
-                        icon={<DownloaderIcon />}
-                        title='Loyiha deklaratsiyasi (5.1 va 5.2-holatlar) '
-                        greyText
-                        text='27.07.2021 (5.1 va 5.2-binolar)' />
-                </div>
-                <span className={styles.line}></span>
-            </Collapsible>
+            {
+                data.map((item, index) => (
+                    <Collapsible className={styles.collapseBox} trigger={mainTrigger(item.title, item.id)} triggerWhenOpen={mainTrigger(item.title, item.id)} open={active === item.id} onOpening={() => setActive(item.id)} onClosing={() => setActive(0)}>
+                        {
+                            item.files.map((file, index) => (
+                                <div className={styles.collapse}>
+                                    <Item
+                                        key={index}
+                                        icon={<DownloaderIcon />}
+                                        title={file.title}
+                                        greyText
+                                        text={file.date} />
+                                </div>
+                            ))
+                        }
+                        <span className={styles.line}></span>
+                    </Collapsible>
+                ))
+            }
         </div>
     )
 }

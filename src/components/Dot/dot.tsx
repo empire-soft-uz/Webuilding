@@ -1,8 +1,8 @@
 import React from 'react'
 import styles from "./dot.module.css"
 interface Props {
-    color: string;
-    size: 'seven' | 'ten';
+    color?: string;
+    size: 'seven' | 'ten' | 'three'
     border: 'none' | 'fifty'
 }
 

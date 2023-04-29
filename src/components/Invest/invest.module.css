@@ -1,23 +1,21 @@
-.container{
-    height: 100%;
+.container {
     background: #FFFFFF;
     border-radius: 10px;
     padding: 20px;
-    margin-bottom: 30px;
 }
 
-.topBox{
+.topBox {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
 }
 
-.text{
+.text {
     display: flex;
     align-items: center;
 }
 
-.filter{
+.filter {
     display: flex;
     border: 1px solid rgba(129, 130, 133, 0.8);
     border-radius: 10px;
@@ -33,7 +31,7 @@
     background-color: rgba(129, 130, 133, 0.8);
 }
 
-.infoBox{
+.infoBox {
     width: 300px;
     height: 270px;
     background: #FFFFFF;
@@ -41,42 +39,50 @@
     border-radius: 10px;
     margin-top: 20px;
 }
-.AllPrices{
+
+.AllPrices {
     height: 70%;
     padding: 10px 15px;
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
 }
-.info{
+
+.info {
     padding: 10px;
     border-bottom: 1.5px solid #EFF3F9;
 }
-.pricesBox{
+
+.pricesBox {
     display: flex;
     gap: 20px;
     font-size: 12px;
     margin-top: 5px;
 }
-.fell{
+
+.fell {
     color: rgba(38, 194, 25, 1);
 }
-.downIcon{
+
+.downIcon {
     margin-right: 5px;
 }
 
-.count{
+.count {
     color: rgba(129, 130, 133, 0.8);
 }
-.content{
+
+.content {
     display: flex;
     justify-content: space-between;
 }
-.item{
+
+.item {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-.chartBox{
+
+.chartBox {
     display: flex;
     align-items: flex-end;
 }

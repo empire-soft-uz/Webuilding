@@ -1,8 +1,11 @@
-.container{
+.container {
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
 }
-.triggerBox{
+
+.triggerBox {
     display: flex;
     align-items: center;
     height: 50px;
@@ -10,8 +13,21 @@
     gap: 6px;
     cursor: pointer;
     padding: 0 20px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
 }
-.triggerBoxTwo{
+
+.triggerBox::before {
+    content: '';
+    width: 100%;
+    height: 1.5px;
+    background-color: #EFF3F9;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.triggerBoxTwo {
     display: flex;
     align-items: center;
     height: 50px;
@@ -20,19 +36,32 @@
     cursor: pointer;
     padding: 0 20px;
     background-color: #EFF3F9;
+    transition: all 0.3s ease-in-out;
 }
-.collapseBox{
+
+.collapseBox {
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 100%;
 }
-.collapse{
+
+.collapse {
     padding: 8px 20px;
 }
-.line{
+
+.line {
     width: 80%;
     height: 1.5px;
     background-color: #EFF3F9;
     display: flex;
+}
+
+.icon {
+    transition: all 0.3s ease-in-out;
+}
+
+.iconActive {
+    transform: rotate(180deg);
+    transition: all 0.3s ease-in-out;
 }

@@ -259,18 +259,18 @@ const CollapseView = () => {
     return (
         <div className={styles.container}>
             {
-                data.map((item: DataType) => (
-                    <Collapsible trigger={trigger(item)} onOpen={() => setOpenId({ ...openId, [item.id]: true })} key={item.id} onClose={() => setOpenId({ ...openId, [item.id]: false })}>
+                data.map((item: DataType, index:number) => (
+                    <Collapsible trigger={trigger(item)} onOpen={() => setOpenId({ ...openId, [item.id]: true })} key={index} onClose={() => setOpenId({ ...openId, [item.id]: false })}>
                         <div className={styles.accordionDetails}>
                             <CollapseFilter />
                             {
-                                item.data.map((item2: triggerData) => {
+                                item.data.map((item2: triggerData, index:number) => {
                                     if (item2.id === item.data.length)
                                         return (
-                                            <CollapseItem end />
+                                            <CollapseItem end key={index}/>
                                         )
                                     return (
-                                        <CollapseItem />
+                                        <CollapseItem key={index} />
                                     )
                                 })
                             }

@@ -11,10 +11,18 @@ const CountBtn: React.FC<Props> = ({
     onPress,
     countBtnType
 }) => {
+
+    const [active, setActive] = React.useState(countBtnType || 'primary')
+
+    onPress = () => {
+        setActive(active === 'primary' ? 'outline' : 'primary')
+    }
+
+
     return (
-        <div className={styles.container}>
-            <p className={`${styles[countBtnType]}`}>{title}</p>
-        </div>
+        <button className={styles.container} onClick={onPress}>
+            <p className={`${styles[active]}`}>{title}</p>
+        </button>
     )
 }
 

@@ -1,10 +1,7 @@
-import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import Banner from '../../../../components/Banner/banner'
 import Button from '../../../../components/Button/button'
 import FinishTimeFilter from '../../../../components/FinishTimeFilter/finishTimeFilter'
 import FloorFilter from '../../../../components/FloorFilter/floorFilter'
-import InfoCardItem from '../../../../components/InfoCardItem/infoCardItem'
 import PriceFilter from '../../../../components/PriceFilter/priceFilter'
 import ProductItem from '../../../../components/ProductItem/productItem'
 import RoomsSelect from '../../../../components/RoomsSelect/roomsSelect'
@@ -13,7 +10,6 @@ import SwiperComp from '../../../../components/Swiper/swiper'
 import ViewMap from '../../../../components/ViewMap/viewMap'
 import { COLORS } from '../../../../constants/color'
 import { ProductData } from '../../../../constants/productData'
-import { ASSETS } from '../../../../constants/requireAssets'
 import { APP_ROUTES } from '../../../../routes/app-router'
 import styles from "./main.module.css"
 
@@ -22,7 +18,6 @@ const Main = () => {
     return (
         <div className={styles.container}>
             <div className={styles.banner}>
-                {/* <Banner imgUrl={ASSETS.tashkent1} /> */}
                 <SwiperComp />
                 <div className={styles.infoBox}>
                     <div className={styles.infoCard}>

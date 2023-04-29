@@ -2,17 +2,24 @@
     display: flex;
     height: 100%;
     background-color: #EFF3F9;
+    overflow: hidden;
 }
+
 .dashboard {
     width: 18vw;
     height: 100vh;
+    overflow: hidden;
 }
-.rightContainer{
+
+.rightContainer {
     width: 82vw;
     height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
-@media(max-width: 768px){
-    .rightContainer{
+
+@media(max-width: 768px) {
+    .rightContainer {
         width: 100%;
     }
 }

@@ -5,11 +5,47 @@ import DropdownMenu from '../DropdownMenu/dropdownMenu'
 import Text from '../Text/text'
 import styles from "./processBuilding.module.css"
 
+
+const data = [
+    {
+        id: 1,
+        img: ASSETS.pr1
+    },
+    {
+        id: 2,
+        img: ASSETS.pr2
+    },
+    {
+        id: 3,
+        img: ASSETS.pr1
+    },
+    {
+        id: 4,
+        img: ASSETS.pr1
+    },
+    {
+        id: 5,
+        img: ASSETS.pr1
+    },
+    {
+        id: 6,
+        img: ASSETS.pr1
+    },
+]
+
+
 const ProcessBuilding = () => {
+
+    const [active, setActive] = React.useState(1)
+
+    const handleActive = (id: number) => {
+        setActive(id)
+    }
+
     return (
         <div className={styles.contianer}>
             <div className={styles.leftBox}>
-                <div className={styles.header}>
+                <div className={styles.header1}>
                     <Text
                         textType={'middle'}
                         textSize={'sixteen'}
@@ -21,33 +57,24 @@ const ProcessBuilding = () => {
                 </div>
                 <div className={styles.caruselBox}>
                     <div className={styles.mainImage}>
-                        <img className={styles.mainImg} src={ASSETS.pr1} alt="" />
+                        <img className={styles.mainImg} src={data[active - 1].img} alt="" />
                     </div>
                     <div className={styles.choseImage}>
-                        <div className={styles.item}>
-                            <img className={styles.img} src={ASSETS.pr1} alt="" />
-                        </div>
-                        <div className={styles.item}>
-                            <img className={styles.img} src={ASSETS.pr1} alt="" />
-                        </div>
-                        <div className={styles.item}>
-                            <img className={styles.img} src={ASSETS.pr1} alt="" />
-                        </div>
-                        <div className={styles.item}>
-                            <img className={styles.img} src={ASSETS.pr1} alt="" />
-                        </div>
-                        <div className={styles.item}>
-                            <img className={styles.img} src={ASSETS.pr1} alt="" />
-                        </div>
-                        <div className={styles.item}>
-                            <img className={styles.img} src={ASSETS.pr1} alt="" />
-                        </div>
+                        {data.map((item, index) => (
+                            <button
+                                key={index}
+                                className={`${styles.item} ${(active === item.id) ? styles.activeItem : ''}`}
+                                onClick={() => handleActive(item.id)}
+                            >
+                                <img className={`${styles.img} ${active === item.id ? styles.activeImg : ''}`} src={item.img} alt="" />
+                            </button>
+                        ))}
                     </div>
                 </div>
             </div>
             <span className={styles.line}></span>
             <div className={styles.rightBox}>
-                <div className={styles.header}>
+                <div className={styles.header2}>
                     <Text
                         textType={'middle'}
                         textSize={'sixteen'}

@@ -17,11 +17,7 @@ const ProductSizesCarusel = () => {
                 <ProductSizes />
                 <span className={styles.line}></span>
                 <ProductSizes />
-            </div>
-            <div className={styles.carouselBtns}>
-                <button className={styles.carouselBtn}>
-                    <img src="/images/arrow-right.svg" alt="" />
-                </button>
+                <span className={styles.line}></span>
             </div>
         </div>
     )

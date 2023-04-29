@@ -1,12 +1,9 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
-import Banner from '../../components/Banner/banner';
 import Dashboard from '../../components/Dashboard/dashboard';
 // import Header from '../../components/Header/header';
-import Top from '../../components/Top/top';
-import { ASSETS } from '../../constants/requireAssets';
 import { APP_ROUTES } from '../../routes/app-router';
-import styles from "./home.module.css"
+import styles from "./home.module.css";
 
 const HomeView = () => {
     const { pathname } = useLocation();

@@ -1,9 +1,9 @@
-.container{
+.container {
     display: flex;
     gap: 30px;
 }
 
-.button{
+.button {
     width: 40px;
     height: 40px;
     background-color: #fff;
@@ -15,8 +15,8 @@
     border: none;
     transition: all 0.2s ease;
 }
-.container .button:hover{
-    opacity: 0.8;
-    /* background-color: #8a3ffc !important; */
+
+.container .button:hover {
+    transform: scale(1.07);
     cursor: pointer;
 }

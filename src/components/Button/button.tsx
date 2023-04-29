@@ -4,7 +4,7 @@ interface Props {
     title?: string;
     iconUrl?: any;
     textSize: 'sixteen' | 'fourteen',
-    btnSize: 'large' | 'middle' | 'small' | 'avarage';
+    btnSize: 'large' | 'middle' | 'small' | 'avarage' | 'auto';
     btnColor: 'purple' | 'lightPurple' | 'outline';
     textColor: 'textWhite' | 'textPurple' | "green" | "red";
     borderRadius: 'ten' | 'none' | 'five' | 'thirty';
@@ -26,14 +26,14 @@ const Button: React.FC<Props> = ({
     children
 }) => {
     return (
-        <div style={{ ...style }} className={`${styles[btnSize]} ${styles[btnColor]} ${styles[borderRadius]}`} onClick={onPress}>
+        <button style={{ ...style }} className={`${styles.button} ${styles[btnSize]} ${styles[btnColor]} ${styles[borderRadius]}`} onClick={onPress}>
             {iconUrl ?
                 <div className={styles.iconBox}>
                     {iconUrl}
                 </div> : null
             }
-            <button className={`${styles.btn} ${styles[textColor]} ${styles[textSize]}`}>{title || children}</button>
-        </div>
+            <p className={`${styles.btn} ${styles[textColor]} ${styles[textSize]}`}>{title || children}</p>
+        </button>
     )
 }
 

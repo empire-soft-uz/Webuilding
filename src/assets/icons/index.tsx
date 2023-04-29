@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { COLORS } from "../../constants/color";
 interface Props {
+    fill?: string;
     color?: string;
+    className?: string;
 }
 
 export const HeartWithCircle: React.FC<Props> = ({ }) => {
@@ -278,10 +280,10 @@ export const FloorNumberIcon: React.FC<Props> = ({ }) => {
     )
 }
 
-export const ArrowBlackIcon: React.FC<Props> = ({ }) => {
+export const ArrowBlackIcon: React.FC<Props> = (props) => {
     return (
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5 9.31836L10 14.3184L15 9.31836" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+            <path d="M5 9.31836L10 14.3184L15 9.31836" stroke={props.color || 'black'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
     )
 }
@@ -346,9 +348,9 @@ export const CarIcon: React.FC<Props> = ({ }) => {
         </svg>
     )
 }
-export const ArrowDownIcon: React.FC<Props> = ({ }) => {
+export const ArrowDownIcon: React.FC<Props> = (props) => {
     return (
-        <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" className={props.className}>
             <path d="M1 1.31836L6 6.31836L11 1.31836" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
     )
@@ -526,13 +528,13 @@ export const ArrowUpIcon: React.FC<Props> = ({ }) => {
 
 export const MenuIcon = () => {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="rgba(0, 0, 0, 1)" transform="msFilter"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="rgba(0, 0, 0, 1)"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path></svg>
     )
 }
 
 export const CloseIcon = () => {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="rgba(0, 0, 0, 1)" transform="msFilter"><path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="rgba(0, 0, 0, 1)"><path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path></svg>
     )
 }
 

@@ -1,36 +1,61 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { CameraIcon, FinishIcon, FinishOneIcon } from '../../assets/icons'
 import { COLORS } from '../../constants/color'
 import { ASSETS } from '../../constants/requireAssets'
 import Button from '../Button/button'
 import Text from '../Text/text'
 import styles from "./productContent.module.css"
+import Dot from '../Dot/dot'
+import ArrowBtn from '../ArrowBtn/arrowBtn'
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Pagination, Navigation, HashNavigation, A11y, EffectFade } from "swiper";
+import ProductBanner from './components/ProductBanner'
+
+
+
+const BannerData = [
+    {
+        id: 1,
+        image: ASSETS.pr1,
+    },
+    {
+        id: 2,
+        image: ASSETS.pr2,
+    },
+    {
+        id: 3,
+        image: ASSETS.pr3,
+    }
+]
+
+
 
 const ProductContent = () => {
+    const newSwiper = useSwiper()
+    const [swiper, setSwiper] = useState(newSwiper);
+
+    const onPrev = () => {
+        swiper.slidePrev()
+    }
+    const onNext = () => {
+        swiper.slideNext()
+    }
+
+
     return (
         <div className={styles.container}>
-            <div className={styles.aboveBox}>
-                <div className={styles.topBox}>
-                    <div className={styles.info}>
-                        <Text cursor='none' textColor='white' textSize='ten' textType='middle' text='Bosh sahifa' />
-                        <Text cursor='none' textColor='white' textSize='ten' textType='middle' text='Tashkent' />
-                        <Text cursor='none' textColor='white' textSize='ten' textType='middle' text='0N1234' />
-                    </div>
-                    <div className={styles.nameBox}>
-                        <Text cursor='none' textColor='white' textSize='thirtyFive' textType='middle' text='JK Yangi Choshtepa' />
-                        <Button btnSize='small' btnColor='purple' textSize='fourteen' title='Ekanom' borderRadius='five' textColor='textWhite' />
-                    </div>
-                    <div className={styles.locationBox}>
-                        <Text cursor='none' textColor='white' textSize='ten' textType='middle' text='Toshkent shahar, Yangi Hayot tumani, O’zar ko’chasi  72-uy 47' />
-                    </div>
-                </div>
-                {/* <div className={styles.btnBox}>
-                    <Button iconUrl={<FinishOneIcon color={COLORS.purple} />} btnSize='avarage' btnColor='lightPurple' textSize='fourteen' title='Tugatish' borderRadius='five' textColor='textPurple' />
-                    <Button iconUrl={<CameraIcon color={COLORS.purple} />} btnSize='avarage' btnColor='lightPurple' textSize='fourteen' title='Suratlar' borderRadius='five' textColor='textPurple' />
-                </div> */}
+            <ProductBanner />
+            <div className={styles.prevBox}>
+                <ArrowBtn />
             </div>
             <div className={styles.imgBox}>
-                <img src={ASSETS.pr1} alt="" />
+                {
+                    BannerData.map((e, index) => {
+                        return (
+                            <img src={e.image} alt="" />
+                        )
+                    })
+                }
             </div>
         </div>
     )

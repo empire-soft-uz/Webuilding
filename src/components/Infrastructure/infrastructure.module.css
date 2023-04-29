@@ -1,15 +1,15 @@
-.container{
+.container {
     background-color: #fff;
     width: 100%;
-    height: 100%;
     padding-top: 30px;
-    margin:  30px 0;
     border-radius: 10px;
 }
-.title{
+
+.title {
     padding: 0 30px;
 }
-.btnBox{
+
+.btnBox {
     display: flex;
     flex-wrap: wrap;
     gap: 10px 20px;
@@ -17,19 +17,19 @@
     padding: 0 30px;
 }
 
-.security{
+.security {
     display: flex;
     flex-direction: column;
     margin: 20px 0;
     padding: 0 30px;
 }
 
-.btn{
+.btn {
     display: flex;
     margin-top: 5px;
 }
 
-.mapBox{
+.mapBox {
     height: 50vh;
     overflow: hidden;
 }

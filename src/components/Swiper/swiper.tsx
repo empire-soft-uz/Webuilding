@@ -9,6 +9,8 @@ import Banner from '../Banner/banner';
 import { ASSETS } from '../../constants/requireAssets';
 import { BannerData } from '../../constants/bannerData';
 import ArrowBtn from '../ArrowBtn/arrowBtn';
+
+
 const SwiperComp = () => {
     const newSwiper = useSwiper()
     const [swiper, setSwiper] = useState(newSwiper);
