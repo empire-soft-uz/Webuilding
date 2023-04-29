@@ -33,6 +33,7 @@
 @media(min-width: 100px) {
     .container {
         padding: 0 5vw;
+        padding-top: 30px;
     }
 
     .productBox {
@@ -67,7 +68,7 @@
     }
 }
 
-@media(min-width: 992px) {
+@media(min-width: 1200px) {
     .container {
         height: 100%;
         overflow-y: auto;
@@ -101,5 +102,3 @@
         flex-wrap: wrap;
     }
 }
-
-@media(min-width: 120px) {}
