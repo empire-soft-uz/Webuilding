@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { CloseIcon, LocationIcon, LogoIcon, MenuIcon } from '../../assets/icons'
+import { CloseIcon, LocationIcon, LogoIcon, MenuIcon, MobileIcon } from '../../assets/icons'
 import { CategoryData } from '../../constants/categoryData'
 import { ASSETS } from '../../constants/requireAssets'
 import styles from "./dashboard.module.css"
@@ -20,14 +20,35 @@ const Dashboard = () => {
 
     return (
         <>
-            <div className={styles.close} onClick={() => Dashboard()} style={{}}>
-                {
-                    isClose ?
-                        <CloseIcon /> :
-                        <MenuIcon />
-                }
+            <div className={styles.closeHeader}>
+                <div className={styles.closeBox} onClick={() => Dashboard()}>
+                    {
+                        isClose ?
+                            <CloseIcon /> :
+                            <MenuIcon />
+                    }
+                </div>
+                <div className={styles.headerBox}>
+                    <Text
+                        textType={'middle'}
+                        textSize={'sixteen'}
+                        textColor={'darkGrey'}
+                        text="Webuilding"
+                    />
+                </div>
+                <a href='tel:+998 93 533 13 35' className={styles.contact}>
+                    <div className={styles.number}>
+                        <Text
+                            textType={'middle'}
+                            textSize={'fourteen'}
+                            textColor={'purple'}
+                            text="+998 93 533 13 35"
+                        />
+                    </div>
+                    <MobileIcon />
+                </a>
             </div>
-            <div className={styles.container} style={{ left: isClose ? "0vw" : "-100vw" }}>
+            <div className={styles.container} style={{ top: isClose ? "0vh" : "-100vh" }}>
                 <div className={styles.topBox}>
                     <div className={styles.logoBox}>
                         <LogoIcon />
