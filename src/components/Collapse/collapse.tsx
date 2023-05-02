@@ -12,6 +12,7 @@ import CollapseItem from '../collapseItem/collapseItem';
 import { ASSETS } from '../../constants/requireAssets';
 import Collapsible from 'react-collapsible';
 import Text from '../Text/text';
+import styled, { css } from 'styled-components';
 
 const data = [
     {
@@ -223,63 +224,168 @@ const CollapseView = () => {
     // data type data in triggerData type
     const trigger = (data: DataType) => {
         return (
-            <div className={`${styles.summary} ${isActivated(data.id) ? styles.active : ''}`}>
-                <div style={{ display: 'flex', gap: '11px', alignItems: 'center' }} className='title1'>
-                    <TableIcon />
-                    <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }} >
-                        <Text textColor='darkBlue' textType='bold' textSize='twelve'>
-                            {data.name}
-                        </Text>
-                        <ArrowDownIcon />
+            <TriggerBox>
+                <div className={`${styles.summary} ${isActivated(data.id) ? styles.active : ''} triggerFirstBox`}>
+                    <div style={{ display: 'flex', gap: '11px', alignItems: 'center' }} className='title1'>
+                        <TableIcon className='tableIcon' />
+                        <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }} >
+                            <Text textColor='darkBlue' textType='bold' textSize='twelve'>
+                                {data.name}
+                            </Text>
+                            <ArrowDownIcon className='arrowIcon' />
+                        </div>
                     </div>
+                    <Text style={{
+                        marginRight: '50px',
+                        justifySelf: 'center',
+                    }} className='title2' textColor='darkBlue' textType='bold' textSize='twelve'>
+                        {data.area}
+                    </Text>
+                    <Text style={{
+                        marginLeft: '20px',
+                        justifySelf: 'center',
+                    }} className='title3' textColor='darkBlue' textType='bold' textSize='twelve'>
+                        {data.price}
+                    </Text>
+                    <Text style={{
+                        justifySelf: 'end',
+                    }} className='title4' textColor='purple' textType='bold' textSize='twelve'>
+                        {data.count}
+                    </Text>
                 </div>
-                <Text style={{
-                    marginRight: '50px',
-                    justifySelf: 'center',
-                }} className='title2' textColor='darkBlue' textType='bold' textSize='twelve'>
-                    {data.area}
-                </Text>
-                <Text style={{
-                    marginLeft: '20px',
-                    justifySelf: 'center',
-                }} className='title3' textColor='darkBlue' textType='bold' textSize='twelve'>
-                    {data.price}
-                </Text>
-                <Text style={{
-                    justifySelf: 'end',
-                }} className='title4' textColor='purple' textType='bold' textSize='twelve'>
-                    {data.count}
-                </Text>
-            </div>
+            </TriggerBox>
         )
     }
 
 
 
     return (
-        <div className={styles.container}>
+        <Container className={styles.container}>
             {
-                data.map((item: DataType, index:number) => (
-                    <Collapsible trigger={trigger(item)} onOpen={() => setOpenId({ ...openId, [item.id]: true })} key={index} onClose={() => setOpenId({ ...openId, [item.id]: false })}>
-                        <div className={styles.accordionDetails}>
-                            <CollapseFilter />
-                            {
-                                item.data.map((item2: triggerData, index:number) => {
-                                    if (item2.id === item.data.length)
+                data.map((item: DataType, index: number) => (
+                    <div className="colapsibleMediaBox">
+                        <Collapsible className='collapsible' trigger={trigger(item)} onOpen={() => setOpenId({ ...openId, [item.id]: true })} key={index} onClose={() => setOpenId({ ...openId, [item.id]: false })}>
+                            <div className={styles.accordionDetails}>
+                                <CollapseFilter />
+                                {
+                                    item.data.map((item2: triggerData, index: number) => {
+                                        if (item2.id === item.data.length)
+                                            return (
+                                                <CollapseItem end key={index} />
+                                            )
                                         return (
-                                            <CollapseItem end key={index}/>
+                                            <CollapseItem key={index} />
                                         )
-                                    return (
-                                        <CollapseItem key={index} />
-                                    )
-                                })
-                            }
+                                    })
+                                }
+                            </div>
+                        </Collapsible>
+                        <div className="SecondMainMediaBox">
+                            <div className="main">
+                                <Text className='title1' textColor='darkBlue' textType='middle' textSize='twelve'>
+                                    {item.name}
+                                </Text>
+                                <Text className='title2' textColor='darkGrey' textType='light' textSize='fourteen'>
+                                    {item.area}
+                                </Text>
+                                <Text className='title3' textColor='black' textType='semiBold' textSize='twelve'>
+                                    {item.price}
+                                </Text>
+                                <Text className='title4' textColor='darkGrey' textType='light' textSize='twelve'>
+                                    {item.count}
+                                </Text>
+                            </div>
+                            <div className='iconBox'>
+                                <ArrowDownIcon className='arrowIcon' />
+                            </div>
                         </div>
-                    </Collapsible>
+                    </div>
                 ))
             }
-        </div>
+        </Container>
     )
 }
 
 export default CollapseView
+
+const Container = styled.div`
+    border: none !important;
+    border-radius: 0 !important;
+
+    .SecondMainMediaBox {
+        display: none;
+    }
+
+    @media (max-width: 768px) {
+        .collapsible {
+            display: none !important;
+        }
+
+        .SecondMainMediaBox {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #E5E5E5;
+
+            .main {
+                flex: 0.9;
+                display: grid;
+                grid-area: title1 title2 title3 title4;
+                grid-template-areas: 
+                    'title1 title3'
+                    'title4 title2';
+                grid-template-columns: 1fr 1fr;
+                row-gap: 5px;
+
+                p{
+                    text-transform: lowercase;
+                }
+
+                .title1 {
+                    margin: 0;
+                    grid-area: title1;
+                    justify-self: start;
+                    font-size: 14px;
+                }
+
+                .title2 {
+                    margin: 0;
+                    grid-area: title2;
+                    justify-self: end;
+                    font-size: 11px;
+                }
+
+                .title3 {
+                    margin: 0;
+                    grid-area: title3;
+                    justify-self: end;
+                }
+
+                .title4 {
+                    margin: 0;
+                    font-size: 11px;
+                    grid-area: title4;
+                    justify-self: start;
+                }
+            }
+
+            .iconBox {
+                flex: 0.1;
+                display: flex;
+                justify-content: end;
+                align-items: center;
+                cursor: pointer;
+                svg {
+                    transform: rotate(-90deg);
+                }
+                path {
+                    stroke: #a1a1a1;
+                }
+            }
+        }
+    }
+`
+
+const TriggerBox = styled.div`
+`

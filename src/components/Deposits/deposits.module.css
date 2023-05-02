@@ -3,50 +3,60 @@
     width: 100%;
     border-radius: 10px;
 }
+
 .topBox {
     padding: 20px 0 0 20px;
 }
-.depositItemBox{
+
+.depositItemBox {
     width: 100%;
     padding: 10px 20px;
     border-bottom: 1px solid #EEF3F9;
 }
-.boxBottom{
+
+.boxBottom {
     display: flex;
     justify-content: space-between;
     padding: 10px 20px;
 }
-.featureBox{
+
+.featureBox {
     border-bottom: 1px solid #EEF3F9;
     padding: 10px 0;
 }
+
 .features {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1.7fr;
     gap: 10px 0;
     padding: 5px 20px;
 }
-.more{
+
+.more {
     padding: 5px 20px 20px 20px;
 }
-.priceBox{
+
+.priceBox {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 10px 0;
-    height: 45px; 
+    height: 45px;
     width: 100%;
 }
-.price{
+
+.price {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
 }
+
 .btnBox {
     display: flex;
     gap: 20px;
 }
-.bottom{
+
+.bottom {
     width: 220px;
 }

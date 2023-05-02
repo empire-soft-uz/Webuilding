@@ -40,13 +40,29 @@ const data = [
     },
 ];
 
+const screenWidth = window.innerWidth;
+const screenHeight = window.innerHeight;
+
+
+
 const Chart = () => {
-    const demoUrl = 'https://codesandbox.io/s/simple-line-chart-kec3v';
+
+    let width = 640;
+
+    if (screenWidth > 1300) {
+        width = screenWidth * 0.76 -355
+    } else {
+        width = screenWidth * 0.94 - 40
+    }
+
+    console.log(width);
+    
+
     return (
-        <ResponsiveContainer minWidth={700} maxHeight={250}>
-            <LineChart
-                width={700}
-                height={220}
+        // <ResponsiveContainer width="100%" height="260px">
+        <LineChart
+                width={width}
+                height={270}
                 data={data}
             >
                 <CartesianGrid strokeDasharray="3 3" />
@@ -56,7 +72,7 @@ const Chart = () => {
                 {/* <Legend /> */}
                 <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
             </LineChart>
-        </ResponsiveContainer>
+        // </ResponsiveContainer>
     )
 }
 export default Chart;

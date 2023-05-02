@@ -12,6 +12,7 @@ interface Props {
     dot?: any;
     dotColor: string;
     dotBorder?: any;
+    className?: string;
 }
 
 const SymbolItem: React.FC<Props> = ({
@@ -23,10 +24,11 @@ const SymbolItem: React.FC<Props> = ({
     textColor,
     textSize,
     textType,
-    dotBorder
+    dotBorder,
+    className
 }) => {
     return (
-        <div className={styles.container}>
+        <div className={`${styles.container} ${className}`}>
             {
                 dot ?
                     <Dot color={dotColor} size={'ten'} border={dotBorder} />

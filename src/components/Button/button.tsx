@@ -11,6 +11,7 @@ interface Props {
     onPress?: () => void;
     style?: CSSProperties;
     children?: React.ReactNode;
+    className?: string
 }
 
 const Button: React.FC<Props> = ({
@@ -23,10 +24,11 @@ const Button: React.FC<Props> = ({
     textSize,
     borderRadius,
     style,
-    children
+    children,
+    className
 }) => {
     return (
-        <button style={{ ...style }} className={`${styles.button} ${styles[btnSize]} ${styles[btnColor]} ${styles[borderRadius]}`} onClick={onPress}>
+        <button style={{ ...style }} className={`${styles.button} ${styles[btnSize]} ${styles[btnColor]} ${styles[borderRadius]} ${className}`} onClick={onPress}>
             {iconUrl ?
                 <div className={styles.iconBox}>
                     {iconUrl}

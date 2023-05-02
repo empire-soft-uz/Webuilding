@@ -3,21 +3,26 @@
     height: 100%;
     background-color: #EFF3F9;
 }
+
 .dashboard {
     width: 18vw;
     height: 100vh;
 }
-.rightContainer{
+
+.rightContainer {
     width: 82vw;
     height: 100vh;
 }
-@media(min-width: 120px){
-    .rightContainer{
+
+@media(min-width: 120px) {
+    .rightContainer {
         width: 100vw;
+        padding-top: 7vh;
     }
 }
-@media(min-width: 1200px){
-    .rightContainer{
+
+@media(min-width: 1200px) {
+    .rightContainer {
         width: 82vw;
     }
 }

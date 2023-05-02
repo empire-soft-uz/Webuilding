@@ -4,33 +4,6 @@
     position: relative;
 }
 
-.main {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    left: 0;
-}
-
-.breadcrumbs {
-    display: flex;
-    align-items: center;
-    gap: 3px;
-    margin-bottom: 30px;
-}
-
-.locationBox {
-    margin-top: 6px;
-}
-
-.breadcrumb {
-    display: flex;
-    align-items: center;
-    gap: 3px;
-    opacity: 0.7;
-}
-
 .prevBox {
     position: absolute;
     z-index: 2;
@@ -44,43 +17,12 @@
     height: 65vh;
 }
 
-@media(max-width: 576px) {
+@media(max-width: 768px) {
     .container {
         height: 60vh;
     }
 
     .prevBox {
-        left: 20px;
+        left: 30px;
     }
-}
-
-.aboveBox {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
-    overflow: hidden;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0.18) 65.3%, rgba(0, 0, 0, 0.756) 100%);
-}
-
-.blurBox {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 50%;
-    border-radius: 20px 0px 0px 20px;
-    height: 100%;
-    backdrop-filter: blur(2.5px);
-    padding: 30px 40px;
-    border-radius: 20px;
-}
-
-.simpleInfo {
-    display: flex;
-    gap: 20px;
-    margin-top: 12px;
-}
-
-.advertising {
-    margin-top: 50px;
 }
