@@ -12,7 +12,7 @@
 .btnBox {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px 20px;
+    gap: 10px 15px;
     margin-top: 30px;
     padding: 0 30px;
 }

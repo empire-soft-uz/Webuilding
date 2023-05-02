@@ -14,7 +14,7 @@ const SliderView = () => {
         setValue(newValue as number[]);
     };
     return (
-        <Box sx={{ width: 248 }}>
+        <Box sx={{ width: "75%" }}>
             <Slider
                 getAriaLabel={() => 'Temperature range'}
                 value={value}

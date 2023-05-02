@@ -43,7 +43,7 @@ const FloorFilter: React.FC<Props> = ({
                 <p className={styles.from}><input onChange={(event) => onHandleChange(event.currentTarget.value, 1)} className={styles.item} type="text" value={value[1]} />gacha</p>
             </div>
             <div className={styles.bottomLineBox}>
-                <Box sx={{ width: 248 }}>
+                <Box sx={{ width: "100%" }}>
                     <Slider
                         value={value}
                         onChange={handleChange}

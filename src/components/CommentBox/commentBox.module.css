@@ -15,6 +15,7 @@
 .locationBox {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 20px;
     margin-top: 20px;
 }
