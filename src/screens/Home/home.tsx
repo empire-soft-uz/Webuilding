@@ -4,6 +4,8 @@ import Dashboard from '../../components/Dashboard/dashboard';
 // import Header from '../../components/Header/header';
 import { APP_ROUTES } from '../../routes/app-router';
 import styles from "./home.module.css";
+import { observer } from 'mobx-react';
+import FilterModal from '../../components/FilterModal/filterModal';
 
 const HomeView = () => {
     const { pathname } = useLocation();
@@ -23,8 +25,9 @@ const HomeView = () => {
             <div className={styles.rightContainer}>
                 <Outlet />
             </div>
+            <FilterModal />
         </div>
     )
 }
 
-export default HomeView;
+export default observer(HomeView);

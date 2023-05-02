@@ -36,9 +36,10 @@
     position: absolute;
     display: flex;
     align-items: center;
-    width: 248px;
-    bottom: -5px;
-    left: 12px;
+    width: 90%;
+    bottom: -4px;
+    left: 5%;
+    right: 5%;
     background-color: #EFF3F9;
 }
 .bottomLine{
@@ -68,4 +69,23 @@
     border: none;
     background-color: transparent;
     outline: none;
+}
+@media(min-width: 120px) {
+    .container{
+        width: 100%;
+    }
+    .center{
+        width: 100%;
+    }
+    .bottomLineBox{
+        width: 90%;
+    }
+}
+@media(min-width: 1200px) {
+    .container{
+        width: auto;
+    }
+    .center{
+        width: 274px;
+    }
 }

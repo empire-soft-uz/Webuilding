@@ -1,6 +1,6 @@
 .container {
-    width: 340px;
-    height: 420px;
+    width: 31%;
+    height: 420px !important;
     display: grid;
     grid-template-rows: 3fr 2fr;
     background: #FFFFFF;
@@ -12,6 +12,7 @@
 .imageBox {
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 .infoBox {
@@ -92,4 +93,19 @@
 
 .container:hover .priceBox {
     display: none;
+}
+@media(min-width: 120px){
+    .container{
+        width: 100%;
+    }
+}
+@media(min-width: 767px){
+    .container{
+        width: 47%;
+    }
+}
+@media(min-width: 1200px){
+    .container{
+        width: 31%;
+    }
 }

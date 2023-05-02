@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Button from '../../../../components/Button/button'
 import FinishTimeFilter from '../../../../components/FinishTimeFilter/finishTimeFilter'
@@ -10,11 +11,15 @@ import SwiperComp from '../../../../components/Swiper/swiper'
 import ViewMap from '../../../../components/ViewMap/viewMap'
 import { COLORS } from '../../../../constants/color'
 import { ProductData } from '../../../../constants/productData'
+import useRootStore from '../../../../Hooks/useRootStore'
 import { APP_ROUTES } from '../../../../routes/app-router'
 import styles from "./main.module.css"
+import { observer } from 'mobx-react';
+import FilterModal from '../../../../components/FilterModal/filterModal'
 
 const Main = () => {
     const navigation = useNavigate()
+    const { visiable, show, toggle } = useRootStore().visibleStore
     return (
         <div className={styles.container}>
             <div className={styles.banner}>
@@ -28,15 +33,11 @@ const Main = () => {
                         <FloorFilter label='Qavat' />
                         <Button
                             textSize={'fourteen'}
-                            btnSize={'large'}
+                            btnSize={'filter'}
                             btnColor={'purple'}
                             textColor={'textWhite'}
                             borderRadius={'ten'}
                             title={"306 ta yangi binolarni ko'rish"}
-                            style={{
-                                height: "50px",
-                                width: "274px"
-                            }}
                         />
                     </div>
                     <ViewMap />
@@ -71,8 +72,24 @@ const Main = () => {
                     })
                 }
             </div>
+            <div className={styles.aboveBox}>
+                <Button
+                    textSize={'fourteen'}
+                    btnSize={'filter'}
+                    btnColor={'purple'}
+                    textColor={'textWhite'}
+                    borderRadius={'ten'}
+                    onPress={() => toggle("filterModal")}
+                    title={"306 ta yangi binolarni ko'rish"}
+                    style={{
+                        width: "100vw",
+                        borderRadius: "0",
+                        height: "100%"
+                    }}
+                />
+            </div>
         </div>
     )
 }
 
-export default Main
+export default observer(Main)

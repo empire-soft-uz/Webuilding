@@ -68,7 +68,7 @@ const FinishTimeFilter: React.FC<Props> = ({
                     {chorak[1]} -chor {years[1]} y</p>
             </div>
             <div className={styles.bottomLineBox}>
-                <Box sx={{ width: 248 }}>
+                <Box sx={{ width: "100%" }}>
                     <Slider
                         value={list}
                         onChange={handleChange}

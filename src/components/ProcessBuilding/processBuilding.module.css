@@ -117,3 +117,32 @@
     transform: translate(-50%, -50%);
     cursor: pointer;
 }
+
+@media(min-width: 120px){
+    .caruselBox{
+        width: 85vw;
+    }
+    .header1{
+        width: 85vw;
+    }
+    .heade2{
+        width: 85vw;
+    }
+    .videoBox{
+        width: 85vw;
+    }
+}
+@media(min-width: 767px){
+    .caruselBox{
+        width: 588px;
+    }
+    .header1{
+        width: 588px;
+    }
+    .heade2{
+        width: 690px;
+    }
+    .videoBox{
+        width: 690px;
+    }
+}

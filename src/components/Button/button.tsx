@@ -4,7 +4,7 @@ interface Props {
     title?: string;
     iconUrl?: any;
     textSize: 'sixteen' | 'fourteen',
-    btnSize: 'large' | 'middle' | 'small' | 'avarage' | 'auto';
+    btnSize: 'large' | 'middle' | 'small' | 'avarage' | 'auto' | 'filter';
     btnColor: 'purple' | 'lightPurple' | 'outline';
     textColor: 'textWhite' | 'textPurple' | "green" | "red";
     borderRadius: 'ten' | 'none' | 'five' | 'thirty';
