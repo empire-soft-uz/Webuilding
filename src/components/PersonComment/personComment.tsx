@@ -5,12 +5,31 @@ import Avatar from '../Avatar/avatar'
 import Button from '../Button/button'
 import Text from '../Text/text'
 import styles from "./personComment.module.css"
+interface Props {
+    personName?: string;
+    personImage?: string;
+    likeCount?: number | string;
+    disLikeCount?: number | string;
+    date?: string | number;
+    comment?: string;
+    positiveComment?: string;
+    negativeComment?: string;
+}
 
-const PersonComment = () => {
+const PersonComment: React.FC<Props> = ({
+    comment,
+    date,
+    disLikeCount,
+    likeCount,
+    negativeComment,
+    personImage,
+    personName,
+    positiveComment
+}) => {
     return (
         <div className={styles.container}>
             <div className={styles.avatarBox}>
-                <Avatar imageUrl={ASSETS.person} />
+                <Avatar imageUrl={personImage} />
             </div>
             <div className={styles.commentBox}>
                 <div className={styles.headerBox}>
@@ -19,14 +38,14 @@ const PersonComment = () => {
                         textSize={'sixteen'}
                         textColor={'black'}
                         cursor={'Cursor'}
-                        text="Darya Rayevskiy"
+                        text={personName}
                     />
                     <Text
                         textType={'middle'}
                         textSize={'fourteen'}
                         textColor={'grey'}
                         cursor={'Cursor'}
-                        text="20 yanvar"
+                        text={date}
                     />
                 </div>
                 <div className={styles.coment}>
@@ -36,9 +55,7 @@ const PersonComment = () => {
                         textColor={'black'}
                         style={{ marginBottom: "30px" }}
                         cursor={'Cursor'}
-                        text="Majmua Daryo bo'yida qurilmoqda va bu juda katta afzallik. 
-                        Piyoda siz o'rmon bog'iga borishingiz mumkin va bu
-                        erda mulk yaqin. Avtomobilsiz markazga borish qiyin bo'lgan yagona narsa."
+                        text={comment}
                     />
                     <div style={{ display: "flex" }}>
                         <Button
@@ -61,9 +78,7 @@ const PersonComment = () => {
                         textColor={'black'}
                         cursor={'Cursor'}
                         style={{ marginBottom: "30px" }}
-                        text="Majmua Daryo bo'yida qurilmoqda va bu juda katta afzallik. 
-                        Piyoda siz o'rmon bog'iga borishingiz mumkin va bu
-                        erda mulk yaqin. Avtomobilsiz markazga borish qiyin bo'lgan yagona narsa."
+                        text={positiveComment}
                     />
                     <div style={{ display: "flex" }}>
                         <Button
@@ -86,7 +101,7 @@ const PersonComment = () => {
                         textColor={'black'}
                         cursor={'Cursor'}
                         style={{ marginBottom: "30px" }}
-                        text="Yo'q"
+                        text={negativeComment}
                     />
                 </div>
             </div>
@@ -98,7 +113,7 @@ const PersonComment = () => {
                         textSize={'sixteen'}
                         textColor={'purple'}
                         cursor={'Cursor'}
-                        text="5"
+                        text={likeCount}
                     />
                 </div>
                 <div className={styles.like}>
@@ -108,7 +123,7 @@ const PersonComment = () => {
                         textSize={'sixteen'}
                         textColor={'grey'}
                         cursor={'Cursor'}
-                        text="5"
+                        text={disLikeCount}
                     />
                 </div>
             </div>

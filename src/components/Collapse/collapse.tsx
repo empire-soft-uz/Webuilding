@@ -263,7 +263,7 @@ const CollapseView = () => {
         <Container className={styles.container}>
             {
                 data.map((item: DataType, index: number) => (
-                    <div className="colapsibleMediaBox">
+                    <div className="colapsibleMediaBox" key={index}>
                         <Collapsible className='collapsible' trigger={trigger(item)} onOpen={() => setOpenId({ ...openId, [item.id]: true })} key={index} onClose={() => setOpenId({ ...openId, [item.id]: false })}>
                             <div className={styles.accordionDetails}>
                                 <CollapseFilter />

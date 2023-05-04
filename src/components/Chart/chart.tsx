@@ -50,28 +50,26 @@ const Chart = () => {
     let width = 640;
 
     if (screenWidth > 1300) {
-        width = screenWidth * 0.76 -355
+        width = screenWidth * 0.76 - 355
     } else {
         width = screenWidth * 0.94 - 40
     }
 
-    console.log(width);
-    
 
     return (
         // <ResponsiveContainer width="100%" height="260px">
         <LineChart
-                width={width}
-                height={270}
-                data={data}
-            >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip />
-                {/* <Legend /> */}
-                <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
-            </LineChart>
+            width={width}
+            height={270}
+            data={data}
+        >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+            {/* <Legend /> */}
+            <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
+        </LineChart>
         // </ResponsiveContainer>
     )
 }

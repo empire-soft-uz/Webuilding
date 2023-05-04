@@ -1,43 +1,16 @@
 import React from 'react'
 import { COLORS } from '../../constants/color'
 import { ASSETS } from '../../constants/requireAssets'
+import useRootStore from '../../Hooks/useRootStore'
 import DropdownMenu from '../DropdownMenu/dropdownMenu'
 import Text from '../Text/text'
 import styles from "./processBuilding.module.css"
-
-
-const data = [
-    {
-        id: 1,
-        img: ASSETS.pr1
-    },
-    {
-        id: 2,
-        img: ASSETS.pr2
-    },
-    {
-        id: 3,
-        img: ASSETS.pr1
-    },
-    {
-        id: 4,
-        img: ASSETS.pr1
-    },
-    {
-        id: 5,
-        img: ASSETS.pr1
-    },
-    {
-        id: 6,
-        img: ASSETS.pr1
-    },
-]
-
+import { observer } from "mobx-react"
 
 const ProcessBuilding = () => {
 
     const [active, setActive] = React.useState(1)
-
+    const { oneProduct } = useRootStore().oneProductStore
     const handleActive = (id: number) => {
         setActive(id)
     }
@@ -57,16 +30,16 @@ const ProcessBuilding = () => {
                 </div>
                 <div className={styles.caruselBox}>
                     <div className={styles.mainImage}>
-                        <img className={styles.mainImg} src={data[active - 1].img} alt="" />
+                        <img className={styles.mainImg} src={oneProduct.processMedia[active - 1].image} alt="" />
                     </div>
                     <div className={styles.choseImage}>
-                        {data.map((item, index) => (
+                        {oneProduct.processMedia.map((item, index) => (
                             <button
                                 key={index}
                                 className={`${styles.item} ${(active === item.id) ? styles.activeItem : ''}`}
                                 onClick={() => handleActive(item.id)}
                             >
-                                <img className={`${styles.img} ${active === item.id ? styles.activeImg : ''}`} src={item.img} alt="" />
+                                <img className={`${styles.img} ${active === item.id ? styles.activeImg : ''}`} src={item.image} alt="" />
                             </button>
                         ))}
                     </div>
@@ -96,4 +69,4 @@ const ProcessBuilding = () => {
     )
 }
 
-export default ProcessBuilding
+export default observer(ProcessBuilding)

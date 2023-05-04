@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import AboutProducer from '../../../../components/AboutProducer/aboutProducer'
 import CollapseContent from '../../../../components/CollapseContent/collapseContent'
 import CommentBox from '../../../../components/CommentBox/commentBox'
@@ -9,11 +10,17 @@ import MainAdventages from '../../../../components/MainAdventages/mainAdventages
 import PlaceComment from '../../../../components/PlaceComment/placeComment'
 import Procedure from '../../../../components/Procedure/procedure'
 import ProcessBuilding from '../../../../components/ProcessBuilding/processBuilding'
+import useRootStore from '../../../../Hooks/useRootStore'
 // import Header from '../../components/Header/header'
 import ProductBanner from './components/ProductBanner'
 import styles from "./product.module.css"
+import { observer } from "mobx-react"
 
 const ProductPage = () => {
+    const { getProduct } = useRootStore().oneProductStore
+    useEffect(() => {
+        getProduct()
+    }, [])
     return (
         <div className={styles.container}>
             <ProductBanner />
@@ -43,4 +50,4 @@ const ProductPage = () => {
     )
 }
 
-export default ProductPage
+export default observer(ProductPage)

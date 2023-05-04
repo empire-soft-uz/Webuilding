@@ -1,8 +1,10 @@
 import React, { CSSProperties } from 'react'
 import Collapsible from 'react-collapsible'
 import { ArrowDownIcon, DownloaderIcon, FileIcon } from '../../assets/icons'
+import useRootStore from '../../Hooks/useRootStore'
 import Item from '../Item/item'
 import styles from "./documentCollapse.module.css"
+import { observer } from 'mobx-react';
 interface Props {
     style?: CSSProperties;
 }
@@ -57,7 +59,7 @@ const DocumentCollapse: React.FC<Props> = ({
 }) => {
 
     const [active, setActive] = React.useState(1)
-
+    const { oneProduct } = useRootStore().oneProductStore
     const mainTrigger = (title: string, id: number) => (
         <div className={`${styles.triggerBox} ${active === id ? styles.triggerBoxTwo : ''}`}>
             <FileIcon />
@@ -71,11 +73,11 @@ const DocumentCollapse: React.FC<Props> = ({
     return (
         <div className={styles.container} style={{ ...style }}>
             {
-                data.map((item, index) => (
-                    <Collapsible className={styles.collapseBox} trigger={mainTrigger(item.title, item.id)} triggerWhenOpen={mainTrigger(item.title, item.id)} open={active === item.id} onOpening={() => setActive(item.id)} onClosing={() => setActive(0)}>
+                oneProduct.documents.map((item, index) => (
+                    <Collapsible key={index} className={styles.collapseBox} trigger={mainTrigger(item.title, item.id)} triggerWhenOpen={mainTrigger(item.title, item.id)} open={active === item.id} onOpening={() => setActive(item.id)} onClosing={() => setActive(0)}>
                         {
                             item.files.map((file, index) => (
-                                <div className={styles.collapse}>
+                                <div className={styles.collapse} key={index}>
                                     <Item
                                         key={index}
                                         icon={<DownloaderIcon />}
@@ -93,4 +95,4 @@ const DocumentCollapse: React.FC<Props> = ({
     )
 }
 
-export default DocumentCollapse
+export default observer(DocumentCollapse)

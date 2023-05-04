@@ -7,11 +7,14 @@ import SimpleBtn from '../SimpleBtn/simpleBtn'
 import Text from '../Text/text'
 import styles from "./commentBox.module.css"
 import DrawerComponent from '../Drawer/DrawerComponent'
+import useRootStore from '../../Hooks/useRootStore'
+import { ASSETS } from '../../constants/requireAssets'
+import { observer } from "mobx-react"
 
 const CommentBox = () => {
     const [open, setOpen] = React.useState(false);
     const [renderDrawer, setRenderDrawer] = React.useState<any>(null);
-
+    const { oneProduct } = useRootStore().oneProductStore
     const handleToggel = () => {
         setOpen(prev => !prev);
     }
@@ -33,9 +36,14 @@ const CommentBox = () => {
                 textSize={'fourteen'}
                 textColor={'black'}
                 cursor={'none'}
-                text='Eng foydali sharh'
+                text={oneProduct.bestUsefulComment.name}
             />
-            <Comment more comment="Idrok gomeostazni yoritadi, Xobbs bu muammoni birinchilardan bo'lib yoritib berdi psixologiya nuqtai nazaridan nima deyish mumkin? Bu muammoni birinchilardan bo'lib yoritib berdi psixologiya nuqtai nazaridan nima deyish mumkin? Bu muammoni birinchilardan bo'lib yoritib berdi psixologiya nuqtai nazaridan nima deyish mumkin?" />
+            <Comment
+                more
+                comment={oneProduct.bestUsefulComment.coment}
+                personIcon={oneProduct.bestUsefulComment.personImage}
+                personName={oneProduct.bestUsefulComment.person}
+            />
         </div>
     )
 
@@ -93,7 +101,10 @@ const CommentBox = () => {
                     cursor={'none'}
                     text='Eng foydali sharh'
                 />
-                <Comment comment="drok gomeostazni yoritadi, Xobbs bu muammoni birinchilardan bo'lib yoritib berdi psixologiya nuqtai nazaridan ..." showMore={handleOpenMoreComment} />
+                <Comment
+                    personIcon={oneProduct.bestUsefulComment.personImage}
+                    personName={oneProduct.bestUsefulComment.person}
+                    comment={oneProduct.bestUsefulComment.coment} showMore={handleOpenMoreComment} />
             </div>
             <div className={styles.transport}>
                 <Text textType={'middle'} textSize={'fourteen'} textColor={'black'} cursor={'none'} text='Joylashuv, transportga kirish imkoniyati' />
@@ -111,4 +122,4 @@ const CommentBox = () => {
     )
 }
 
-export default CommentBox
+export default observer(CommentBox)

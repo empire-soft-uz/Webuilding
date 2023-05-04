@@ -3,15 +3,17 @@ import { MenuItem, Select } from '@mui/material'
 import React from 'react'
 import styled from 'styled-components'
 import { GreenDownIcon } from '../../assets/icons'
+import useRootStore from '../../Hooks/useRootStore'
 import Chart from '../Chart/chart'
 import Item from '../Item/item'
 import Text from '../Text/text'
 import styles from "./invest.module.css"
+import { observer } from "mobx-react"
 
 const Invest = () => {
 
     const [value, setValue] = React.useState('all');
-
+    const { oneProduct } = useRootStore().oneProductStore
     return (
         <Container className={styles.container}>
             <div className={`${styles.topBox} topBox`}>
@@ -74,8 +76,8 @@ const Invest = () => {
                     <div className={styles.info}>
                         <Item
                             icon={<Face />}
-                            title='Shoshilishni maslahat beramiz'
-                            text="O'rtacha narx 2% ga tushdi"
+                            title={oneProduct.investment.text}
+                            text={oneProduct.investment.middlePrice}
                             greyText
                         />
                     </div>
@@ -90,13 +92,13 @@ const Invest = () => {
                             />
                             <div className={styles.pricesBox}>
                                 <p className={styles.price}>
-                                    6.9 mln $
+                                    {oneProduct.investment.flatMiddlePrice}
                                 </p>
                                 <p className={styles.fell}>
                                     <span className={styles.downIcon}>
                                         <GreenDownIcon />
                                     </span>
-                                    134 940 $
+                                    {oneProduct.investment.flatMiddlePriceDown}
                                 </p>
                             </div>
                         </div>
@@ -110,13 +112,13 @@ const Invest = () => {
                             />
                             <div className={styles.pricesBox}>
                                 <p className={styles.price}>
-                                    6.9 mln $
+                                    {oneProduct.investment.squareMiddlePrice}
                                 </p>
                                 <p className={styles.fell}>
                                     <span className={styles.downIcon}>
                                         <GreenDownIcon />
                                     </span>
-                                    134 940 $
+                                    {oneProduct.investment.squareMiddlePriceDown}
                                 </p>
                             </div>
                         </div>
@@ -126,14 +128,14 @@ const Invest = () => {
                                 textSize={'twelve'}
                                 textColor={'grey'}
                                 cursor={'Cursor'}
-                                text="Kvadrat metr uchun o'rtacha narx. metr"
+                                text="Sotilgan kvartiralar"
                             />
                             <div className={styles.pricesBox}>
                                 <p className={styles.price}>
-                                    6.9 mln $
+                                    {oneProduct.investment.soldFlatsfFrom}
                                 </p>
                                 <p className={styles.count}>
-                                    1884 tasi
+                                    {oneProduct.investment.soldFlatsf}
                                 </p>
                             </div>
                         </div>
@@ -147,7 +149,7 @@ const Invest = () => {
     )
 }
 
-export default Invest
+export default observer(Invest)
 
 
 const Container = styled.div`

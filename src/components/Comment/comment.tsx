@@ -1,14 +1,16 @@
 import React from 'react';
 import { LikeIcon } from '../../assets/icons';
 import { ASSETS } from '../../constants/requireAssets';
+import useRootStore from '../../Hooks/useRootStore';
 import RowItem from '../Rowitem/rowItem';
 import Text from '../Text/text';
 import styles from "./comment.module.css";
+import { observer } from 'mobx-react';
 interface Props {
     comment: string;
     likeIcon?: any;
     more?: boolean;
-    personOcon?: any;
+    personIcon?: any;
     personName?: string;
     showMore?: () => void;
 }
@@ -18,9 +20,10 @@ const Comment: React.FC<Props> = ({
     likeIcon,
     more,
     personName,
-    personOcon,
+    personIcon,
     showMore
 }) => {
+    const { oneProduct } = useRootStore().oneProductStore
     return (
         <div className={styles.container}>
             <div className={styles.likeBox}>
@@ -38,7 +41,7 @@ const Comment: React.FC<Props> = ({
                                 text={comment}
                             />
                         </div>
-                        <RowItem imgUrl={ASSETS.person} text='Begmamatov Shahzod' />
+                        <RowItem imgUrl={personIcon} text={personName} />
                     </div>
                 ) : (
                     <div className={styles.commentBox}>
@@ -61,7 +64,7 @@ const Comment: React.FC<Props> = ({
                                 />
                             </button>
                         </div>
-                        <RowItem imgUrl={ASSETS.person} text='Begmamatov Shahzod' />
+                        <RowItem imgUrl={personIcon} text={personName} />
                     </div>
                 )
             }
@@ -69,4 +72,4 @@ const Comment: React.FC<Props> = ({
     )
 }
 
-export default Comment
+export default observer(Comment)

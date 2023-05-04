@@ -15,11 +15,16 @@ import useRootStore from '../../../../Hooks/useRootStore'
 import { APP_ROUTES } from '../../../../routes/app-router'
 import styles from "./main.module.css"
 import { observer } from 'mobx-react';
-import FilterModal from '../../../../components/FilterModal/filterModal'
 
 const Main = () => {
     const navigation = useNavigate()
-    const { visiable, show, toggle } = useRootStore().visibleStore
+    const { toggle } = useRootStore().visibleStore
+    const { oneProduct, setOneProduct } = useRootStore().oneProductStore
+
+    const getOneProduct = async (item: any) => {
+        setOneProduct(item)
+        navigation(APP_ROUTES.PRODUCT)
+    }
     return (
         <div className={styles.container}>
             <div className={styles.banner}>
@@ -59,7 +64,7 @@ const Main = () => {
                                 price={e.price}
                                 time={e.process}
                                 symbolDotIcon={e.symbolDotIcon}
-                                onPress={() => navigation(APP_ROUTES.PRODUCT)}
+                                onPress={() => getOneProduct(e)}
                                 minexpense={e.minExpense}
                                 studios={e.studios}
                                 oneRoom={e.oneRoom}

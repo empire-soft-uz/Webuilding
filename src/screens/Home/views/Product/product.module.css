@@ -29,3 +29,13 @@
 .processBuilding {
     overflow: auto;
 }
+@media(min-width: 120px){
+    .container{
+        padding-top: 9vh;
+    }
+}
+@media(min-width: 1200px){
+    .container{
+        padding-top: 5vh;
+    }
+}

@@ -1,7 +1,7 @@
 import React, { CSSProperties } from 'react'
 import styles from "./button.module.css"
 interface Props {
-    title?: string;
+    title?: string | number;
     iconUrl?: any;
     textSize: 'sixteen' | 'fourteen',
     btnSize: 'large' | 'middle' | 'small' | 'avarage' | 'auto' | 'filter';

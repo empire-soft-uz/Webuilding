@@ -1,10 +1,13 @@
 import React from 'react'
 import { ASSETS } from '../../constants/requireAssets'
+import useRootStore from '../../Hooks/useRootStore'
 import Text from '../Text/text'
 import styles from "./aboutProducer.module.css"
+import { observer } from 'mobx-react';
 
 
 const AboutProducer = () => {
+    const { oneProduct } = useRootStore().oneProductStore
     return (
         <div className={styles.container}>
             <Text
@@ -31,7 +34,7 @@ const AboutProducer = () => {
                         textSize={'fourteen'}
                         textColor={'black'}
                         cursor={'Cursor'}
-                        text="24 LCD - dagi 211 ta uy"
+                        text={oneProduct.aboutProducer.finished}
                     />
                 </div>
                 <span className={styles.line}></span>
@@ -48,7 +51,7 @@ const AboutProducer = () => {
                         textSize={'fourteen'}
                         textColor={'black'}
                         cursor={'Cursor'}
-                        text="20 LCD - da 140 ta uy"
+                        text={oneProduct.aboutProducer.construction}
                     />
                 </div>
                 <span className={styles.line}></span>
@@ -65,7 +68,7 @@ const AboutProducer = () => {
                         textSize={'fourteen'}
                         textColor={'black'}
                         cursor={'Cursor'}
-                        text="Bozorda 13 yil"
+                        text={oneProduct.aboutProducer.companyAge}
                     />
                 </div>
             </div>
@@ -75,13 +78,10 @@ const AboutProducer = () => {
                 textColor={'grey'}
                 style={{ lineHeight: "25px" }}
                 cursor={'Cursor'}
-                text="Bozorning har bir sohasi, bugungi qarashlar doirasida, maqsadli trafikni ko'p qirrali ravishda tezlashtiradi. Biznes-reja
-                        muvozanatli. Taniqli marketing klassiklaridan biri F. Kotler buni quyidagicha ta'riflaydi: qayta aloqa kuchaytiradi
-                        oldingi kampaniyalar tajribasidan foydalangan holda reklama tartibi. Mediaves, yuqorida aytib o'tilganlardan 
-                        ko'rinib turibdiki, quyidagilarni jamlaydi"
+                text={oneProduct.aboutProducer.companyText}
             />
         </div>
     )
 }
 
-export default AboutProducer
+export default observer(AboutProducer)

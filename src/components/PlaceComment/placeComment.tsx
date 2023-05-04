@@ -1,15 +1,16 @@
 import React from 'react'
 import { StarIcon } from '../../assets/icons'
+import useRootStore from '../../Hooks/useRootStore'
 import Button from '../Button/button'
 import DrawerComponent from '../Drawer/DrawerComponent'
 import PersonComment from '../PersonComment/personComment'
 import Text from '../Text/text'
 import styles from "./placeComment.module.css"
+import { observer } from "mobx-react"
 
 const PlaceComment = () => {
-
     const [open, setOpen] = React.useState(false)
-
+    const { oneProduct } = useRootStore().oneProductStore
     return (
         <div className={styles.container}>
             <div className={styles.topBox}>
@@ -19,7 +20,7 @@ const PlaceComment = () => {
                         textSize={'sixteen'}
                         textColor={'black'}
                         cursor={'Cursor'}
-                        text="'Coastal Park' turar-joy majmuasi haqida 5 ta sharh "
+                        text={oneProduct.placeCommentName}
                     />
                     <Button
                         textSize={'sixteen'}
@@ -27,7 +28,7 @@ const PlaceComment = () => {
                         btnColor={'lightPurple'}
                         textColor={'textPurple'}
                         borderRadius={'five'}
-                        title="4.5"
+                        title={oneProduct.placeCommentRatingCount}
                         iconUrl={<StarIcon />}
                     />
                 </div>
@@ -45,9 +46,23 @@ const PlaceComment = () => {
                 </div>
             </div>
             <div className={styles.commentBox}>
-                <PersonComment />
-                <span className={styles.line}></span>
-                <PersonComment />
+                {oneProduct.placeComments.map((e, index) => {
+                    return (
+                        <div key={index}>
+                            <PersonComment
+                                personName={e.personName}
+                                personImage={e.personImage}
+                                comment={e.comment}
+                                likeCount={e.likeCount}
+                                disLikeCount={e.disLikeCount}
+                                date={e.date}
+                                positiveComment={e.positiveComment}
+                                negativeComment={e.negativeComment}
+                            />
+                            <span className={styles.line}></span>
+                        </div>
+                    )
+                })}
             </div>
             <DrawerComponent open={open} openDrawer={() => setOpen(false)} title='Bu majmua uchun izoh qoldiring'>
                 <div className={styles.drawerBox}>
@@ -75,4 +90,4 @@ const PlaceComment = () => {
     )
 }
 
-export default PlaceComment
+export default observer(PlaceComment)

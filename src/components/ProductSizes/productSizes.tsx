@@ -3,8 +3,27 @@ import { ASSETS } from '../../constants/requireAssets'
 import Button from '../Button/button'
 import Text from '../Text/text'
 import styles from "./productSizes.module.css"
+interface Props {
+    image: string,
+    rooms: string | number,
+    common: string | number,
+    accommodation: string | number,
+    kitchen: string | number,
+    roomsArea: string | number,
+    bodySizeFrom: string | number,
+    bodySizeTo: string | number
+}
 
-const ProductSizes = () => {
+const ProductSizes: React.FC<Props> = ({
+    accommodation,
+    bodySizeFrom,
+    bodySizeTo,
+    common,
+    image,
+    kitchen,
+    rooms,
+    roomsArea
+}) => {
     return (
         <div className={styles.container}>
             <div className={styles.imageBox}>
@@ -17,7 +36,7 @@ const ProductSizes = () => {
                         textSize={'twelve'}
                         textColor={'black'}
                         cursor={'Cursor'}
-                        text="4"
+                        text={rooms}
                     />
                     <Text
                         textType={'middle'}
@@ -33,7 +52,7 @@ const ProductSizes = () => {
                         textSize={'twelve'}
                         textColor={'black'}
                         cursor={'Cursor'}
-                        text="79.35 m2"
+                        text={common}
                     />
                     <Text
                         textType={'middle'}
@@ -49,7 +68,7 @@ const ProductSizes = () => {
                         textSize={'twelve'}
                         textColor={'black'}
                         cursor={'Cursor'}
-                        text="67.30 m2"
+                        text={accommodation}
                     />
                     <Text
                         textType={'middle'}
@@ -65,7 +84,7 @@ const ProductSizes = () => {
                         textSize={'twelve'}
                         textColor={'black'}
                         cursor={'Cursor'}
-                        text="7.96 m2"
+                        text={kitchen}
                     />
                     <Text
                         textType={'middle'}
@@ -82,7 +101,7 @@ const ProductSizes = () => {
                     textSize={'twelve'}
                     textColor={'black'}
                     cursor={'Cursor'}
-                    text="12.7 / 10.98 / 11.45 m2"
+                    text={roomsArea}
                 />
                 <Text
                     textType={'middle'}
@@ -98,14 +117,14 @@ const ProductSizes = () => {
                     textSize={'twelve'}
                     textColor={'grey'}
                     cursor={'Cursor'}
-                    text="Korpus 4.2, 3-xona, 171 493 R / m2 dan"
+                    text={bodySizeFrom}
                 />
                 <Text
                     textType={'middle'}
                     textSize={'twelve'}
                     textColor={'black'}
                     cursor={'Cursor'}
-                    text="52,9 m2 dan 9 068 570 R gacha"
+                    text={bodySizeTo}
                 />
             </div>
             <div className={styles.btnBox}>

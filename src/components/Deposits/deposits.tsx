@@ -5,8 +5,11 @@ import Item from '../Item/item'
 import Text from '../Text/text'
 import DepositItem from '../depositItem/depositItem'
 import styles from "./deposits.module.css"
+import useRootStore from '../../Hooks/useRootStore'
+import { observer } from "mobx-react"
 
 const Deposits = () => {
+    const { oneProduct } = useRootStore().oneProductStore
     return (
         <Container className={styles.container}>
             <div className={styles.topBox}>
@@ -33,51 +36,51 @@ const Deposits = () => {
             <div className={`${styles.featureBox}`}>
                 <div className={`${styles.features} featureItemsBox`}>
                     <Item
+                        text={oneProduct.flatPlaces}
                         title='Kvartira maydonlari'
-                        text='21.6 - 79.4 m2'
                         icon={<AreaIcon />}
                         greyTitle
                     />
                     <Item
+                        text={oneProduct.finishTime}
                         title='Topshirish muddati'
-                        text='2023 - 2025'
                         icon={<CalendarIcon />}
                         greyTitle
                     />
                     <Item
                         icon={<BuildingIcon />}
-                        title='Binolar'
-                        text='16 ta bino'
+                        title={oneProduct.buildings}
+                        text='Binolar'
                         greyTitle
                     />
                     <Item
                         icon={<ShiftIcon />}
+                        text={oneProduct.ceilings}
                         title='Shiftlar'
-                        text='2.6 m - 2.7 m'
                         greyTitle
                     />
                     <Item
                         icon={<HomeTypeIcon />}
-                        title='Uy turi'
-                        text="Panel, monolit g'isht, g'isht, monolit"
+                        title="Uy turi"
+                        text={oneProduct.homeType}
                         greyTitle
                     />
                     <Item
                         icon={<HomeIcon />}
                         title='Sinf'
-                        text='Iqtisodiyot'
+                        text={oneProduct.class}
                         greyTitle
                     />
                     <Item
                         icon={<FloorNumberIcon />}
                         title='Qavatlar soni'
-                        text='10 dan 18 gacha'
+                        text={oneProduct.floorNumbers}
                         greyTitle
                     />
                     <Item
                         icon={<FinishIcon />}
                         title='Tugatish variantlari'
-                        text='Mebel bilan tugatish'
+                        text={oneProduct.finishVariants}
                         greyTitle
                     />
                 </div>
@@ -90,7 +93,7 @@ const Deposits = () => {
                     <div className={styles.priceBox}>
                         <div className={styles.price}>
                             <Text textColor="darkGrey" textSize='twelve' textType='middle' cursor='none' text='Ishlab chiquvchi' />
-                            <Text textColor="darkBlue" textSize='fourteen' textType='bold' cursor='none' text='"Domda" Guruhi' />
+                            <Text textColor="darkBlue" textSize='fourteen' textType='bold' cursor='none' text={oneProduct.producerTeam} />
                         </div>
                         <div>
                             <Organizator />
@@ -106,7 +109,7 @@ const Deposits = () => {
     )
 }
 
-export default Deposits
+export default observer(Deposits)
 
 
 const Container = styled.div`

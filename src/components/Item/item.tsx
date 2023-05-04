@@ -4,8 +4,8 @@ import styles from "./item.module.css"
 import Text from '../Text/text'
 interface Props {
     icon?: any
-    title?: string;
-    text?: string;
+    title?: string | number;
+    text?: string | number;
     greyTitle?: boolean;
     greyText?: boolean
 }

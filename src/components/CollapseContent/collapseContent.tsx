@@ -6,11 +6,13 @@ import Text from '../Text/text'
 import styles from "./collapseContent.module.css"
 import { MenuItem, Select } from '@mui/material'
 import React from 'react'
+import useRootStore from '../../Hooks/useRootStore'
+import { observer } from "mobx-react-lite"
 
 const CollapseContent = () => {
 
     const [value, setValue] = React.useState('all');
-
+    const { oneProduct } = useRootStore().oneProductStore
     return (
         <Container className={styles.container}>
             <Text
@@ -19,7 +21,7 @@ const CollapseContent = () => {
                 textSize={'twenty'}
                 textColor={'black'}
                 cursor={'none'}
-                text={'JK “Yangi choshtepa” ishlab chiqaruvchidan 56 ta xonadon'}
+                text={oneProduct.producerBuildingCount}
                 style={{ marginBottom: "20px" }}
             />
             {/* <DropdownMenu option='Barcha korpus' textColor={COLORS.purple} textSize='16px' /> */}
@@ -52,7 +54,7 @@ const CollapseContent = () => {
                 textSize={'fourteen'}
                 textColor={'black'}
                 cursor={'none'}
-                text={'2023-yil II-B da yetkazish'}
+                text={oneProduct.deliverAt}
                 style={{ margin: "10px 0 20px 0" }}
             />
             <Collapse />
@@ -60,7 +62,7 @@ const CollapseContent = () => {
     )
 }
 
-export default CollapseContent
+export default observer(CollapseContent)
 
 
 const Container = styled.div`
@@ -100,7 +102,9 @@ const Container = styled.div`
         .mainText {
             font-size: 12px;
             margin-bottom: 10px !important;
-        }
+        }import { observer } from 'mobx-react';
+import observer from '../../screens/Home/home';
+
     }
 
 `

@@ -3,9 +3,11 @@ import * as mobx from "mobx"
 import { createContext } from "react"
 import {enableStaticRendering} from "mobx-react-lite"
 import VisibleStore from "./VisibleStore"
+import OnePruduct from "./OneProduct"
 
 export class AppRootStore{
     visibleStore = new VisibleStore()
+    oneProductStore = new OnePruduct()
 
     constructor() {
         makeAutoObservable(this)
