@@ -5,15 +5,16 @@ import DrawerComponent from '../Drawer/DrawerComponent'
 import PersonComment from '../PersonComment/personComment'
 import Text from '../Text/text'
 import styles from "./placeComment.module.css"
+import styled from 'styled-components'
 
 const PlaceComment = () => {
 
     const [open, setOpen] = React.useState(false)
 
     return (
-        <div className={styles.container}>
-            <div className={styles.topBox}>
-                <div className={styles.rateBox}>
+        <Container className={styles.container}>
+            <div className={`${styles.topBox} topBox`}>
+                <div className={`${styles.rateBox} rateBox`}>
                     <Text
                         textType={'middle'}
                         textSize={'sixteen'}
@@ -31,7 +32,7 @@ const PlaceComment = () => {
                         iconUrl={<StarIcon />}
                     />
                 </div>
-                <div>
+                <div className='btnBox'>
                     <Button
                         textSize={'fourteen'}
                         btnSize={'small'}
@@ -71,8 +72,22 @@ const PlaceComment = () => {
                     </div>
                 </div>
             </DrawerComponent>
-        </div>
+        </Container>
     )
 }
 
 export default PlaceComment
+
+
+const Container = styled.div`
+
+    @media (max-width: 768px) {
+        .topBox{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .btnBox {}
+    }
+`

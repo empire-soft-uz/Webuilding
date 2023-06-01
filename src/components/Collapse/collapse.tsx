@@ -1,18 +1,16 @@
-import React from 'react'
-import Accordion from '@mui/material/Accordion';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import Typography from '@mui/material/Typography';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import styles from "./collapse.module.css"
-import { COLORS } from '../../constants/color';
+import React from 'react';
+import Collapsible from 'react-collapsible';
+import styled from 'styled-components';
 import { ArrowDownIcon, TableIcon } from '../../assets/icons';
+import { ASSETS } from '../../constants/requireAssets';
+import Text from '../Text/text';
 import CollapseFilter from '../collapseFilter/collapseFilter';
 import CollapseItem from '../collapseItem/collapseItem';
-import { ASSETS } from '../../constants/requireAssets';
-import Collapsible from 'react-collapsible';
-import Text from '../Text/text';
-import styled, { css } from 'styled-components';
+import styles from "./collapse.module.css";
+import DrawerComponent from '../Drawer/DrawerComponent';
+import FilterListIcon from '@mui/icons-material/FilterList';
+import DialogComponent from '../Dialog/DialogComponent';
+import FilterModal from '../FilterModal/filterModal';
 
 const data = [
     {
@@ -206,8 +204,21 @@ type triggerData = {
     finish: string
 }
 
+type roomDataTypes = {
+    id: number,
+    img: string,
+    text: string,
+    price: string,
+    area: string,
+    finish: string
+}
+
 const CollapseView = () => {
-    const [expanded, setExpanded] = React.useState<string | false>(false);
+
+    const [open, setOpen] = React.useState<boolean>(false)
+    const [openDialog, setOpenDialog] = React.useState<boolean>(false)
+
+    const [roomsData, setRoomsData] = React.useState<Array<roomDataTypes>>([])
     const [openId, setOpenId] = React.useState<{
         [key: string]: boolean
     }>({});
@@ -216,10 +227,18 @@ const CollapseView = () => {
         return openId[id] ? true : false
     }
 
-    const handleChange =
-        (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
-            setExpanded(isExpanded ? panel : false);
-        };
+    const handleOpenDrawer = (id: number) => {
+        setRoomsData(data.filter(item => item.id === id)[0].data)
+        setOpen(true)
+    }
+
+    const handleCloseDialog = () => {
+        setOpenDialog(false)
+    }
+
+    const handleOpenDialog = () => {
+        setOpenDialog(true)
+    }
 
     // data type data in triggerData type
     const trigger = (data: DataType) => {
@@ -258,6 +277,15 @@ const CollapseView = () => {
     }
 
 
+    const filterBtnComponent = (
+        <FilterButton className="btnBox" onClick={handleOpenDialog}>
+            <FilterListIcon fontSize='small' />
+            <Text textColor='darkBlue' textType='middle' textSize='twelve'>
+                Filtrlash
+            </Text>
+        </FilterButton>
+    )
+
 
     return (
         <Container className={styles.container}>
@@ -280,7 +308,7 @@ const CollapseView = () => {
                                 }
                             </div>
                         </Collapsible>
-                        <div className="SecondMainMediaBox">
+                        <div className="SecondMainMediaBox" onClick={() => handleOpenDrawer(item.id)}>
                             <div className="main">
                                 <Text className='title1' textColor='darkBlue' textType='middle' textSize='twelve'>
                                     {item.name}
@@ -302,6 +330,44 @@ const CollapseView = () => {
                     </div>
                 ))
             }
+
+            <DrawerComponent
+                btn={filterBtnComponent}
+                open={open} openDrawer={() => {
+                setRoomsData([])
+                setOpen(false)
+            }}>
+                <div className='drawerHeader'>
+                    <Text className='title1' textColor='darkBlue' textType='middle' textSize='twenty'>
+                        {roomsData.length} xonali kvartira
+                    </Text>
+                    <Text className='title1' textColor='darkGrey' textType='thin' textSize='fourteen'>
+                        {roomsData.length} ta xonadon
+                    </Text>
+                </div>
+                <div className='collapseItemBox'>
+                    <div className="itemBox" style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '20px',
+                        marginTop: '20px'
+                    }}>
+                        {
+                            roomsData.map((item: roomDataTypes, index: number) => {
+                                return (
+                                    <CollapseItem key={index} />
+                                )
+                            })
+                        }
+                    </div>
+                </div>
+            </DrawerComponent>
+
+            <DialogComponent open={openDialog} close={handleCloseDialog} >
+                <DialogBody>
+                    <CollapseFilter />
+                </DialogBody>
+            </DialogComponent>
         </Container>
     )
 }
@@ -309,6 +375,7 @@ const CollapseView = () => {
 export default CollapseView
 
 const Container = styled.div`
+    width: 100%;
     border: none !important;
     border-radius: 0 !important;
 
@@ -388,4 +455,21 @@ const Container = styled.div`
 `
 
 const TriggerBox = styled.div`
+`
+
+const FilterButton = styled.button`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    gap: 7px;
+`
+
+const DialogBody = styled.div`
+    width: 100%;
+    height: 100%;
+
 `

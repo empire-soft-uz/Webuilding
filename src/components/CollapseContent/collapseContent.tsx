@@ -1,11 +1,10 @@
+import { MenuItem, Select } from '@mui/material'
+import React from 'react'
 import styled from 'styled-components'
 import { COLORS } from '../../constants/color'
 import Collapse from '../Collapse/collapse'
-import DropdownMenu from '../DropdownMenu/dropdownMenu'
 import Text from '../Text/text'
 import styles from "./collapseContent.module.css"
-import { MenuItem, Select } from '@mui/material'
-import React from 'react'
 
 const CollapseContent = () => {
 
@@ -65,6 +64,7 @@ export default CollapseContent
 
 const Container = styled.div`
     width: 100%;
+    height: auto;
 
     .selectBox {
         #demo-simple-select {

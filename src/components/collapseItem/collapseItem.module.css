@@ -1,15 +1,3 @@
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1.5px solid #EFF3F9;
-    padding: 15px 0;
-}
-
-.notBorderBottom {
-    border-bottom: none !important;
-    padding-bottom: 0;
-}
 
 .leftBox {
     display: flex;

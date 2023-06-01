@@ -1,4 +1,3 @@
-import React from 'react'
 import DropdownMenu from '../DropdownMenu/dropdownMenu'
 import styles from "./collapseFilter.module.css"
 

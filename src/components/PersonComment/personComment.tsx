@@ -1,4 +1,4 @@
-import React from 'react'
+import styled from 'styled-components'
 import { DisLike, LikeIconTwo } from '../../assets/icons'
 import { ASSETS } from '../../constants/requireAssets'
 import Avatar from '../Avatar/avatar'
@@ -8,27 +8,52 @@ import styles from "./personComment.module.css"
 
 const PersonComment = () => {
     return (
-        <div className={styles.container}>
-            <div className={styles.avatarBox}>
-                <Avatar imageUrl={ASSETS.person} />
+        <Container className={styles.container}>
+            <div className="commentTopBox">
+                <div className="userBox">
+                    <Avatar imageUrl={ASSETS.person} className='avatar' />
+                    <div className={styles.headerBox}>
+                        <Text
+                            textType={'middle'}
+                            textSize={'sixteen'}
+                            textColor={'black'}
+                            cursor={'Cursor'}
+                            text="Darya Rayevskiy"
+                        />
+                        <Text
+                            className='dateComment'
+                            textType={'middle'}
+                            textSize={'fourteen'}
+                            textColor={'grey'}
+                            cursor={'Cursor'}
+                            text="20 yanvar"
+                        />
+                    </div>
+                </div>
+                <div className={`${styles.likeBox} topLikeBox`}>
+                    <div className={styles.like}>
+                        <LikeIconTwo />
+                        <Text
+                            textType={'bold'}
+                            textSize={'sixteen'}
+                            textColor={'purple'}
+                            cursor={'Cursor'}
+                            text="5"
+                        />
+                    </div>
+                    <div className={styles.like}>
+                        <DisLike />
+                        <Text
+                            textType={'bold'}
+                            textSize={'sixteen'}
+                            textColor={'grey'}
+                            cursor={'Cursor'}
+                            text="5"
+                        />
+                    </div>
+                </div>
             </div>
             <div className={styles.commentBox}>
-                <div className={styles.headerBox}>
-                    <Text
-                        textType={'middle'}
-                        textSize={'sixteen'}
-                        textColor={'black'}
-                        cursor={'Cursor'}
-                        text="Darya Rayevskiy"
-                    />
-                    <Text
-                        textType={'middle'}
-                        textSize={'fourteen'}
-                        textColor={'grey'}
-                        cursor={'Cursor'}
-                        text="20 yanvar"
-                    />
-                </div>
                 <div className={styles.coment}>
                     <Text
                         textType={'thin'}
@@ -85,35 +110,113 @@ const PersonComment = () => {
                         textSize={'fourteen'}
                         textColor={'black'}
                         cursor={'Cursor'}
-                        style={{ marginBottom: "30px" }}
                         text="Yo'q"
+                        className='no'
                     />
                 </div>
             </div>
-            <div className={styles.likeBox}>
-                <div className={styles.like}>
-                    <LikeIconTwo />
-                    <Text
-                        textType={'bold'}
-                        textSize={'sixteen'}
-                        textColor={'purple'}
-                        cursor={'Cursor'}
-                        text="5"
-                    />
-                </div>
-                <div className={styles.like}>
-                    <DisLike />
-                    <Text
-                        textType={'bold'}
-                        textSize={'sixteen'}
-                        textColor={'grey'}
-                        cursor={'Cursor'}
-                        text="5"
-                    />
+            <div className='footerBox'>
+                <Text
+                    textType={'middle'}
+                    textSize={'fourteen'}
+                    textColor={'grey'}
+                    cursor={'Cursor'}
+                    text="20 yanvar"
+                />
+                <div className={`${styles.likeBox} likeBox`}>
+                    <div className={styles.like}>
+                        <LikeIconTwo />
+                        <Text
+                            textType={'bold'}
+                            textSize={'sixteen'}
+                            textColor={'purple'}
+                            cursor={'Cursor'}
+                            text="5"
+                        />
+                    </div>
+                    <div className={styles.like}>
+                        <DisLike />
+                        <Text
+                            textType={'bold'}
+                            textSize={'sixteen'}
+                            textColor={'grey'}
+                            cursor={'Cursor'}
+                            text="5"
+                        />
+                    </div>
                 </div>
             </div>
-        </div>
+        </Container>
     )
 }
 
 export default PersonComment
+
+
+const Container = styled.div`
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    .commentTopBox {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 15px;
+
+        .userBox{
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+        }
+    }
+
+    .no {
+        margin-bottom: 30px;
+    }
+
+    .likeBox {
+        display: none;
+    }
+
+    @media (max-width: 576px) {
+        
+        .no{
+            margin-bottom: 0px;
+        }
+
+        .commentTopBox {
+
+            .userBox {
+                .avatar {
+                    width: 45px;
+                    height: 45px;
+                }
+            }
+            .dateComment {
+                display: none;
+            }
+            .topLikeBox {
+                display: none;
+            }            
+        }
+
+        .footerBox {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            justify-content: end;
+            .likeBox {
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+
+    }
+`

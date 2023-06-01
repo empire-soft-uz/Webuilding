@@ -9,9 +9,8 @@
 
 .btnContainer {
     display: flex;
-    justify-content: flex-end;
-    margin-right: 20px;
-    margin-bottom: 30px;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .drawer {
@@ -39,4 +38,9 @@
     background-color: #8A3FFC;
     transition: ease-in-out 0.25s;
     color: #fff;
+}
+
+.drawerBody {
+    width: 100%;
+    height: 100%;
 }
