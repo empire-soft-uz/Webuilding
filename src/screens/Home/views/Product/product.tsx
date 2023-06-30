@@ -1,46 +1,46 @@
-import AboutProducer from '../../../../components/AboutProducer/aboutProducer'
-import CollapseContent from '../../../../components/CollapseContent/collapseContent'
-import CommentBox from '../../../../components/CommentBox/commentBox'
-import Deposits from '../../../../components/Deposits/deposits'
-import Documents from '../../../../components/Documents/documents'
-import Infrastructure from '../../../../components/Infrastructure/infrastructure'
-import Invest from '../../../../components/Invest/invest'
-import MainAdventages from '../../../../components/MainAdventages/mainAdventages'
-import PlaceComment from '../../../../components/PlaceComment/placeComment'
-import Procedure from '../../../../components/Procedure/procedure'
-import ProcessBuilding from '../../../../components/ProcessBuilding/processBuilding'
+import AboutProducer from "../../../../components/AboutProducer/aboutProducer";
+import CollapseContent from "../../../../components/CollapseContent/collapseContent";
+import CommentBox from "../../../../components/CommentBox/commentBox";
+import Deposits from "../../../../components/Deposits/deposits";
+import Documents from "../../../../components/Documents/documents";
+import Infrastructure from "../../../../components/Infrastructure/infrastructure";
+import Invest from "../../../../components/Invest/invest";
+import MainAdventages from "../../../../components/MainAdventages/mainAdventages";
+import PlaceComment from "../../../../components/PlaceComment/placeComment";
+import Procedure from "../../../../components/Procedure/procedure";
+import ProcessBuilding from "../../../../components/ProcessBuilding/processBuilding";
 // import Header from '../../components/Header/header'
-import ProductBanner from './components/ProductBanner'
-import styles from "./product.module.css"
+import ProductBanner from "./components/ProductBanner";
+import styles from "./product.module.css";
 
 const ProductPage = () => {
-    return (
-        <div className={styles.container}>
-            <ProductBanner />
+  return (
+    <div className={styles.container}>
+      <ProductBanner />
 
-            <Deposits />
+      <Deposits />
 
-            <CollapseContent />
+      <CollapseContent />
 
-            <CommentBox />
+      <CommentBox />
 
-            <Infrastructure />
+      <Infrastructure />
 
-            <Procedure />
+      <Procedure />
 
-            <Invest />
+      <Invest />
 
-            <MainAdventages />
+      <MainAdventages />
 
-            <AboutProducer />
+      <AboutProducer />
 
-            <ProcessBuilding />
+      <ProcessBuilding />
 
-            <Documents />
+      <Documents />
 
-            <PlaceComment />
-        </div>
-    )
-}
+      <PlaceComment />
+    </div>
+  );
+};
 
-export default ProductPage
+export default ProductPage;

@@ -1,30 +1,30 @@
 .swiper {
-    height: 100%;
-    width: 100%;
-    transition: all 5s ease-in-out !important;
+  height: 100%;
+  width: 100%;
+  transition: all 5s ease-in-out !important;
 }
 
 .container {
-    height: 65vh;
+  height: 65vh;
 }
 
 .prevBox {
-    position: absolute;
-    z-index: 2;
-    bottom: 40px;
-    left: 50px;
+  position: absolute;
+  z-index: 2;
+  bottom: 40px;
+  left: 50px;
 }
 
 .swiperSlide {
-    overflow: hidden;
+  overflow: hidden;
 }
 
-@media(max-width: 576px) {
-    .container {
-        height: 60vh;
-    }
+@media (max-width: 576px) {
+  .container {
+    height: 60vh;
+  }
 
-    .prevBox {
-        left: 20px;
-    }
+  .prevBox {
+    left: 20px;
+  }
 }
