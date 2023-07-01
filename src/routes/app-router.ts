@@ -5,4 +5,5 @@ export enum APP_ROUTES {
   DEVELOPERS = "/developers",
   map = "map",
   BUILDER = "/builder",
+  ABOUT_US = "/about-us",
 }

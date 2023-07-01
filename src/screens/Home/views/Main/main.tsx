@@ -16,16 +16,7 @@ import { APP_ROUTES } from "../../../../routes/app-router";
 import styles from "./main.module.css";
 
 const Main = () => {
-  const navigation = useNavigate();
-  const { visiable, show, toggle } = useRootStore().visibleStore;
-
-  const filterHanler = () => {
-    for (let i = 0; i < ProductData.length; i++) {
-      if (ProductData[i].price === "35 000 $ dan") {
-        console.log("newArr");
-      }
-    }
-  };
+  const { toggle } = useRootStore().visibleStore;
 
   return (
     <div className={styles.container}>
@@ -49,39 +40,12 @@ const Main = () => {
               textColor={"textWhite"}
               borderRadius={"ten"}
               title={"306 ta yangi binolarni ko'rish"}
-              onPress={filterHanler}
             />
           </div>
           <ViewMap />
         </div>
       </div>
-      <div className={styles.productBox}>
-        {ProductData.map((e, index) => {
-          return (
-            <ProductItem
-              key={index}
-              symbolDotColor={COLORS.orange}
-              image={e.images[0].image}
-              company={e.company}
-              name={e.name}
-              homeCount={e.homeCount}
-              near={e.near}
-              nearTime={e.nearTime}
-              price={e.price}
-              time={e.process}
-              symbolDotIcon={e.symbolDotIcon}
-              onPress={() => navigation(APP_ROUTES.PRODUCT)}
-              minexpense={e.minExpense}
-              studios={e.studios}
-              oneRoom={e.oneRoom}
-              twoRooms={e.twoRooms}
-              threeRooms={e.threeRooms}
-              fourRooms={e.fourRooms}
-              fiveRooms={e.fiveRooms}
-            />
-          );
-        })}
-      </div>
+      <ProductListOfMain />
       <div className={styles.aboveBox}>
         <Button
           textSize={"fourteen"}
@@ -98,6 +62,39 @@ const Main = () => {
           }}
         />
       </div>
+    </div>
+  );
+};
+
+export const ProductListOfMain = () => {
+  const navigation = useNavigate();
+  return (
+    <div className={styles.productBox}>
+      {ProductData.map((e, index) => {
+        return (
+          <ProductItem
+            key={index}
+            symbolDotColor={COLORS.orange}
+            image={e.images[0].image}
+            company={e.company}
+            name={e.name}
+            homeCount={e.homeCount}
+            near={e.near}
+            nearTime={e.nearTime}
+            price={e.price}
+            time={e.process}
+            symbolDotIcon={e.symbolDotIcon}
+            onPress={() => navigation(APP_ROUTES.PRODUCT)}
+            minexpense={e.minExpense}
+            studios={e.studios}
+            oneRoom={e.oneRoom}
+            twoRooms={e.twoRooms}
+            threeRooms={e.threeRooms}
+            fourRooms={e.fourRooms}
+            fiveRooms={e.fiveRooms}
+          />
+        );
+      })}
     </div>
   );
 };

@@ -7,7 +7,7 @@ import { APP_ROUTES } from "./app-router";
 import ProtectedRoute from "./protectRouter";
 import Developers from "../screens/Home/views/Developers/developers";
 import DevelopersInfo from "../screens/Home/views/Developers/DevelopersInfo/developersInfo";
-
+import AboutUsPage from "../screens/Home/views/AboutUs/AboutUs";
 const Router = () => {
   return (
     <BrowserRouter>
@@ -24,6 +24,7 @@ const Router = () => {
           <Route path={APP_ROUTES.PRODUCT} element={<ProductPage />} />
           <Route path={APP_ROUTES.DEVELOPERS} element={<Developers />} />
           <Route path={APP_ROUTES.BUILDER} element={<DevelopersInfo />} />
+          <Route path={APP_ROUTES.ABOUT_US} element={<AboutUsPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

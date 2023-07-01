@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import {
   CloseIcon,
   LocationIcon,
@@ -21,26 +21,26 @@ const Dashboard = () => {
   const [active, setActive] = useState(1);
   const [isClose, setIsClose] = useState(false);
   const location = useLocation();
-  const navigation = useNavigate();
+  const navigate = useNavigate();
 
   const Category = (item: any) => {
     setActive(item);
     setIsClose(false);
-    if (item === 1) {
-      navigation(APP_ROUTES.HOME);
-    } else if (item === 2) {
-      navigation(APP_ROUTES.DEVELOPERS);
-    }
   };
-  const Dashboard = () => {
+  const Dashboard2 = () => {
     setIsClose((e) => !e);
   };
-  // useEffect(() => {}, [location]);
+  const goToNextPage = useCallback(
+    (path: APP_ROUTES | null) => {
+      if (path && path !== null) navigate(path);
+    },
+    [navigate]
+  );
 
   return (
     <>
       <div className={styles.closeHeader}>
-        <div className={styles.closeBox} onClick={() => Dashboard()}>
+        <div className={styles.closeBox} onClick={() => Dashboard2()}>
           {isClose ? <CloseIcon /> : <MenuIcon />}
         </div>
         <div className={styles.headerBox}>
@@ -87,7 +87,9 @@ const Dashboard = () => {
                 <div
                   className={styles.textBox}
                   key={index}
-                  onClick={() => Category(e.id)}
+                  onClick={() => {
+                    Category(e.id), goToNextPage(e.path);
+                  }}
                 >
                   <Text
                     textType={"middle"}
