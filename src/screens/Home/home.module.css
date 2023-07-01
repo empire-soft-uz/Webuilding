@@ -16,6 +16,7 @@
 @media (min-width: 120px) {
   .rightContainer {
     width: 100vw;
+    padding-top: 90px;
   }
 }
 

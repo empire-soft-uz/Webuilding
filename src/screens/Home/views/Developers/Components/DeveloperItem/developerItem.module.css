@@ -1,0 +1,120 @@
+.container {
+  box-sizing: border-box;
+  display: block;
+  height: 346px;
+  line-height: 24px;
+  font-size: 14px;
+  color: black;
+  width: 290.75px;
+  transition: all 0.2s ease;
+}
+.link {
+  background-color: transparent;
+  text-decoration-line: none;
+  text-decoration-style: solid;
+  display: block;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  transition: all 0.2s ease;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+.image_box {
+  background-attachment: scroll;
+  background-clip: border-box;
+  background-color: rgb(255, 255, 255);
+  background-image: none;
+  background-origin: padding-box;
+  background-position-x: 0%;
+  background-position-y: 0%;
+  background-size: auto;
+  box-shadow: rgba(0, 0, 0, 0.08) 2px 2px 40px 0px;
+  box-sizing: border-box;
+
+  display: block;
+  height: 290.75px;
+  width: 290.75px;
+  transition: all 0.2s ease;
+}
+
+.developers_img_wrapper {
+  position: relative;
+  padding-bottom: 100%;
+  transition: all 0.5s ease;
+}
+.developers_img_content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+  transition: all 0.5s ease;
+  z-index: 2;
+}
+.developers_info {
+  box-sizing: border-box;
+  width: 100%;
+  transition: all 0.5s ease;
+  position: absolute;
+  margin-top: 20px;
+}
+.developers_name h2 {
+  font-size: 15px;
+  color: black;
+}
+.developers_features {
+  opacity: 0;
+  margin-right: 20px;
+  display: none;
+}
+
+.link:hover .image_box {
+  height: 50%;
+  transition: all 0.2s ease;
+}
+.link:hover .developers_img_content {
+  bottom: 50%;
+  transition: all 0.2s ease;
+}
+
+.link:hover .developers_info {
+  transition: all 0.2s ease;
+  z-index: -100;
+}
+.link:hover .developers_features {
+  opacity: 1;
+  transition: all 0.2s ease;
+  display: block;
+}
+.developers__text {
+  width: 100%;
+}
+.developers__text p {
+  color: black;
+  font-size: 13px;
+}
+.features_item {
+  display: flex;
+  justify-content: flex-start;
+  margin: 10px 0;
+}
+
+.features_counter {
+  display: block;
+  color: #ff502f;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 3px;
+}
+.features_item {
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 12px !important;
+  line-height: 22px !important;
+  color: #151d33 !important;
+}
