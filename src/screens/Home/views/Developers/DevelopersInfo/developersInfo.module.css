@@ -1,18 +1,16 @@
-* {
-  box-sizing: border-box;
-  margin: 0%;
-  padding: 0%;
-}
 .container {
-  width: 100vw;
-  position: relative;
-  margin-top: 7vh;
-  background-color: transparent;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0 3vw;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 47px 0;
+  padding-top: 36px;
 }
 .box {
   display: flex;
-
-  padding: 0 30px;
 }
 .image_box {
   width: 326px;
@@ -79,15 +77,14 @@
   position: relative;
 }
 .developer__text ol li {
-  position: relative;
-  margin-left: 25px;
+  margin-right: 25;
 }
 
 .developer__text ol li:before {
   top: 0;
   left: 0;
   color: #ff502f;
-  position: absolute;
+  /* position: absolute; */
   content: counter(li) ".";
   counter-increment: li;
 }

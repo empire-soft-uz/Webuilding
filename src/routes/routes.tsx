@@ -6,7 +6,7 @@ import ProductPage from "../screens/Home/views/Product/product";
 import { APP_ROUTES } from "./app-router";
 import ProtectedRoute from "./protectRouter";
 import Developers from "../screens/Home/views/Developers/developers";
-import DevelopersInfo from "../screens/Home/views/Developers/Components/DevelopersInfo/developersInfo";
+import DevelopersInfo from "../screens/Home/views/Developers/DevelopersInfo/developersInfo";
 
 const Router = () => {
   return (
