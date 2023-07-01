@@ -14,13 +14,10 @@ import { COLORS } from "../../../../constants/color";
 import { ProductData } from "../../../../constants/productData";
 import { APP_ROUTES } from "../../../../routes/app-router";
 import styles from "./main.module.css";
-import { useEffect, useState } from "react";
-import useRootState from "../../../../Hooks/useRootState";
 
 const Main = () => {
   const navigation = useNavigate();
   const { visiable, show, toggle } = useRootStore().visibleStore;
-  const state = useRootState().filterState;
 
   const filterHanler = () => {
     for (let i = 0; i < ProductData.length; i++) {

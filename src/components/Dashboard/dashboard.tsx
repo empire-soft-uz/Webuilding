@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   CloseIcon,
   LocationIcon,
@@ -12,16 +12,30 @@ import BottomLine from "../BottomLine/bottomLine";
 import Button from "../Button/button";
 import Text from "../Text/text";
 import styles from "./dashboard.module.css";
+import { useNavigate } from "react-router-dom";
+import { APP_ROUTES } from "../../routes/app-router";
+import Dot from "../Dot/dot";
+import { useLocation } from "react-router-dom";
 
 const Dashboard = () => {
   const [active, setActive] = useState(1);
   const [isClose, setIsClose] = useState(false);
+  const location = useLocation();
+  const navigation = useNavigate();
+
   const Category = (item: any) => {
     setActive(item);
+    setIsClose(false);
+    if (item === 1) {
+      navigation(APP_ROUTES.HOME);
+    } else if (item === 2) {
+      navigation(APP_ROUTES.DEVELOPERS);
+    }
   };
   const Dashboard = () => {
     setIsClose((e) => !e);
   };
+  // useEffect(() => {}, [location]);
 
   return (
     <>
@@ -114,6 +128,42 @@ const Dashboard = () => {
               text={"Sizga qo'ng'iroq qilaylikmi?"}
             />
           </a>
+        </div>
+      </div>
+
+      <div
+        className={styles.container2}
+        style={{ top: isClose ? "0vh" : "-100vh" }}
+      >
+        <div className={styles.topBox2}>
+          <div className={styles.categoryBox2}>
+            {CategoryData.map((e, index) => {
+              return (
+                <div
+                  className={styles.textBox2}
+                  key={index}
+                  onClick={() => Category(e.id)}
+                >
+                  {active === e.id ? (
+                    <Dot
+                      color={COLORS.purple}
+                      size={"seven"}
+                      border={"fifty"}
+                    />
+                  ) : (
+                    <div className={styles.emptyPlace}></div>
+                  )}
+                  <Text
+                    textType={"middle"}
+                    textSize={"sixteen"}
+                    textColor={"darkGrey"}
+                    cursor={"Cursor"}
+                    text={e.name}
+                  />
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </>
