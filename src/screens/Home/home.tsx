@@ -6,6 +6,9 @@ import { APP_ROUTES } from '../../routes/app-router';
 import styles from "./home.module.css";
 import { observer } from 'mobx-react';
 import FilterModal from '../../components/FilterModal/filterModal';
+import ContactModal from '../../components/ContactModal/contactModal';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const HomeView = () => {
     const { pathname } = useLocation();
@@ -19,6 +22,18 @@ const HomeView = () => {
 
     return (
         <div className={styles.container}>
+            <ToastContainer
+                position='top-center'
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme='light'
+            />
             <div className={styles.dashboard}>
                 <Dashboard />
             </div>
@@ -26,6 +41,7 @@ const HomeView = () => {
                 <Outlet />
             </div>
             <FilterModal />
+            <ContactModal />
         </div>
     )
 }

@@ -41,6 +41,10 @@
     cursor: pointer;
 }
 
+.tell{
+    text-decoration: none;
+}
+
 @media(min-width: 120px) {
     .container {
         position: fixed;

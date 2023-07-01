@@ -3,12 +3,14 @@ import React from 'react'
 import CloseIcon from '@mui/icons-material/Close';
 import Text from '../Text/text'
 import styles from "./drawer.module.css"
+import { observer } from "mobx-react"
 
 type Props = {
     open: boolean;
     openDrawer: () => void;
     children?: React.ReactNode;
     title?: string;
+    btnBottom?: React.ReactNode
 }
 
 function DrawerComponent(
@@ -16,7 +18,8 @@ function DrawerComponent(
         open,
         openDrawer,
         children,
-        title
+        title,
+        btnBottom
     }: Props
 ) {
 
@@ -35,8 +38,9 @@ function DrawerComponent(
                     {children}
                 </div>
             </div>
+            {btnBottom}
         </Drawer>
     )
 }
 
-export default DrawerComponent
+export default observer(DrawerComponent)

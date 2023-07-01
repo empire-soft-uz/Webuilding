@@ -7,10 +7,13 @@ import Text from '../Text/text'
 import Button from '../Button/button'
 import Dot from '../Dot/dot'
 import { COLORS } from '../../constants/color'
+import useRootStore from '../../Hooks/useRootStore'
+import { observer } from "mobx-react"
 
 const Dashboard = () => {
     const [active, setActive] = useState(1)
     const [isClose, setIsClose] = useState(false)
+    const { show } = useRootStore().visibleStore
     const Category = (item: any) => {
         setActive(item)
     }
@@ -78,12 +81,14 @@ const Dashboard = () => {
                     </div>
                 </div>
                 <div className={styles.bottomBox}>
-                    <Text textType={'middle'} textSize={'sixteen'} textColor={'darkGrey'} cursor={'Cursor'} text={'+998 ( 99 ) 310 37 63'} />
-                    <Text style={{ marginTop: "10px" }} textType={'middle'} textSize={'fourteen'} textColor={'purple'} cursor={'Cursor'} text={"Sizga qo'ng'iroq qilaylikmi?"} />
+                    <a className={styles.tell} href="tel:+998 93 533 13 35">
+                        <Text textType={'middle'} textSize={'sixteen'} textColor={'darkGrey'} cursor={'Cursor'} text={'+998 ( 99 ) 310 37 63'} />
+                    </a>
+                    <Text onPress={() => show("contactModal")} style={{ marginTop: "10px" }} textType={'middle'} textSize={'fourteen'} textColor={'purple'} cursor={'Cursor'} text={"Sizga qo'ng'iroq qilaylikmi?"} />
                 </div>
             </div>
         </>
     )
 }
 
-export default Dashboard
+export default observer(Dashboard)

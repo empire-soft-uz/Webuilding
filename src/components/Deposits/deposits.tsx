@@ -10,6 +10,7 @@ import { observer } from "mobx-react"
 
 const Deposits = () => {
     const { oneProduct } = useRootStore().oneProductStore
+    const { show } = useRootStore().visibleStore
     return (
         <Container className={styles.container}>
             <div className={styles.topBox}>
@@ -101,8 +102,26 @@ const Deposits = () => {
                     </div>
                 </div>
                 <div className={`${styles.btnBox} btnsBox`}>
-                    <Button borderRadius='ten' textSize='fourteen' btnColor='purple' btnSize='middle' textColor='textWhite' title="Qo' ng'iroq qiling" iconUrl={<PhoneIcon />} />
-                    <Button borderRadius='ten' textSize='fourteen' btnColor='lightPurple' btnSize='large' textColor='textPurple' title="Menga qo'ng'iroq qiling" />
+                    <a className={styles.tell} href="tel:+998 93 533 13 35">
+                        <Button
+                            borderRadius='ten'
+                            textSize='fourteen'
+                            btnColor='purple'
+                            btnSize='middle'
+                            textColor='textWhite'
+                            title="Qo' ng'iroq qilish"
+                            iconUrl={<PhoneIcon />}
+                        />
+                    </a>
+                    <Button
+                        borderRadius='ten'
+                        textSize='fourteen'
+                        btnColor='lightPurple'
+                        btnSize='large'
+                        textColor='textPurple'
+                        title="Menga qo'ng'iroq qiling"
+                        onPress={() => show("contactModal")}
+                    />
                 </div>
             </div>
         </Container>

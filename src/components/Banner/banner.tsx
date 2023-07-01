@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { ArrowLeftIcon, ArrowRightIcon, PersonIcon } from '../../assets/icons'
 import { COLORS } from '../../constants/color'
+import { APP_ROUTES } from '../../routes/app-router'
 import ArrowBtn from '../ArrowBtn/arrowBtn'
 import Button from '../Button/button'
 import SymbolItem from '../SymbolItem/symbolItem'
@@ -31,7 +33,7 @@ const Banner: React.FC<Props> = ({
     station,
     stationTime
 }) => {
-
+    const navigation = useNavigate()
     return (
         <div className={styles.container}>
             <div className={styles.aboveBox}>
@@ -49,7 +51,7 @@ const Banner: React.FC<Props> = ({
                                 <Text textType={'middle'} textSize={'sixteen'} textColor={'white'} cursor={'Cursor'} text={price} />
                                 <Text textType={'thin'} textSize={'fourteen'} textColor={'white'} cursor={'Cursor'} text={countFlat} />
                             </div>
-                            <Button textSize={'fourteen'} btnSize={'middle'} btnColor={'purple'} textColor={'textWhite'} borderRadius={'five'} title='Kvartirani tanlang' />
+                            <Button onPress={() => navigation(APP_ROUTES.CHOOSE_FLAT)} textSize={'fourteen'} btnSize={'middle'} btnColor={'purple'} textColor={'textWhite'} borderRadius={'five'} title='Kvartirani tanlang' />
                         </div>
                     </div>
                 </div>

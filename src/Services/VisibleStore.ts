@@ -2,6 +2,7 @@ import { makeAutoObservable } from "mobx";
 
 type modal = {
     filterModal: boolean;
+    contactModal: boolean;
 }
 
 export default class VisibleStore {
@@ -10,7 +11,8 @@ export default class VisibleStore {
     }
 
     visiable: modal = {
-        filterModal: false
+        filterModal: false,
+        contactModal: false
     }
 
     show = (key: keyof modal) => {
