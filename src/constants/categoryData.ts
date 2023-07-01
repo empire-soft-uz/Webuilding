@@ -4,7 +4,7 @@ export const CategoryData = [
 	{
 		id: 1,
 		name: 'Главная',
-		path: null,
+		path: APP_ROUTES.MAIN,
 	},
 	{
 		id: 2,
