@@ -88,7 +88,8 @@ const Dashboard = () => {
                   className={styles.textBox}
                   key={index}
                   onClick={() => {
-                    Category(e.id), goToNextPage(e.path);
+                    Category(e.id);
+                    goToNextPage(e.path);
                   }}
                 >
                   <Text
