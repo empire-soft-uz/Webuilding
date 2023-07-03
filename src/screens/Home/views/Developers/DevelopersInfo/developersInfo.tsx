@@ -1,8 +1,43 @@
+import ProductItem from "../../../../../components/ProductItem/productItem";
+import { COLORS } from "../../../../../constants/color";
+import { ProductData } from "../../../../../constants/productData";
+import { APP_ROUTES } from "../../../../../routes/app-router";
 import styles from "./developersInfo.module.css";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 const DevelopersInfo = () => {
-  const { state } = useLocation();
+  const navigation = useNavigate();
 
+  const ProductListOfMain = () => {
+    return (
+      <div className={styles.productBox}>
+        {ProductData.map((e, index) => {
+          return (
+            <ProductItem
+              key={index}
+              symbolDotColor={COLORS.orange}
+              image={e.images[0].image}
+              company={e.company}
+              name={e.name}
+              homeCount={e.homeCount}
+              near={e.near}
+              nearTime={e.nearTime}
+              price={e.price}
+              time={e.process}
+              symbolDotIcon={e.symbolDotIcon}
+              minexpense={e.minExpense}
+              studios={e.studios}
+              oneRoom={e.oneRoom}
+              twoRooms={e.twoRooms}
+              threeRooms={e.threeRooms}
+              fourRooms={e.fourRooms}
+              fiveRooms={e.fiveRooms}
+              onPress={() => navigation(APP_ROUTES.PRODUCT)}
+            />
+          );
+        })}
+      </div>
+    );
+  };
   return (
     <div className={styles.container}>
       <div className={styles.box}>
@@ -73,6 +108,49 @@ const DevelopersInfo = () => {
             </p>
           </div>
         </div>
+      </div>
+      <div className={styles.section}>
+        <div className={styles.section__header}>
+          <h2 className={styles.section__header_title}>Новостройки от Coldy</h2>
+          <div className={styles.section__header_nav}>
+            <div className={styles.section__header_buttons}>
+              {/* <div className={styles.section_nav}>
+                <button
+                  type="button"
+                  className="slider-button slider-button--prev homecomplex-prev swiper-button-disabled swiper-button-lock"
+                  disabled={false}
+                  aria-label="Previous slide"
+                  aria-controls="swiper-wrapper-e84ab5b1096b816be"
+                  aria-disabled="true"
+                >
+                  <i>
+                    <svg
+                      className="ico-svg"
+                      viewBox="0 0 192 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    ></svg>
+                  </i>
+                </button>
+                <button
+                  type="button"
+                  className="slider-button slider-button--next homecomplex-next swiper-button-lock swiper-button-disabled"
+                  aria-label="Next slide"
+                  aria-controls="swiper-wrapper-e84ab5b1096b816be"
+                  aria-disabled="true"
+                >
+                  <i>
+                    <svg
+                      className="ico-svg"
+                      viewBox="0 0 192 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    ></svg>
+                  </i>
+                </button>
+              </div> */}
+            </div>
+          </div>
+        </div>
+        <ProductListOfMain />
       </div>
     </div>
   );
