@@ -58,18 +58,16 @@ const FloorFilter: React.FC<Props> = ({ label, from, to }) => {
           gacha
         </p>
       </div>
-      <div className={styles.bottomLineBox}>
-        <Slider
-          value={value}
-          onChange={handleChange}
-          min={1}
-          max={49}
-          valueLabelDisplay="auto"
-          getAriaValueText={valuetext}
-          size="small"
-          className={styles.slider}
-        />
-      </div>
+      <Slider
+        value={value}
+        onChange={handleChange}
+        min={1}
+        max={49}
+        valueLabelDisplay="auto"
+        getAriaValueText={valuetext}
+        size="small"
+        className={styles.slider}
+      />
     </div>
   );
 };

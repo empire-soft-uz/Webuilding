@@ -58,18 +58,16 @@ const SizeFilter: React.FC<Props> = ({ label, from, to }) => {
           gacha
         </p>
       </div>
-      <div className={styles.bottomLineBox}>
-        <Slider
-          value={value}
-          onChange={handleChange}
-          min={10.5}
-          max={164.9}
-          valueLabelDisplay="auto"
-          getAriaValueText={valuetext}
-          size="small"
-          className={styles.slider}
-        />
-      </div>
+      <Slider
+        value={value}
+        onChange={handleChange}
+        min={10.5}
+        max={164.9}
+        valueLabelDisplay="auto"
+        getAriaValueText={valuetext}
+        size="small"
+        className={styles.slider}
+      />
     </div>
   );
 };
