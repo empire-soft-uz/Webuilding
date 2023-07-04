@@ -37,6 +37,7 @@
 .bottomLineBox{
     position: absolute;
     width: 90%;
+    height: 19px !important;
     bottom: 0 !important;
     left: 5%;
     right: 5%;
