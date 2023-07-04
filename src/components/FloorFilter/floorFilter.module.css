@@ -35,10 +35,8 @@
 }
 .bottomLineBox{
     position: absolute;
-    display: flex;
-    align-items: center;
-    width: 248px;
-    bottom: -4px;
+    width: 90%;
+    bottom: 0 !important;
     left: 5%;
     right: 5%;
     background-color: #EFF3F9;
