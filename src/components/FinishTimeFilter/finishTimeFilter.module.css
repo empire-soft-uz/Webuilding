@@ -36,13 +36,11 @@
 }
 .bottomLineBox{
     position: absolute;
-    display: flex;
-    align-items: center;
     width: 90%;
-    bottom: -4px;
+    bottom: 0 !important;
     left: 5%;
     right: 5%;
-    background-color: #EFF3F9;
+    background-color: transparent;
 }
 .bottomLine{
     background-color: #8A3FFC;
