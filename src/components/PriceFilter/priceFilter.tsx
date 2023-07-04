@@ -59,18 +59,16 @@ const PriceFilter: React.FC<Props> = ({ label, from, to }) => {
         </p>
       </div>
       <div className={styles.bottomLineBox}>
-        <Box sx={{ width: "100%" }}>
-          <Slider
-            min={2.2}
-            max={14.2}
-            value={value}
-            onChange={handleChange}
-            valueLabelDisplay="auto"
-            getAriaValueText={valuetext}
-            size="small"
-            style={{ color: COLORS.purple, height: "1.5px", bottom: "0" }}
-          />
-        </Box>
+        <Slider
+          min={2.2}
+          max={14.2}
+          value={value}
+          onChange={handleChange}
+          valueLabelDisplay="auto"
+          getAriaValueText={valuetext}
+          size="small"
+          className={styles.slider}
+        />
       </div>
     </div>
   );
