@@ -58,18 +58,16 @@ const PriceFilter: React.FC<Props> = ({ label, from, to }) => {
           gacha
         </p>
       </div>
-      <div className={styles.bottomLineBox}>
-        <Slider
-          min={2.2}
-          max={14.2}
-          value={value}
-          onChange={handleChange}
-          valueLabelDisplay="auto"
-          getAriaValueText={valuetext}
-          size="small"
-          className={styles.slider}
-        />
-      </div>
+      <Slider
+        min={2.2}
+        max={14.2}
+        value={value}
+        onChange={handleChange}
+        valueLabelDisplay="auto"
+        getAriaValueText={valuetext}
+        size="small"
+        className={styles.slider}
+      />
     </div>
   );
 };

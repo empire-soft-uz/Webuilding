@@ -63,17 +63,15 @@ const FinishTimeFilter: React.FC<Props> = ({ label, from, to }) => {
           {chorak[1]} -chor {years[1]} y
         </p>
       </div>
-      <div className={styles.bottomLineBox}>
-        <Slider
-          value={list}
-          onChange={handleChange}
-          {...minMax()}
-          // valueLabelDisplay="auto"
-          getAriaValueText={valuetext}
-          size="small"
-          className={styles.slider}
-        />
-      </div>
+      <Slider
+        value={list}
+        onChange={handleChange}
+        {...minMax()}
+        // valueLabelDisplay="auto"
+        getAriaValueText={valuetext}
+        size="small"
+        className={styles.slider}
+      />
     </div>
   );
 };
