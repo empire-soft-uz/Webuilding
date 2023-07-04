@@ -72,7 +72,7 @@ const FinishTimeFilter: React.FC<Props> = ({ label, from, to }) => {
             // valueLabelDisplay="auto"
             getAriaValueText={valuetext}
             size="small"
-            style={{ color: COLORS.purple, height: "1.5px", bottom: "-4px" }}
+            style={{ color: COLORS.purple, height: "1.5px", bottom: "0px" }}
           />
         </Box>
       </div>
