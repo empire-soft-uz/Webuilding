@@ -34,13 +34,19 @@
     align-items: center;
 }
 .bottomLineBox{
-    position: absolute;
-    height: 15.5px !important;
+    position: relative !important;
     width: 90%;
-    bottom: 0 !important;
+    height: 3px !important;
+    bottom: 1.5px !important;
     left: 5%;
     right: 5%;
-    background-color: #EFF3F9;
+    background-color: transparent;
+}
+.slider{
+    position: absolute !important;
+    color: #8A3FFC !important;
+    height: 2px !important;
+    bottom: 1px !important;
 }
 .bottomLine{
     background-color: #8A3FFC;

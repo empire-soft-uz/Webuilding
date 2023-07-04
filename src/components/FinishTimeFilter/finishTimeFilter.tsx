@@ -64,17 +64,15 @@ const FinishTimeFilter: React.FC<Props> = ({ label, from, to }) => {
         </p>
       </div>
       <div className={styles.bottomLineBox}>
-        <Box sx={{ width: "100%" }}>
-          <Slider
-            value={list}
-            onChange={handleChange}
-            {...minMax()}
-            // valueLabelDisplay="auto"
-            getAriaValueText={valuetext}
-            size="small"
-            style={{ color: COLORS.purple, height: "1.5px", bottom: "0px" }}
-          />
-        </Box>
+        <Slider
+          value={list}
+          onChange={handleChange}
+          {...minMax()}
+          // valueLabelDisplay="auto"
+          getAriaValueText={valuetext}
+          size="small"
+          className={styles.slider}
+        />
       </div>
     </div>
   );
