@@ -4,6 +4,7 @@ import FilterModal from "../../../../components/FilterModal/filterModal";
 import Footer from "../../../../components/Footer/footer";
 import YandexMap from "../../../../components/YandexMap/yandexMap";
 import styles from "./card.module.css";
+
 const CardDashboard = () => {
   const { toggle } = useRootStore().visibleStore;
   const data = [
@@ -12,6 +13,7 @@ const CardDashboard = () => {
     { id: 2, locatsiya1: 41.314354, locatsiya2: 69.26548 },
     { id: 3, locatsiya1: 41.309733, locatsiya2: 69.254216 },
   ];
+
   return (
     <div className={styles.container}>
       <div className={styles.filterBox}>
@@ -23,7 +25,7 @@ const CardDashboard = () => {
         </button>
         <button className={styles.listBtn}>Показать списком</button>
       </div>
-      <div className={styles.map}>
+      <div className={styles.map} id="map">
         <YandexMap data={data} />
       </div>
       <div className={styles.footer}>
