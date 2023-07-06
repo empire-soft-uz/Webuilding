@@ -1,15 +1,13 @@
-import React, { useState } from "react";
+import { observer } from "mobx-react";
 import useRootStore from "../../Hooks/useRootStore";
-import Button from "../Button/button";
+import { CloseIcon } from "../../assets/icons";
 import FinishTimeFilter from "../FinishTimeFilter/finishTimeFilter";
 import FloorFilter from "../FloorFilter/floorFilter";
 import PriceFilter from "../PriceFilter/priceFilter";
 import RoomsSelect from "../RoomsSelect/roomsSelect";
 import SizeFilter from "../SizeFilter/sizeFilter";
-import styles from "./filterModal.module.css";
-import { observer } from "mobx-react";
 import Text from "../Text/text";
-import { CloseIcon } from "../../assets/icons";
+import styles from "./filterModal.module.css";
 interface Props {
   onOpen?: boolean;
   onClose?: () => void;

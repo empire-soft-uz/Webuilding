@@ -1,0 +1,67 @@
+.container {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+  height: 100vh;
+  background-color: transparent;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.map {
+  width: 100%;
+  height: 80%;
+}
+.filterBox {
+  position: absolute;
+  top: 40px;
+  z-index: 8;
+  left: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.filterBtn {
+  padding: 11px 18px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  color: #ffffff;
+  border: 1px solid #ff502f;
+  position: relative;
+  background-color: #ff502f;
+}
+.filterBtn:hover {
+  background: #e6482a;
+}
+.listBtn {
+  padding: 11px 18px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  position: relative;
+  display: block;
+  text-decoration: none;
+  background: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #cccccc;
+  color: #151d33;
+  margin-left: 15px;
+}
+.listBtn:hover {
+  background: #e6482a;
+  color: white;
+}
+.footer {
+  width: 100%;
+  padding: 0 3vw;
+  background-color: white;
+}

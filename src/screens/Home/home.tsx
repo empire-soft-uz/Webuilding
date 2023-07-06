@@ -6,6 +6,7 @@ import { APP_ROUTES } from "../../routes/app-router";
 import styles from "./home.module.css";
 import { observer } from "mobx-react";
 import FilterModal from "../../components/FilterModal/filterModal";
+import Footer from "../../components/Footer/footer";
 
 const HomeView = () => {
   const { pathname } = useLocation();

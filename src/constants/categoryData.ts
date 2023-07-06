@@ -19,6 +19,6 @@ export const CategoryData = [
   {
     id: 4,
     name: "Карта",
-    path: null,
+    path: APP_ROUTES.Card,
   },
 ];
