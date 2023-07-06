@@ -65,11 +65,14 @@ const Dashboard = () => {
       </div>
       <div className={styles.container}>
         <div className={styles.topBox}>
-          <div className={styles.logoBox}>
+          <div
+            className={styles.logoBox}
+            onClick={() => navigate(APP_ROUTES.HOME)}
+          >
             <LogoIcon />
             <h2 className={styles.logoTitle}>Webuilding</h2>
           </div>
-          <div className={styles.btnLocation}>
+          {/* <div className={styles.btnLocation}>
             <Button
               textSize={"fourteen"}
               btnSize={"avarage"}
@@ -80,7 +83,7 @@ const Dashboard = () => {
               style={{ width: "170px" }}
               iconUrl={<LocationIcon />}
             />
-          </div>
+          </div> */}
           <div className={styles.categoryBox}>
             {CategoryData.map((e, index) => {
               return (
@@ -145,7 +148,10 @@ const Dashboard = () => {
                 <div
                   className={styles.textBox2}
                   key={index}
-                  onClick={() => Category(e.id)}
+                  onClick={() => {
+                    Category(e.id);
+                    goToNextPage(e.path);
+                  }}
                 >
                   {active === e.id ? (
                     <Dot

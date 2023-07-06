@@ -1,0 +1,8 @@
+.popover {
+  display: block;
+  background-color: #fff;
+  max-width: unset;
+  position: absolute;
+  z-index: 1010;
+  border-radius: 6px;
+}

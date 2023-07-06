@@ -6,4 +6,5 @@ export enum APP_ROUTES {
   map = "map",
   BUILDER = "/builder",
   ABOUT_US = "/about-us",
+  Card = "/card",
 }

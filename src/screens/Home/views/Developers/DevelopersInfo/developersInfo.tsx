@@ -1,3 +1,4 @@
+import Footer from "../../../../../components/Footer/footer";
 import ProductItem from "../../../../../components/ProductItem/productItem";
 import { COLORS } from "../../../../../constants/color";
 import { ProductData } from "../../../../../constants/productData";
@@ -152,6 +153,7 @@ const DevelopersInfo = () => {
         </div>
         <ProductListOfMain />
       </div>
+      <Footer />
     </div>
   );
 };

@@ -33,6 +33,7 @@
 
   .logoBox {
     display: none;
+    cursor: pointer;
   }
 
   .btnLocation {
