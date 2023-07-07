@@ -14,7 +14,7 @@ type propsType = {
 const YandexMap = (props: propsType) => {
   const navigate = useNavigate();
   const handleButtonOnClick = () => {
-    navigate(APP_ROUTES.HOME);
+    navigate(APP_ROUTES.PRODUCT);
   };
 
   return (
