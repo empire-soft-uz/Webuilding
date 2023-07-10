@@ -17,8 +17,10 @@ import Item from "../Item/item";
 import Text from "../Text/text";
 import DepositItem from "../depositItem/depositItem";
 import styles from "./deposits.module.css";
+import { useAppModals } from "../Modals";
 
 const Deposits = () => {
+  const appModals = useAppModals();
   return (
     <Container className={styles.container}>
       <div className={styles.topBox}>
@@ -43,7 +45,13 @@ const Deposits = () => {
               cursor="none"
               text="Sotish uchun mavjud"
             />
-            <div style={{ display: "flex", flexDirection: "row", gap: 5 }}>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                gap: 5,
+              }}
+            >
               <Text
                 textColor="grey"
                 textSize="fourteen"
@@ -67,9 +75,6 @@ const Deposits = () => {
               />
             </div>
           </div>
-          {/* <div>
-                        <BateryIcon />
-                    </div> */}
         </div>
       </div>
       <div className={`${styles.featureBox}`}>
@@ -160,6 +165,9 @@ const Deposits = () => {
             btnSize="middle"
             textColor="textWhite"
             title="Qo' ng'iroq qiling"
+            onPress={() => {
+              appModals?.show("i_call_you_now");
+            }}
             iconUrl={<PhoneIcon />}
           />
           <Button
@@ -167,6 +175,9 @@ const Deposits = () => {
             textSize="fourteen"
             btnColor="lightPurple"
             btnSize="large"
+            onPress={() => {
+              appModals?.show("call_me_later");
+            }}
             textColor="textPurple"
             title="Menga qo'ng'iroq qiling"
           />

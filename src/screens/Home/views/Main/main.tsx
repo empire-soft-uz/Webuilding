@@ -24,62 +24,64 @@ const Main = () => {
   return (
     <>
       <div className={styles.container}>
-          <div className={styles.banner}>
-            <SwiperComp />
-            <div className={styles.infoBox}>
-              <div className={styles.infoCard}>
-                <RoomsSelect />
-                <PriceFilter label="Narxi, ming $" />
-                <SizeFilter label="Maydoni, m²" />
-                <FinishTimeFilter
-                  from={new Date()}
-                  to={new Date("Thu Dec 27 2025")}
-                  label="Topshirish muddati"
-                />
-                <FloorFilter label="Qavat" />
-                <Button
-                  textSize={"fourteen"}
-                  btnSize={"filter"}
-                  btnColor={"purple"}
-                  textColor={"textWhite"}
-                  borderRadius={"ten"}
-                  title={"306 ta yangi binolarni ko'rish"}
-                />
-              </div>
-              <ViewMap />
+        <div className={styles.banner}>
+          <SwiperComp />
+          <div className={styles.infoBox}>
+            <div className={styles.infoCard}>
+              <RoomsSelect />
+              <PriceFilter label="Narxi, ming $" />
+              <SizeFilter label="Maydoni, m²" />
+              <FinishTimeFilter
+                from={new Date()}
+                to={new Date("Thu Dec 27 2025")}
+                label="Topshirish muddati"
+              />
+              <FloorFilter label="Qavat" />
+              <Button
+                textSize={"fourteen"}
+                btnSize={"filter"}
+                btnColor={"purple"}
+                textColor={"textWhite"}
+                borderRadius={"ten"}
+                title={"306 ta yangi binolarni ko'rish"}
+              />
             </div>
+            <ViewMap />
           </div>
+        </div>
         <AdsContainerForProducts>
-          <ProductListOfMain classname='productList' />
-          <div className="rightAdsBox"></div>
-        </AdsContainerForProducts>
-          <div className={styles.aboveBox}>
-            <Button
-              textSize={"fourteen"}
-              btnSize={"filter"}
-              btnColor={"purple"}
-              textColor={"textWhite"}
-              borderRadius={"ten"}
-              onPress={() => toggle("filterModal")}
-              title={"306 ta yangi binolarni ko'rish"}
-              style={{
-                width: "100vw",
-                borderRadius: "0",
-                height: "100%",
-              }}
+          <ProductListOfMain classname="productList" />
+          <div className="rightAdsBox">
+            <img
+              src="https://domtut.uz/resources/uploads/property/ipak-yoli/main_1.jpg?r=1682593805"
+              alt=""
+              style={{ width: "100%", height: "100%" }}
             />
           </div>
-          <Footer />
+        </AdsContainerForProducts>
+        <div className={styles.aboveBox}>
+          <Button
+            textSize={"fourteen"}
+            btnSize={"filter"}
+            btnColor={"purple"}
+            textColor={"textWhite"}
+            borderRadius={"ten"}
+            onPress={() => toggle("filterModal")}
+            title={"306 ta yangi binolarni ko'rish"}
+            style={{
+              width: "100vw",
+              borderRadius: "0",
+              height: "100%",
+            }}
+          />
+        </div>
+        <Footer />
       </div>
     </>
   );
 };
 
-export const ProductListOfMain = ({
-  classname
-}: {
-  classname?: string;
-}) => {
+export const ProductListOfMain = ({ classname }: { classname?: string }) => {
   const navigation = useNavigate();
   return (
     <div className={`${styles.productBox} ${classname}`}>
@@ -114,14 +116,13 @@ export const ProductListOfMain = ({
 
 export default observer(Main);
 
-
 const AdsContainerForProducts = styled.div`
   justify-content: space-around;
   gap: 30px;
   position: relative;
   display: grid;
   grid-template-columns: 1fr 250px;
-  grid-template-areas: 'productList rightAdsBox';
+  grid-template-areas: "productList rightAdsBox";
 
   .productList {
     grid-area: productList;
@@ -140,7 +141,7 @@ const AdsContainerForProducts = styled.div`
 
   @media (max-width: 960px) {
     grid-template-columns: 1fr;
-    grid-template-areas: 'rightAdsBox' 'productList';
+    grid-template-areas: "rightAdsBox" "productList";
 
     .rightAdsBox {
       width: 100%;
@@ -151,5 +152,4 @@ const AdsContainerForProducts = styled.div`
       margin-bottom: 0;
     }
   }
-
-`
+`;

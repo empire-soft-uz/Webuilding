@@ -1,11 +1,13 @@
 .container {
-    width: 100%;
-    background-color: #fff;
-    padding: 25px 0px;
-    border-radius: 10px;
+  width: 100%;
+  background-color: #fff;
+  padding: 25px 0px;
+  border-radius: 10px;
+  margin: 10px 0;
 }
 
 .documentCollapse {
-    width: 100%;
-    margin-top: 20px;
+  width: 100%;
+  margin-top: 20px;
+  background-color: #fff;
 }

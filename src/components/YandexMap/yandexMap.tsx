@@ -53,7 +53,7 @@ const YandexMap = (props: propsType) => {
                 geometry={[item.locatsiya1, item.locatsiya2]}
                 properties={{
                   balloonContent: `
-                      <button id="custom-button" style="height: 397px; width: 326px ; padding:0,margin:0;box-sizing: border-box;cursor: pointer; z-index: 20 ;border:none ; background-color: transparent;">
+                      <div id="custom-button" style="height: 397px; width: 326px ; padding:0,margin:0;box-sizing: border-box;cursor: pointer; z-index: 20 ;border:none ; background-color: transparent;">
                         <div style="overflow: hidden; height: 240px; width: 100%;">
                              <img style=" height: 100%; width: 100%; object-fit: cover;" src="https://cdn.netsolve.ru/Residents/skyview/renders/_HnYSP2ekNztgrp64V2n5xzjfp052mHP6.png" />
                         </div>
@@ -84,7 +84,7 @@ const YandexMap = (props: propsType) => {
                          <div class="_residence-card-flat-counter">0 кв.</div>
                        </div>
                         </div>
-                      </button>
+                      </div>
                        `,
                 }}
                 instanceRef={(ref) => {
