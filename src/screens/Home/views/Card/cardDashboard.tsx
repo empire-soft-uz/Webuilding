@@ -1,6 +1,5 @@
 import { observer } from "mobx-react";
 import useRootStore from "../../../../Hooks/useRootStore";
-import FilterModal from "../../../../components/FilterModal/filterModal";
 import Footer from "../../../../components/Footer/footer";
 import YandexMap from "../../../../components/YandexMap/yandexMap";
 import styles from "./card.module.css";
