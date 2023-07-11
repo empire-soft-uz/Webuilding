@@ -6,7 +6,7 @@ import Deposits from "../../../../components/Deposits/deposits";
 import Documents from "../../../../components/Documents/documents";
 import Footer from "../../../../components/Footer/footer";
 import Infrastructure from "../../../../components/Infrastructure/infrastructure";
-import Invest from "../../../../components/Invest/invest";
+
 import MainAdventages from "../../../../components/MainAdventages/mainAdventages";
 import PlaceComment from "../../../../components/PlaceComment/placeComment";
 import Procedure from "../../../../components/Procedure/procedure";

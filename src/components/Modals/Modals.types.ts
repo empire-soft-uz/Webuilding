@@ -13,7 +13,6 @@ export type ModalsContextType = {
   hide(): void;
   state: ModalsState;
 };
-
 export type ModalsProviderType = {
   children: any;
 };

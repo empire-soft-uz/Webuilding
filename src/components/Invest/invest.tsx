@@ -20,7 +20,7 @@ const Invest = () => {
             textSize={"sixteen"}
             textColor={"black"}
             cursor={"Cursor"}
-            text="Investitsion jozibadorlik"
+            text="ModalsProviderTypeitsion jozibadorlik"
           />
         </div>
         <div className="filterBtnBox">
@@ -128,162 +128,162 @@ const Invest = () => {
   );
 };
 
-export default Invest;
-
 const Container = styled.div`
-  position: relative;
-  padding-top: 30px;
-  padding-bottom: 30px;
 
-  .content {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 0.4fr 1fr;
-    gap: 15px;
+	position: relative;
+	padding-top: 30px;
+	padding-bottom: 30px;
 
-    .infoBox {
-      margin-top: 0;
+	.content {
+		width: 100%;
+		display: grid;
+		grid-template-columns: 0.4fr 1fr;
+		gap: 15px;
 
-      .AllPrices {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-      }
-    }
+		.infoBox {
+			margin-top: 0;
 
-    .chartBox {
-      /* max-width: 60vw; */
-      /* flex: 1; */
-    }
-  }
+			.AllPrices {
+				display: flex;
+				flex-direction: column;
+				gap: 20px;
+			}
+		}
 
-  .topBox {
-    margin-bottom: 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
+		.chartBox {
+			/* max-width: 60vw; */
+			/* flex: 1; */
+		}
+	}
 
-  .filterBtnBox {
-    display: flex;
+	.topBox {
+		margin-bottom: 30px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 20px;
+	}
 
-    .filterBtn {
-      padding: 10px 20px;
-      border: 1px solid #e5e5e5;
-      border-left: none;
-      background-color: #fff;
-      color: #000;
-      font-size: 12px;
-      font-weight: 500;
+	.filterBtnBox {
+		display: flex;
 
-      &:hover {
-        background-color: "#fff";
-        border: 1px solid #8a3ffc;
-      }
-    }
+		.filterBtn {
+			padding: 10px 20px;
+			border: 1px solid #e5e5e5;
+			border-left: none;
+			background-color: #fff;
+			color: #000;
+			font-size: 12px;
+			font-weight: 500;
 
-    .firstBtn {
-      border-left: 1px solid #e5e5e5;
-      border-radius: 7px 0 0 7px;
-    }
+			&:hover {
+				background-color: '#fff';
+				border: 1px solid #8a3ffc;
+			}
+		}
 
-    .endBtn {
-      border-radius: 0 7px 7px 0;
-    }
+		.firstBtn {
+			border-left: 1px solid #e5e5e5;
+			border-radius: 7px 0 0 7px;
+		}
 
-    .filterBtn.active {
-      background-color: #8a3ffc;
-      color: #fff;
-      border: 1px solid #8a3ffc;
-    }
+		.endBtn {
+			border-radius: 0 7px 7px 0;
+		}
 
-    .selectBox {
-      display: none;
-    }
-  }
+		.filterBtn.active {
+			background-color: #8a3ffc;
+			color: #fff;
+			border: 1px solid #8a3ffc;
+		}
 
-  @media (max-width: 1300px) {
-    .topBox {
-      margin-bottom: 0;
-    }
+		.selectBox {
+			display: none;
+		}
+	}
 
-    .content {
-      display: flex !important;
-      flex-direction: column !important;
+	@media (max-width: 1300px) {
+		.topBox {
+			margin-bottom: 0;
+		}
 
-      .infoBox {
-        width: 100%;
-        height: auto !important;
-        margin-bottom: 20px;
-        box-shadow: none !important;
-        flex-wrap: wrap !important;
+		.content {
+			display: flex !important;
+			flex-direction: column !important;
 
-        .AllPrices {
-          width: 100%;
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-between;
-          flex-direction: row !important;
-          gap: 20px;
-        }
-      }
+			.infoBox {
+				width: 100%;
+				height: auto !important;
+				margin-bottom: 20px;
+				box-shadow: none !important;
+				flex-wrap: wrap !important;
 
-      .chartBox {
-        overflow: hidden;
-        max-width: none;
-      }
-    }
-  }
+				.AllPrices {
+					width: 100%;
+					display: flex;
+					flex-wrap: wrap;
+					justify-content: space-between;
+					flex-direction: row !important;
+					gap: 20px;
+				}
+			}
 
-  @media (max-width: 992px) {
-    .filterBtnBox {
-      .filterBtn {
-        padding: 10px 15px;
-      }
-    }
-  }
+			.chartBox {
+				overflow: hidden;
+				max-width: none;
+			}
+		}
+	}
 
-  @media (max-width: 768px) {
-    .topBox {
-      display: flex;
-      flex-wrap: wrap;
-      margin-bottom: 10px;
-    }
-  }
+	@media (max-width: 992px) {
+		.filterBtnBox {
+			.filterBtn {
+				padding: 10px 15px;
+			}
+		}
+	}
 
-  @media (max-width: 576px) {
-    .topBox {
-      flex-direction: column;
-      justify-content: start;
-      align-items: start;
-      gap: 10px;
-      margin-bottom: 0;
+	@media (max-width: 768px) {
+		.topBox {
+			display: flex;
+			flex-wrap: wrap;
+			margin-bottom: 10px;
+		}
+	}
 
-      .filterBtnBox {
-        flex-direction: column;
-        .btnsBox {
-          display: none;
-        }
+	@media (max-width: 576px) {
+		.topBox {
+			flex-direction: column;
+			justify-content: start;
+			align-items: start;
+			gap: 10px;
+			margin-bottom: 0;
 
-        .selectBox {
-          display: flex;
-          #demo-simple-select {
-            width: 115px;
-            padding: 0 !important;
-            padding-right: 32px !important;
-          }
-        }
-      }
-    }
+			.filterBtnBox {
+				flex-direction: column;
+				.btnsBox {
+					display: none;
+				}
 
-    .content {
-      .infoBox {
-        div {
-          padding-left: 0;
-        }
-      }
-    }
-  }
+				.selectBox {
+					display: flex;
+					#demo-simple-select {
+						width: 115px;
+						padding: 0 !important;
+						padding-right: 32px !important;
+					}
+				}
+			}
+		}
+
+		.content {
+			.infoBox {
+				div {
+					padding-left: 0;
+				}
+			}
+		}
+	}
+>>>>>>> a1cbc14a677dcf467d77c085fdc417ced20f6e78
 `;
