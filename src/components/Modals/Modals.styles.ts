@@ -278,4 +278,10 @@ export const AdvertisingNowContainer = styled.div`
     width: 900px;
     height: 500px;
   }
+=======
+import styled from 'styled-components';
+import { COLORS, addAlpha } from '../../constants/color';
+import { FONTS, RESPONSIVE } from '../../constants/constants';
+
+
 `;

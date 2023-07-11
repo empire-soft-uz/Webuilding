@@ -40,5 +40,4 @@ export const ModalsProvider: FC<ModalsProviderType> = ({ children }) => {
     </ModalsContext.Provider>
   );
 };
-
 export const useAppModals = () => useContext(ModalsContext);

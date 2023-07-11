@@ -232,9 +232,10 @@ const Container = styled.div`
 			.chartBox {
 				overflow: hidden;
 				max-width: none;
-			}
-		}
-	}
+
+
+
+
 
 	@media (max-width: 992px) {
 		.filterBtnBox {
@@ -277,13 +278,6 @@ const Container = styled.div`
 			}
 		}
 
-		.content {
-			.infoBox {
-				div {
-					padding-left: 0;
-				}
-			}
-		}
-	}
->>>>>>> a1cbc14a677dcf467d77c085fdc417ced20f6e78
+
+
 `;
