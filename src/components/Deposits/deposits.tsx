@@ -75,6 +75,9 @@ const Deposits = () => {
               />
             </div>
           </div>
+          {/* <div>
+                        <BateryIcon />
+                    </div> */}
         </div>
       </div>
       <div className={`${styles.featureBox}`}>

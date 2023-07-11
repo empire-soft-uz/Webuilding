@@ -20,7 +20,7 @@ const Invest = () => {
             textSize={"sixteen"}
             textColor={"black"}
             cursor={"Cursor"}
-            text="ModalsProviderTypeitsion jozibadorlik"
+            text="Investitsion jozibadorlik"
           />
         </div>
         <div className="filterBtnBox">
@@ -58,7 +58,7 @@ const Invest = () => {
           </div>
         </div>
       </div>
-      <div className={`content`}>
+      <div className={`${styles.content} content`}>
         <div className={`${styles.infoBox} infoBox`}>
           <div className={styles.info}>
             <Item
@@ -120,164 +120,120 @@ const Invest = () => {
             </div>
           </div>
         </div>
-        <div className={`${styles.chartBox} chartBox`}>
-          <Chart />
-        </div>
+        {/* <div className={`${styles.chartBox} chartBox`}>
+                    <Chart />
+                </div> */}
       </div>
     </Container>
   );
 };
 
+export default Invest;
+
 const Container = styled.div`
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 30px;
 
-	position: relative;
-	padding-top: 30px;
-	padding-bottom: 30px;
+  .content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 0.4fr 1fr;
+    gap: 15px;
 
-	.content {
-		width: 100%;
-		display: grid;
-		grid-template-columns: 0.4fr 1fr;
-		gap: 15px;
+    .infoBox {
+      margin-top: 0;
 
-		.infoBox {
-			margin-top: 0;
+      .AllPrices {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
 
-			.AllPrices {
-				display: flex;
-				flex-direction: column;
-				gap: 20px;
-			}
-		}
+    .chartBox {
+      /* max-width: 60vw; */
+      /* flex: 1; */
+    }
+  }
 
-		.chartBox {
-			/* max-width: 60vw; */
-			/* flex: 1; */
-		}
-	}
+  .topBox {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
 
-	.topBox {
-		margin-bottom: 30px;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		flex-wrap: wrap;
-		gap: 20px;
-	}
+  .filterBtnBox {
+    display: flex;
 
-	.filterBtnBox {
-		display: flex;
+    .filterBtn {
+      padding: 10px 20px;
+      border: 1px solid #e5e5e5;
+      border-left: none;
+      background-color: #fff;
+      color: #000;
+      font-size: 12px;
+      font-weight: 500;
 
-		.filterBtn {
-			padding: 10px 20px;
-			border: 1px solid #e5e5e5;
-			border-left: none;
-			background-color: #fff;
-			color: #000;
-			font-size: 12px;
-			font-weight: 500;
+      &:hover {
+        background-color: "#fff";
+        border: 1px solid #8a3ffc;
+      }
+    }
 
-			&:hover {
-				background-color: '#fff';
-				border: 1px solid #8a3ffc;
-			}
-		}
+    .firstBtn {
+      border-left: 1px solid #e5e5e5;
+      border-radius: 7px 0 0 7px;
+    }
 
-		.firstBtn {
-			border-left: 1px solid #e5e5e5;
-			border-radius: 7px 0 0 7px;
-		}
+    .endBtn {
+      border-radius: 0 7px 7px 0;
+    }
 
-		.endBtn {
-			border-radius: 0 7px 7px 0;
-		}
+    .filterBtn.active {
+      background-color: #8a3ffc;
+      color: #fff;
+      border: 1px solid #8a3ffc;
+    }
 
-		.filterBtn.active {
-			background-color: #8a3ffc;
-			color: #fff;
-			border: 1px solid #8a3ffc;
-		}
+    .selectBox {
+      display: none;
+    }
+  }
 
-		.selectBox {
-			display: none;
-		}
-	}
+  @media (max-width: 1300px) {
+    .topBox {
+      margin-bottom: 0;
+    }
 
-	@media (max-width: 1300px) {
-		.topBox {
-			margin-bottom: 0;
-		}
+    .content {
+      display: flex !important;
+      flex-direction: column !important;
 
-		.content {
-			display: flex !important;
-			flex-direction: column !important;
+      .infoBox {
+        width: 100%;
+        height: auto !important;
+        margin-bottom: 20px;
+        box-shadow: none !important;
+        flex-wrap: wrap !important;
 
-			.infoBox {
-				width: 100%;
-				height: auto !important;
-				margin-bottom: 20px;
-				box-shadow: none !important;
-				flex-wrap: wrap !important;
+        .AllPrices {
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          flex-direction: row !important;
+          gap: 20px;
+        }
+      }
 
-				.AllPrices {
-					width: 100%;
-					display: flex;
-					flex-wrap: wrap;
-					justify-content: space-between;
-					flex-direction: row !important;
-					gap: 20px;
-				}
-			}
-
-			.chartBox {
-				overflow: hidden;
-				max-width: none;
-
-
-
-
-
-	@media (max-width: 992px) {
-		.filterBtnBox {
-			.filterBtn {
-				padding: 10px 15px;
-			}
-		}
-	}
-
-	@media (max-width: 768px) {
-		.topBox {
-			display: flex;
-			flex-wrap: wrap;
-			margin-bottom: 10px;
-		}
-	}
-
-	@media (max-width: 576px) {
-		.topBox {
-			flex-direction: column;
-			justify-content: start;
-			align-items: start;
-			gap: 10px;
-			margin-bottom: 0;
-
-			.filterBtnBox {
-				flex-direction: column;
-				.btnsBox {
-					display: none;
-				}
-
-				.selectBox {
-					display: flex;
-					#demo-simple-select {
-						width: 115px;
-						padding: 0 !important;
-						padding-right: 32px !important;
-					}
-				}
-			}
-		}
-
-
-
+      .chartBox {
+        overflow: hidden;
+        max-width: none;
+      }
+    }
+  }
 `;

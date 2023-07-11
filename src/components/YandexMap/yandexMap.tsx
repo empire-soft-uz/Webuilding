@@ -6,6 +6,7 @@ import { COLORS } from "../../constants/color";
 import { LocateIcon } from "../../assets/icons";
 import { useNavigate } from "react-router-dom";
 import { APP_ROUTES } from "../../routes/app-router";
+import useRootStore from "../../Hooks/useRootStore";
 
 type propsType = {
   data: any;
