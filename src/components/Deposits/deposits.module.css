@@ -1,62 +1,63 @@
 .container {
-    background-color: #fff;
-    width: 100%;
-    border-radius: 10px;
+  background-color: #fff;
+  width: 100%;
+  border-radius: 10px;
+  margin: 10px 0;
 }
 
 .topBox {
-    padding: 20px 0 0 20px;
+  padding: 20px 0 0 20px;
 }
 
 .depositItemBox {
-    width: 100%;
-    padding: 10px 20px;
-    border-bottom: 1px solid #EEF3F9;
+  width: 100%;
+  padding: 10px 20px;
+  border-bottom: 1px solid #eef3f9;
 }
 
 .boxBottom {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
 }
 
 .featureBox {
-    border-bottom: 1px solid #EEF3F9;
-    padding: 10px 0;
+  border-bottom: 1px solid #eef3f9;
+  padding: 10px 0;
 }
 
 .features {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1.7fr;
-    gap: 10px 0;
-    padding: 5px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1.7fr;
+  gap: 10px 0;
+  padding: 5px 20px;
 }
 
 .more {
-    padding: 5px 20px 20px 20px;
+  padding: 5px 20px 20px 20px;
 }
 
 .priceBox {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 10px 0;
-    height: 45px;
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  height: 45px;
+  width: 100%;
 }
 
 .price {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .btnBox {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 }
 
 .bottom {
-    width: 220px;
+  width: 220px;
 }

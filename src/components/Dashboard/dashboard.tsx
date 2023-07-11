@@ -1,21 +1,13 @@
 import { useCallback, useEffect, useState } from "react";
-import {
-  CloseIcon,
-  LocationIcon,
-  LogoIcon,
-  MenuIcon,
-  MobileIcon,
-} from "../../assets/icons";
+import { useLocation, useNavigate } from "react-router-dom";
+import { CloseIcon, LogoIcon, MenuIcon, MobileIcon } from "../../assets/icons";
 import { CategoryData } from "../../constants/categoryData";
 import { COLORS } from "../../constants/color";
+import { APP_ROUTES } from "../../routes/app-router";
 import BottomLine from "../BottomLine/bottomLine";
-import Button from "../Button/button";
+import Dot from "../Dot/dot";
 import Text from "../Text/text";
 import styles from "./dashboard.module.css";
-import { useNavigate } from "react-router-dom";
-import { APP_ROUTES } from "../../routes/app-router";
-import Dot from "../Dot/dot";
-import { useLocation } from "react-router-dom";
 
 const Dashboard = () => {
   const [active, setActive] = useState(1);
@@ -36,6 +28,19 @@ const Dashboard = () => {
     },
     [navigate]
   );
+  // const [show, setShow] = useState<any>("");
+
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll);
+  // }, [window.addEventListener]);
+
+  // const handleScroll = (event: any) => {
+  //   let scrollTop = event.srcElement.body.scrollTop,
+  //     itemTranslate = Math.min(0, scrollTop / 3 - 60);
+
+  //   setShow(itemTranslate);
+  // };
+  // console.log("show", show);
 
   return (
     <>
@@ -63,6 +68,7 @@ const Dashboard = () => {
           <MobileIcon />
         </a>
       </div>
+
       <div className={styles.container}>
         <div className={styles.topBox}>
           <div
@@ -72,18 +78,7 @@ const Dashboard = () => {
             <LogoIcon />
             <h2 className={styles.logoTitle}>Webuilding</h2>
           </div>
-          {/* <div className={styles.btnLocation}>
-            <Button
-              textSize={"fourteen"}
-              btnSize={"avarage"}
-              btnColor={"outline"}
-              textColor={"textPurple"}
-              borderRadius={"thirty"}
-              title={"Tashkent ..."}
-              style={{ width: "170px" }}
-              iconUrl={<LocationIcon />}
-            />
-          </div> */}
+
           <div className={styles.categoryBox}>
             {CategoryData.map((e, index) => {
               return (
