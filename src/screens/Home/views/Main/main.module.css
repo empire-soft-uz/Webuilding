@@ -5,6 +5,11 @@
   width: 100%;
 }
 
+.padding {
+  width: 100%;
+  padding: 0 3vw;
+}
+
 .banner {
   padding: 5vh 0 0 0;
 }
@@ -37,6 +42,10 @@
   .container {
     padding: 0 5vw;
     padding-top: 30px;
+  }
+  .padding {
+    width: 100%;
+    padding: 0 5vw;
   }
   .banner {
     padding: 5vh 0 0 0;
@@ -89,13 +98,17 @@
     width: 100%;
   }
 
+  .padding {
+    width: 100%;
+    padding: 0 3vw;
+  }
+
   .banner {
     padding: 5vh 0 2vh 0;
   }
 
   .productBox {
     display: flex;
-    gap: 3.5%;
     flex-wrap: wrap;
     margin: 20px 0;
     justify-content: flex-start;

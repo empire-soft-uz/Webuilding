@@ -15,6 +15,8 @@ import { ProductData } from "../../../../constants/productData";
 import { APP_ROUTES } from "../../../../routes/app-router";
 import styles from "./main.module.css";
 import Footer from "../../../../components/Footer/footer";
+import styled from "styled-components";
+import { useRef } from "react";
 
 const Main = () => {
   const { toggle } = useRootStore().visibleStore;
@@ -47,7 +49,16 @@ const Main = () => {
             <ViewMap />
           </div>
         </div>
-        <ProductListOfMain />
+        <AdsContainerForProducts>
+          <ProductListOfMain classname="productList" />
+          <div className="rightAdsBox">
+            <img
+              src="https://domtut.uz/resources/uploads/property/ipak-yoli/main_1.jpg?r=1682593805"
+              alt=""
+              style={{ width: "100%", height: "100%" }}
+            />
+          </div>
+        </AdsContainerForProducts>
         <div className={styles.aboveBox}>
           <Button
             textSize={"fourteen"}
@@ -70,10 +81,10 @@ const Main = () => {
   );
 };
 
-export const ProductListOfMain = () => {
+export const ProductListOfMain = ({ classname }: { classname?: string }) => {
   const navigation = useNavigate();
   return (
-    <div className={styles.productBox}>
+    <div className={`${styles.productBox} ${classname}`}>
       {ProductData.map((e, index) => {
         return (
           <ProductItem
@@ -104,3 +115,41 @@ export const ProductListOfMain = () => {
 };
 
 export default observer(Main);
+
+const AdsContainerForProducts = styled.div`
+  justify-content: space-around;
+  gap: 30px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 250px;
+  grid-template-areas: "productList rightAdsBox";
+
+  .productList {
+    grid-area: productList;
+  }
+
+  .rightAdsBox {
+    grid-area: rightAdsBox;
+    width: 250px;
+    height: 500px;
+    background-color: red;
+    position: sticky;
+    top: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 960px) {
+    grid-template-columns: 1fr;
+    grid-template-areas: "rightAdsBox" "productList";
+
+    .rightAdsBox {
+      width: 100%;
+      height: 250px;
+      position: relative;
+      top: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+`;
