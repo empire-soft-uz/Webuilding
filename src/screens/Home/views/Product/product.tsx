@@ -13,6 +13,7 @@ import Procedure from "../../../../components/Procedure/procedure";
 import ProcessBuilding from "../../../../components/ProcessBuilding/processBuilding";
 import ProductBanner from "./components/ProductBanner";
 import styles from "./product.module.css";
+import Invest from "../../../../components/Invest/invest";
 
 const ProductPage = () => {
   return (
@@ -25,10 +26,10 @@ const ProductPage = () => {
           <CommentBox />
           <Infrastructure />
           <Procedure />
-          {/* <Invest /> */}
+          <Invest />
           <MainAdventages />
           <AboutProducer />
-          {/* <ProcessBuilding /> */}
+          <ProcessBuilding />
           <Documents />
           <PlaceComment />
         </div>

@@ -15,6 +15,7 @@ import {
 import CallMeLaterModal from "./CallMeLaterModal";
 import ICallYouNowModal from "./ICallYouNowModal";
 import Advertising from "./advertising";
+import CartFilterModal from "./cartFilterModal";
 
 const ModalsContext = createContext<ModalsContextType | null>(null);
 
@@ -36,6 +37,7 @@ export const ModalsProvider: FC<ModalsProviderType> = ({ children }) => {
       <CallMeLaterModal />
       <ICallYouNowModal />
       <Advertising />
+      <CartFilterModal />
       {children}
     </ModalsContext.Provider>
   );

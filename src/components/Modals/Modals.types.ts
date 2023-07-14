@@ -2,7 +2,8 @@ export type MVisibleType =
   | "none"
   | "i_call_you_now"
   | "call_me_later"
-  | "advertising";
+  | "advertising"
+  | "cartfilter";
 
 export type ModalsState = {
   type: MVisibleType;

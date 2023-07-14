@@ -12,7 +12,7 @@ import styles from "./dashboard.module.css";
 const Dashboard = () => {
   const [active, setActive] = useState(1);
   const [isClose, setIsClose] = useState(false);
-  const location = useLocation();
+
   const navigate = useNavigate();
 
   const Category = (item: any) => {
@@ -28,22 +28,9 @@ const Dashboard = () => {
     },
     [navigate]
   );
-  // const [show, setShow] = useState<any>("");
-
-  // useEffect(() => {
-  //   window.addEventListener("scroll", handleScroll);
-  // }, [window.addEventListener]);
-
-  // const handleScroll = (event: any) => {
-  //   let scrollTop = event.srcElement.body.scrollTop,
-  //     itemTranslate = Math.min(0, scrollTop / 3 - 60);
-
-  //   setShow(itemTranslate);
-  // };
-  // console.log("show", show);
 
   return (
-    <>
+    <div style={{ position: "sticky", top: "0px", zIndex: 15 }}>
       <div className={styles.closeHeader}>
         <div className={styles.closeBox} onClick={() => Dashboard2()}>
           {isClose ? <CloseIcon /> : <MenuIcon />}
@@ -170,7 +157,7 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

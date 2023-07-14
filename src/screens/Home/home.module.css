@@ -1,31 +1,30 @@
 .container {
-  height: 100%;
   background-color: #eff3f9;
   box-sizing: border-box;
+  height: 100vh;
+  overflow: auto;
 }
 
-.dashboard {
-  width: 100vw;
+.reaclamabox {
+  width: 100%;
 }
 .footer {
   width: 100vw;
 }
-
-.rightContainer {
-  width: 100vw;
-  height: 100vh;
+.topAdvertising {
+  position: relative;
+  width: 100%;
+  height: 30vh;
+  z-index: 40;
+  display: flex;
+  justify-content: center;
 }
-
-@media (min-width: 120px) {
-  .rightContainer {
-    width: 100vw;
-    padding-top: 90px;
-  }
+.topImage {
+  height: 100%;
 }
 
 @media (min-width: 1200px) {
   .rightContainer {
     width: 100vw;
-    padding-top: 90px;
   }
 }

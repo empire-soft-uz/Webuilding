@@ -274,8 +274,93 @@ export const AdvertisingNowContainer = styled.div`
     right: 0;
     bottom: 0;
   }
+  .imageBox {
+    position: relative;
+    @media (min-width: ${RESPONSIVE.minPhone}) {
+      width: 90%;
+      height: 300px;
+    }
+    @media (min-width: ${RESPONSIVE.phone}) {
+      width: 90%;
+      height: 500px;
+    }
+    @media (min-width: ${RESPONSIVE.largeDevice}) {
+      width: 900px;
+      height: 500px;
+    }
+  }
   .image {
-    width: 900px;
-    height: 500px;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+  }
+  .closeBtn {
+    position: absolute;
+    top: -25px;
+    right: -15px;
+    z-index: 1000;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+  }
+`;
+
+export const CartFilterNowContainer = styled.div`
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: ${addAlpha(COLORS.black, 0.5)};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.4s ease;
+
+  &.active {
+    z-index: 999;
+    opacity: 1;
+  }
+
+  &.none {
+    z-index: -999;
+    opacity: 0;
+  }
+
+  .cancel_window {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .filterBox {
+    position: relative;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    overflow-y: auto;
+    padding: 30px;
+    @media (min-width: ${RESPONSIVE.minPhone}) {
+      max-width: 420px;
+    }
+    @media (min-width: ${RESPONSIVE.phone}) {
+      max-width: 420px;
+    }
+    @media (min-width: ${RESPONSIVE.largeDevice}) {
+      max-width: 420px;
+    }
+  }
+  .topBox {
+    position: relative;
+  }
+  .bottomBox {
+    border: 1px solid red;
+  }
+  .filterPrimary {
+    margin: 0;
+    margin-bottom: 1.5rem;
   }
 `;
