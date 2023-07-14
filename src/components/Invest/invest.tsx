@@ -120,9 +120,9 @@ const Invest = () => {
             </div>
           </div>
         </div>
-        {/* <div className={`${styles.chartBox} chartBox`}>
-                    <Chart />
-                </div> */}
+        <div className={styles.chartBox}>
+          <Chart />
+        </div>
       </div>
     </Container>
   );

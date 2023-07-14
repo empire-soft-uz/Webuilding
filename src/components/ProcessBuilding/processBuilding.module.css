@@ -4,28 +4,28 @@
   border-radius: 10px;
   position: relative;
   display: flex;
-  flex-direction: row;
   overflow-x: auto;
   overflow-y: hidden;
-  padding: 20px 0;
+  padding: 20px;
 }
 .box_container {
   background-color: #fff;
   display: flex;
-  justify-content: space-between;
   width: 100%;
 }
-
-.contianer::-webkit-scrollbar {
-  display: none;
+.leftBox {
+  width: 50%;
+  height: 100%;
+  position: relative;
+  margin-right: 20px;
 }
-
+.rightBox {
+  width: 50%;
+  height: 100%;
+  position: relative;
+  margin-left: 20px;
+}
 .header1 {
-  display: flex;
-  justify-content: space-between;
-}
-
-.heade2 {
   display: flex;
   justify-content: space-between;
 }
@@ -37,6 +37,7 @@
 
 .caruselBox {
   height: 100%;
+  position: relative;
 }
 
 .mainImage {
@@ -94,7 +95,7 @@
 }
 
 .mainVideo {
-  width: 95%;
+  width: 100%;
   height: 100%;
   position: absolute;
   border-radius: 10px;
@@ -102,7 +103,7 @@
 
 .playBox {
   position: absolute;
-  width: 95%;
+  width: 100%;
   height: 100%;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
   border-radius: 10px;
@@ -125,11 +126,19 @@
   .header1 {
     width: 85vw;
   }
-  .heade2 {
-    width: 85vw;
-  }
+
   .videoBox {
     width: 85vw;
+  }
+  .leftBox {
+    margin: 0;
+  }
+  .rightBox {
+    margin: 0;
+  }
+  .box_container {
+    display: flex;
+    flex-direction: column;
   }
 }
 @media (min-width: 767px) {
@@ -139,11 +148,19 @@
   .header1 {
     width: 100%;
   }
-  .heade2 {
-    width: 690px;
-  }
+
   .videoBox {
-    width: 50%;
+    width: 100%;
+  }
+  .box_container {
+    display: flex;
+    flex-direction: row;
+  }
+  .leftBox {
+    margin-right: 20px;
+  }
+  .rightBox {
+    margin-left: 20px;
   }
 }
 @media (min-width: 1200px) {
@@ -153,10 +170,33 @@
   .header1 {
     width: 100%;
   }
-  .heade2 {
-    width: 690px;
+
+  .videoBox {
+    width: 100%;
+  }
+  .box_container {
+    display: flex;
+    flex-direction: row;
+  }
+}
+@media (min-width: 1800px) {
+  .caruselBox {
+    width: 680px;
+  }
+  .header1 {
+    width: 100%;
   }
   .videoBox {
-    width: 690px;
+    width: 680px;
+  }
+  .box_container {
+    display: flex;
+    flex-direction: row;
+  }
+  .leftBox {
+    width: 680px;
+  }
+  .rightBox {
+    width: 680px;
   }
 }

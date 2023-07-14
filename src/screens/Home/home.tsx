@@ -1,12 +1,11 @@
 import { useEffect } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Dashboard from "../../components/Dashboard/dashboard";
-// import Header from '../../components/Header/header';
 import { observer } from "mobx-react";
 import FilterModal from "../../components/FilterModal/filterModal";
+import { useAppModals } from "../../components/Modals";
 import { APP_ROUTES } from "../../routes/app-router";
 import styles from "./home.module.css";
-import { useAppModals } from "../../components/Modals";
 
 const HomeView = () => {
   const { pathname } = useLocation();
@@ -27,12 +26,15 @@ const HomeView = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.dashboard}>
-        <Dashboard />
+      <div className={styles.topAdvertising}>
+        <img
+          className={styles.topImage}
+          src="https://yangiuylar.uz/wp-content/uploads/2022/07/kislorod32.jpg?v=1659158295"
+          alt=""
+        />
       </div>
-      <div className={styles.rightContainer}>
-        <Outlet />
-      </div>
+      <Dashboard />
+      <Outlet />
       <FilterModal />
     </div>
   );
