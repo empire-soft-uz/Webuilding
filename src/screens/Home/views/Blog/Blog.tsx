@@ -20,6 +20,8 @@ export const mocData = [
 		owner: 'Мэтью Тибо',
 		img: 'https://www.constructiondive.com/imgproxy/o_Eei0TyVOEeh5gaPp7hhP3rott1bFcjPiSwFslGOP4/g:ce/rs:fill:1200:675:1/bG9jYWw6Ly8vZGl2ZWltYWdlL0hvbWVfTG9jYXRpb25fQm9zdG9uLmpwZw.jpg',
 		createAt: new Date('July 12, 2023').toString(),
+		userImg:
+			'https://d1b6lhn2ymmy1x.cloudfront.net/journalist-headshots/thibault-matthew-square-600x600.jpg',
 	},
 	{
 		id: '2',
@@ -29,6 +31,8 @@ export const mocData = [
 		owner: 'Дженнифер Гудман',
 		img: 'https://www.constructiondive.com/imgproxy/GsZ5_D4Zjz41IwlDub3mrKpvMHBFr1ROG8T3kEsFsY8/g:ce/rs:fill:1200:675:1/bG9jYWw6Ly8vZGl2ZWltYWdlL3BvbG9uaV9oZWFkZXIucG5n.jpg',
 		createAt: new Date('July 12, 2023').toString(),
+		userImg:
+			'https://d1b6lhn2ymmy1x.cloudfront.net/journalist-headshots/construction/goodman-jenn-square-600x600.jpg',
 	},
 	{
 		id: '3',
@@ -38,6 +42,8 @@ export const mocData = [
 		owner: 'Дженнифер Гудман',
 		img: 'https://www.constructiondive.com/imgproxy/BwTc0Nuqtzu86IW1tz-UQrBsbXQjvt0zM25X5bmgMNo/g:ce/rs:fill:1200:675:1/bG9jYWw6Ly8vZGl2ZWltYWdlL0dldHR5SW1hZ2VzLTE3MDk2MTg4Mi5qcGc.jpg',
 		createAt: new Date('July 11, 2023').toString(),
+		userImg:
+			'https://d1b6lhn2ymmy1x.cloudfront.net/journalist-headshots/thibault-matthew-square-600x600.jpg',
 	},
 	{
 		id: '4',
@@ -47,6 +53,8 @@ export const mocData = [
 		owner: 'Мэтью Тибо',
 		img: 'https://www.constructiondive.com/imgproxy/YxROujSskSZb145ZQ9c_pBlQDBCrmoVs2ImSQopQcOM/g:ce/rs:fill:1200:675:1/bG9jYWw6Ly8vZGl2ZWltYWdlL0JlY2h0ZWwuanBlZw.jpg',
 		createAt: new Date('July 10, 2023').toString(),
+		userImg:
+			'https://d1b6lhn2ymmy1x.cloudfront.net/journalist-headshots/thibault-matthew-square-600x600.jpg',
 	},
 ];
 
