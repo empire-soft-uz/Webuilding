@@ -6,7 +6,7 @@ interface Props {
   className?: string;
 }
 
-export const HeartWithCircle: React.FC<Props> = ({}) => {
+export const HeartWithCircle: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="24"
@@ -72,7 +72,7 @@ export const CameraIcon: React.FC<Props> = ({ color }) => {
     </svg>
   );
 };
-export const FinishOneIcon: React.FC<Props> = ({}) => {
+export const FinishOneIcon: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="14"
@@ -111,7 +111,7 @@ export const ArrowLeftIcon: React.FC<Props> = ({ color }) => {
   );
 };
 
-export const MapIcon: React.FC<Props> = ({}) => {
+export const MapIcon: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="20"
@@ -145,7 +145,7 @@ export const MapIcon: React.FC<Props> = ({}) => {
   );
 };
 
-export const PhoneIcon: React.FC<Props> = ({}) => {
+export const PhoneIcon: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="19"
@@ -165,7 +165,7 @@ export const PhoneIcon: React.FC<Props> = ({}) => {
   );
 };
 
-export const PluseIcon: React.FC<Props> = ({}) => {
+export const PluseIcon: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="24"
@@ -199,7 +199,7 @@ export const PluseIcon: React.FC<Props> = ({}) => {
   );
 };
 
-export const SolarIcon: React.FC<Props> = ({}) => {
+export const SolarIcon: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="20"
@@ -217,7 +217,7 @@ export const SolarIcon: React.FC<Props> = ({}) => {
     </svg>
   );
 };
-export const CatalogIcon: React.FC<Props> = ({}) => {
+export const CatalogIcon: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="20"
@@ -231,7 +231,7 @@ export const CatalogIcon: React.FC<Props> = ({}) => {
     </svg>
   );
 };
-export const BellIcon: React.FC<Props> = ({}) => {
+export const BellIcon: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="24"
@@ -272,7 +272,7 @@ export const LineIcon: React.FC<Props> = ({ color }) => {
   );
 };
 
-export const TableIcon: React.FC<Props> = ({}) => {
+export const TableIcon: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="23"
@@ -311,7 +311,7 @@ export const TableIcon: React.FC<Props> = ({}) => {
   );
 };
 
-export const AreaIcon: React.FC<Props> = ({}) => {
+export const AreaIcon: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="36"
@@ -357,7 +357,7 @@ export const AreaIcon: React.FC<Props> = ({}) => {
     </svg>
   );
 };
-export const BuildingIcon: React.FC<Props> = ({}) => {
+export const BuildingIcon: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="36"
@@ -408,7 +408,7 @@ export const BuildingIcon: React.FC<Props> = ({}) => {
     </svg>
   );
 };
-export const BateryIcon: React.FC<Props> = ({}) => {
+export const BateryIcon: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="48"
@@ -424,7 +424,7 @@ export const BateryIcon: React.FC<Props> = ({}) => {
     </svg>
   );
 };
-export const RoundHeartIcon: React.FC<Props> = ({}) => {
+export const RoundHeartIcon: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="49"
@@ -447,7 +447,7 @@ export const RoundHeartIcon: React.FC<Props> = ({}) => {
     </svg>
   );
 };
-export const Organizator: React.FC<Props> = ({}) => {
+export const Organizator: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="39"
@@ -547,7 +547,7 @@ export const Organizator: React.FC<Props> = ({}) => {
     </svg>
   );
 };
-export const CalendarIcon: React.FC<Props> = ({}) => {
+export const CalendarIcon: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="36"
@@ -577,7 +577,7 @@ export const CalendarIcon: React.FC<Props> = ({}) => {
     </svg>
   );
 };
-export const ShiftIcon: React.FC<Props> = ({}) => {
+export const ShiftIcon: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="30"
@@ -607,7 +607,7 @@ export const ShiftIcon: React.FC<Props> = ({}) => {
     </svg>
   );
 };
-export const HomeTypeIcon: React.FC<Props> = ({}) => {
+export const HomeTypeIcon: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="30"
@@ -637,7 +637,7 @@ export const HomeTypeIcon: React.FC<Props> = ({}) => {
     </svg>
   );
 };
-export const FloorNumberIcon: React.FC<Props> = ({}) => {
+export const FloorNumberIcon: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="24"
@@ -692,7 +692,7 @@ export const ArrowBlackIcon: React.FC<Props> = (props) => {
   );
 };
 
-export const HomeIcon: React.FC<Props> = ({}) => {
+export const HomeIcon: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="36"
@@ -722,7 +722,7 @@ export const HomeIcon: React.FC<Props> = ({}) => {
     </svg>
   );
 };
-export const FinishIcon: React.FC<Props> = ({}) => {
+export const FinishIcon: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="30"
@@ -752,7 +752,7 @@ export const FinishIcon: React.FC<Props> = ({}) => {
     </svg>
   );
 };
-export const FinishPurpeIcon: React.FC<Props> = ({}) => {
+export const FinishPurpeIcon: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="19"
@@ -768,7 +768,7 @@ export const FinishPurpeIcon: React.FC<Props> = ({}) => {
     </svg>
   );
 };
-export const LocationIcon: React.FC<Props> = ({}) => {
+export const LocationIcon: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="13"
@@ -784,7 +784,7 @@ export const LocationIcon: React.FC<Props> = ({}) => {
     </svg>
   );
 };
-export const CategoryIcon: React.FC<Props> = ({}) => {
+export const CategoryIcon: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="21"
@@ -822,7 +822,7 @@ export const CategoryIcon: React.FC<Props> = ({}) => {
     </svg>
   );
 };
-export const CarIcon: React.FC<Props> = ({}) => {
+export const CarIcon: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="18"
@@ -878,7 +878,7 @@ export const ArrowRightIcon: React.FC<Props> = () => {
     </svg>
   );
 };
-export const PersonIcon: React.FC<Props> = ({}) => {
+export const PersonIcon: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="12"
@@ -898,7 +898,7 @@ export const PersonIcon: React.FC<Props> = ({}) => {
     </svg>
   );
 };
-export const LogoIcon: React.FC<Props> = ({}) => {
+export const LogoIcon: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="156"
@@ -931,7 +931,7 @@ export const LogoIcon: React.FC<Props> = ({}) => {
     </svg>
   );
 };
-export const BabyFaceIcon: React.FC<Props> = ({}) => {
+export const BabyFaceIcon: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="25"
@@ -961,7 +961,7 @@ export const BabyFaceIcon: React.FC<Props> = ({}) => {
     </svg>
   );
 };
-export const CyclingIcon: React.FC<Props> = ({}) => {
+export const CyclingIcon: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="25"
@@ -992,7 +992,7 @@ export const CyclingIcon: React.FC<Props> = ({}) => {
   );
 };
 
-export const LikeIcon: React.FC<Props> = ({}) => {
+export const LikeIcon: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="40"
@@ -1016,7 +1016,7 @@ export const LikeIcon: React.FC<Props> = ({}) => {
   );
 };
 
-export const HolidayIcon: React.FC<Props> = ({}) => {
+export const HolidayIcon: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="24"
@@ -1047,7 +1047,7 @@ export const HolidayIcon: React.FC<Props> = ({}) => {
   );
 };
 
-export const ProtectIcon: React.FC<Props> = ({}) => {
+export const ProtectIcon: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="24"
@@ -1078,7 +1078,7 @@ export const ProtectIcon: React.FC<Props> = ({}) => {
   );
 };
 
-export const SchoolBuildingIcon: React.FC<Props> = ({}) => {
+export const SchoolBuildingIcon: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="24"
@@ -1108,7 +1108,7 @@ export const SchoolBuildingIcon: React.FC<Props> = ({}) => {
     </svg>
   );
 };
-export const SoccerBallIcon: React.FC<Props> = ({}) => {
+export const SoccerBallIcon: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="25"
@@ -1139,7 +1139,7 @@ export const SoccerBallIcon: React.FC<Props> = ({}) => {
   );
 };
 
-export const StethoscopeIcon: React.FC<Props> = ({}) => {
+export const StethoscopeIcon: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="25"
@@ -1169,7 +1169,7 @@ export const StethoscopeIcon: React.FC<Props> = ({}) => {
     </svg>
   );
 };
-export const LocationTwoIcon: React.FC<Props> = ({}) => {
+export const LocationTwoIcon: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="20"
@@ -1187,7 +1187,7 @@ export const LocationTwoIcon: React.FC<Props> = ({}) => {
     </svg>
   );
 };
-export const LocateIcon: React.FC<Props> = ({}) => {
+export const LocateIcon: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="13"
@@ -1206,7 +1206,7 @@ export const LocateIcon: React.FC<Props> = ({}) => {
     </svg>
   );
 };
-export const GreenDownIcon: React.FC<Props> = ({}) => {
+export const GreenDownIcon: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="9"
@@ -1223,7 +1223,7 @@ export const GreenDownIcon: React.FC<Props> = ({}) => {
   );
 };
 
-export const FileIcon: React.FC<Props> = ({}) => {
+export const FileIcon: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="20"
@@ -1242,7 +1242,7 @@ export const FileIcon: React.FC<Props> = ({}) => {
     </svg>
   );
 };
-export const ArrowUpIcon: React.FC<Props> = ({}) => {
+export const ArrowUpIcon: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="13"
@@ -1290,7 +1290,7 @@ export const CloseIcon = () => {
   );
 };
 
-export const DownloaderIcon: React.FC<Props> = ({}) => {
+export const DownloaderIcon: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="25"
@@ -1335,7 +1335,7 @@ export const DownloaderIcon: React.FC<Props> = ({}) => {
     </svg>
   );
 };
-export const StarIcon: React.FC<Props> = ({}) => {
+export const StarIcon: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="13"
@@ -1352,7 +1352,7 @@ export const StarIcon: React.FC<Props> = ({}) => {
   );
 };
 
-export const LikeIconTwo: React.FC<Props> = ({}) => {
+export const LikeIconTwo: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="20"
@@ -1370,7 +1370,7 @@ export const LikeIconTwo: React.FC<Props> = ({}) => {
     </svg>
   );
 };
-export const DisLike: React.FC<Props> = ({}) => {
+export const DisLike: React.FC<Props> = ({ }) => {
   return (
     <svg
       width="20"
@@ -1390,7 +1390,7 @@ export const DisLike: React.FC<Props> = ({}) => {
   );
 };
 
-export const MobileIcon: React.FC<Props> = ({}) => {
+export const MobileIcon: React.FC<Props> = ({ }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -1405,3 +1405,25 @@ export const MobileIcon: React.FC<Props> = ({}) => {
     </svg>
   );
 };
+
+export const InstaIcon = () => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 16 16" id="instagram"><linearGradient id="a" x1="1.464" x2="14.536" y1="14.536" y2="1.464" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stopColor="#FFC107"></stop><stop offset=".507" stopColor="#F44336"></stop><stop offset=".99" stopColor="#9C27B0"></stop></linearGradient><path fill="url(#a)" d="M11 0H5a5 5 0 0 0-5 5v6a5 5 0 0 0 5 5h6a5 5 0 0 0 5-5V5a5 5 0 0 0-5-5zm3.5 11c0 1.93-1.57 3.5-3.5 3.5H5c-1.93 0-3.5-1.57-3.5-3.5V5c0-1.93 1.57-3.5 3.5-3.5h6c1.93 0 3.5 1.57 3.5 3.5v6z"></path><linearGradient id="b" x1="5.172" x2="10.828" y1="10.828" y2="5.172" gradientUnits="userSpaceOnUse"><stop offset="0" stopColor="#FFC107"></stop><stop offset=".507" stopColor="#F44336"></stop><stop offset=".99" stopColor="#9C27B0"></stop></linearGradient><path fill="url(#b)" d="M8 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm0 6.5A2.503 2.503 0 0 1 5.5 8c0-1.379 1.122-2.5 2.5-2.5s2.5 1.121 2.5 2.5c0 1.378-1.122 2.5-2.5 2.5z"></path><linearGradient id="c" x1="11.923" x2="12.677" y1="4.077" y2="3.323" gradientUnits="userSpaceOnUse"><stop offset="0" stopColor="#FFC107"></stop><stop offset=".507" stopColor="#F44336"></stop><stop offset=".99" stopColor="#9C27B0"></stop></linearGradient><circle cx="12.3" cy="3.7" r=".533" fill="url(#c)"></circle>
+    </svg>
+  )
+}
+export const TelegramIcon = () => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="none" viewBox="0 0 48 48" id="telegram">
+      <rect width="48" height="48" fill="#419FD9" rx="24"></rect><rect width="48" height="48" fill="url(#paint0_linear)" rx="24"></rect><path fill="#fff" d="M10.7874 23.4709C17.7667 20.3663 22.4206 18.3195 24.7493 17.3305C31.3979 14.507 32.7795 14.0165 33.68 14.0002C33.878 13.9968 34.3208 14.0469 34.6077 14.2845C34.8499 14.4852 34.9165 14.7563 34.9484 14.9465C34.9803 15.1368 35.02 15.5702 34.9884 15.9088C34.6281 19.774 33.0692 29.1539 32.276 33.483C31.9404 35.3148 31.2796 35.929 30.6399 35.9891C29.2496 36.1197 28.1938 35.051 26.8473 34.1497C24.7401 32.7395 23.5498 31.8615 21.5044 30.4854C19.1407 28.895 20.673 28.0209 22.0201 26.5923C22.3726 26.2185 28.4983 20.5295 28.6169 20.0135C28.6317 19.9489 28.6455 19.7083 28.5055 19.5813C28.3655 19.4543 28.1589 19.4977 28.0098 19.5322C27.7985 19.5812 24.4323 21.8529 17.9113 26.3473C16.9558 27.0172 16.0904 27.3435 15.315 27.3264C14.4602 27.3076 12.8159 26.833 11.5935 26.4273C10.0942 25.9296 8.90254 25.6666 9.0063 24.8215C9.06035 24.3813 9.65403 23.9311 10.7874 23.4709Z"></path><defs><linearGradient id="paint0_linear" x1="24" x2="24" y2="47.644" gradientUnits="userSpaceOnUse"><stop stopColor="#2AABEE"></stop><stop offset="1" stopColor="#229ED9"></stop></linearGradient></defs>
+    </svg>
+  )
+}
+export const YoutubeIcon = () => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="youtube">
+      <g fillRule="evenodd" clipRule="evenodd"><path fill="#F44336" d="M15.32 4.06c-.434-.772-.905-.914-1.864-.968C12.498 3.027 10.089 3 8.002 3c-2.091 0-4.501.027-5.458.091-.957.055-1.429.196-1.867.969C.23 4.831 0 6.159 0 8.497v.008c0 2.328.23 3.666.677 4.429.438.772.909.912 1.866.977.958.056 3.368.089 5.459.089 2.087 0 4.496-.033 5.455-.088.959-.065 1.43-.205 1.864-.977.451-.763.679-2.101.679-4.429v-.008c0-2.339-.228-3.667-.68-4.438z"></path><path fill="#FAFAFA" d="M6 11.5v-6l5 3z"></path></g>
+    </svg>
+  )
+}

@@ -17,65 +17,73 @@ import styles from "./main.module.css";
 import Footer from "../../../../components/Footer/footer";
 import styled from "styled-components";
 import { useRef } from "react";
+import SocialCard from "../../../../components/SocialCard/SocialCard";
+import { SocialData } from "../../../../constants/socialData";
+import Carousel from "../../../../components/Carousel/Carousel";
+import AdvencedSlider from "../../../../components/AdvencedSlider/AdvencedSlider";
 
 const Main = () => {
   const { toggle } = useRootStore().visibleStore;
 
   return (
-    <div className={styles.container}>
-      <div className={styles.banner}>
-        <SwiperComp />
-        <div className={styles.infoBox}>
-          <div className={styles.infoCard}>
-            <RoomsSelect />
-            <PriceFilter label="Narxi, ming $" />
-            <SizeFilter label="Maydoni, m²" />
-            <FinishTimeFilter
-              from={new Date()}
-              to={new Date("Thu Dec 27 2025")}
-              label="Topshirish muddati"
-            />
-            <FloorFilter label="Qavat" />
-            <Button
-              textSize={"fourteen"}
-              btnSize={"filter"}
-              btnColor={"purple"}
-              textColor={"textWhite"}
-              borderRadius={"ten"}
-              title={"306 ta yangi binolarni ko'rish"}
+    <>
+      {/* <AdvencedSlider /> */}
+      <div className={styles.container}>
+        <div className={styles.banner}>
+          <SwiperComp />
+          {/* <Carousel /> */}
+          <div className={styles.infoBox}>
+            <div className={styles.infoCard}>
+              <RoomsSelect />
+              <PriceFilter label="Narxi, ming $" />
+              <SizeFilter label="Maydoni, m²" />
+              <FinishTimeFilter
+                from={new Date()}
+                to={new Date("Thu Dec 27 2025")}
+                label="Topshirish muddati"
+              />
+              <FloorFilter label="Qavat" />
+              <Button
+                textSize={"fourteen"}
+                btnSize={"filter"}
+                btnColor={"purple"}
+                textColor={"textWhite"}
+                borderRadius={"ten"}
+                title={"306 ta yangi binolarni ko'rish"}
+              />
+            </div>
+            <ViewMap />
+          </div>
+        </div>
+        <AdsContainerForProducts>
+          <ProductListOfMain classname="productList" />
+          <div className="rightAdsBox">
+            <img
+              src="https://domtut.uz/resources/uploads/property/ipak-yoli/main_1.jpg?r=1682593805"
+              alt=""
+              style={{ width: "100%", height: "100%" }}
             />
           </div>
-          <ViewMap />
-        </div>
-      </div>
-      <AdsContainerForProducts>
-        <ProductListOfMain classname="productList" />
-        <div className="rightAdsBox">
-          <img
-            src="https://domtut.uz/resources/uploads/property/ipak-yoli/main_1.jpg?r=1682593805"
-            alt=""
-            style={{ width: "100%", height: "100%" }}
+        </AdsContainerForProducts>
+        <div className={styles.aboveBox}>
+          <Button
+            textSize={"fourteen"}
+            btnSize={"filter"}
+            btnColor={"purple"}
+            textColor={"textWhite"}
+            borderRadius={"ten"}
+            onPress={() => toggle("filterModal")}
+            title={"306 ta yangi binolarni ko'rish"}
+            style={{
+              width: "100vw",
+              borderRadius: "0",
+              height: "100%",
+            }}
           />
         </div>
-      </AdsContainerForProducts>
-      <div className={styles.aboveBox}>
-        <Button
-          textSize={"fourteen"}
-          btnSize={"filter"}
-          btnColor={"purple"}
-          textColor={"textWhite"}
-          borderRadius={"ten"}
-          onPress={() => toggle("filterModal")}
-          title={"306 ta yangi binolarni ko'rish"}
-          style={{
-            width: "100vw",
-            borderRadius: "0",
-            height: "100%",
-          }}
-        />
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </>
   );
 };
 
@@ -107,6 +115,11 @@ export const ProductListOfMain = ({ classname }: { classname?: string }) => {
             fiveRooms={e.fiveRooms}
           />
         );
+      })}
+      {SocialData.map((e, index) => {
+        return (
+          <SocialCard key={index} title={e.title} icon={e.icon} />
+        )
       })}
     </div>
   );

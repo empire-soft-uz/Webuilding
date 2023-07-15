@@ -4,8 +4,8 @@ interface Props {
     text?: string | number;
     style?: CSSProperties;
     textType: 'bold' | 'middle' | 'thin' | 'semiBold' | 'light';
-    textSize: 'fifty' | 'thirtyFive' | 'thirty' | 'twentyFour' | 'twenty' | 'sixteen' | 'fourteen' | 'twelve' | 'ten';
-    textColor: 'black' | 'purple' | 'darkGrey' | 'grey' | 'white' | 'blue' | 'darkBlue';
+    textSize: 'fifty' | 'thirtyFive' | 'thirty' | 'twentyFour' | 'twenty' | 'eighteen' | 'sixteen' | 'fourteen' | 'twelve' | 'ten';
+    textColor: 'black' | 'purple' | 'darkGrey' | 'grey' | 'white' | 'blue' | 'darkBlue' | 'lightGrey';
     cursor?: 'Cursor' | 'none'
     onPress?: () => void;
     children?: React.ReactNode;
