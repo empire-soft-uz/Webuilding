@@ -1,6 +1,5 @@
-import React, { useRef, useState } from 'react'
-import { ASSETS } from '../../constants/requireAssets'
-import { SliderData, SliderDataInitial, SliderDataType } from '../../constants/SliderData'
+import React, { useEffect, useRef, useState } from 'react'
+import { SliderData, SliderDataType } from '../../constants/SliderData'
 import ArrowBtn from '../ArrowBtn/arrowBtn'
 import Button from '../Button/button'
 import Text from '../Text/text'
@@ -8,66 +7,103 @@ import styles from "./AdvencedSlider.module.css"
 import _ from 'lodash';
 import useRootStore from '../../Hooks/useRootStore'
 import { observer } from 'mobx-react-lite'
-import { toJS } from 'mobx'
-import { useEffect } from 'react';
+import { RiArrowLeftSLine, RiArrowRightSLine } from "react-icons/ri"
+import { COLORS } from '../../constants/color';
 
 const AdvencedSlider = () => {
     const outerDiv = useRef<HTMLDivElement>(null)
     const inerDiv = useRef<HTMLDivElement>(null)
-
-    const [DATA, setDATA] = useState<SliderDataType[]>(SliderData)
-    const { currentSliderData, getSliderData } = useRootStore().sliderStore
-    // const data = SliderData
-
-    // useEffect(() => {
-    //     data.shift()
-    //     setDATA(data)
-    // }, data)
-
-    const NextSlider = (id: number) => {
-        getSliderData(id)
-        // data.push(data[0])
-        outerDiv.current?.scrollTo({
-            left: inerDiv.current?.clientWidth!,
-            top: 0,
-            behavior: 'smooth',
-        })
+    const [translateX, setTranslateX] = useState(0)
+    const { currentSliderData, getSliderData, nextSilader, backSilader } = useRootStore().sliderStore
+    const NextSlider = () => {
+        if (currentSliderData.id < SliderData.length) {
+            getSliderData(currentSliderData.id + 1)
+            setTranslateX(-(inerDiv.current?.clientWidth! + 20) * nextSilader())
+        }
     }
-    const BackSlider = (id: number) => {
-        getSliderData(id)
-        outerDiv.current?.scrollTo({
-            left: -(inerDiv.current?.clientWidth!) + (inerDiv.current?.clientWidth!) - 100,
-            top: 0,
-            behavior: 'smooth',
-        })
+
+    const BackSlider = () => {
+        if (currentSliderData.id > 1) {
+            getSliderData(currentSliderData.id - 1)
+            setTranslateX(-(inerDiv.current?.clientWidth! + 20) * backSilader())
+        }
     }
     return (
         <div className={styles.container}>
-            <div className={styles.blendMode}></div>
-            <img className={styles.backImage} src={currentSliderData.backImage} alt="" />
-            <div className={styles.line}></div>
-            <div className={styles.textBox}>
-                <Text textType={'middle'} textSize={'fifty'} textColor={'white'} text={currentSliderData.title} />
-                <Text textType={'middle'} textSize={'fourteen'} textColor={'lightGrey'} text={currentSliderData.text} />
-                <Button style={{ display: "flex", justifyContent: "center" }} title='Explore' textSize={'sixteen'} btnSize={'avarage'} btnColor={'purple'} textColor={'textWhite'} borderRadius={'five'} />
+            <div className={styles.lineBox}>
+                <div className={styles.line}>
+                    <div className={`${styles.dot} ${currentSliderData.id === 1 ? styles.activeDot : ""}`}>
+                        {currentSliderData.id === 1 ? 1 : ""}
+                    </div>
+                    <div className={`${styles.dot} ${currentSliderData.id === 2 ? styles.activeDot : ""}`}>
+                        {currentSliderData.id === 2 ? 2 : ""}
+                    </div>
+                    <div className={`${styles.dot} ${currentSliderData.id === 3 ? styles.activeDot : ""}`}>
+                        {currentSliderData.id === 3 ? 3 : ""}
+                    </div>
+                    <div className={`${styles.dot} ${currentSliderData.id === 4 ? styles.activeDot : ""}`}>
+                        {currentSliderData.id === 4 ? 4 : ""}
+                    </div>
+                    <div className={`${styles.dot} ${currentSliderData.id === 5 ? styles.activeDot : ""}`}>
+                        {currentSliderData.id === 5 ? 5 : ""}
+                    </div>
+                </div>
             </div>
-            <div className={styles.cardBox}>
-                <div className={styles.content} ref={outerDiv}>
-                    {DATA.map((i, index) => {
-                        return (
-                            <div ref={inerDiv} key={index} className={`${styles.card} ${currentSliderData.id === i.id ? styles.currenCard : styles.card}`}>
-                                <div className={styles.cardBlendMode}></div>
-                                <img className={styles.cardImage} src={i.cardImage} alt="" />
-                                <div className={styles.cardText}>
-                                    <Text text={i.title} textType={'middle'} textSize={'eighteen'} textColor={'white'} />
-                                    <Text style={{ marginTop: "8px" }} text={i.location} textType={'middle'} textSize={'fourteen'} textColor={'lightGrey'} />
+            {SliderData.map((e, index) => {
+                return (
+                    <div className={`${styles.slideContainer} ${e.id === currentSliderData.id ? styles.slideContainerActive : ""}`} key={index}>
+                        <div className={styles.slide}>
+                            <div className={styles.textBox}>
+                                <div className={styles.animateTitle}>
+                                    <Text className={styles.title} textType={'middle'} textSize={'fifty'} textColor={'white'} text={currentSliderData.title} />
+                                </div>
+                                <div className={styles.animateText}>
+                                    <Text className={styles.text} textType={'middle'} textSize={'fourteen'} textColor={'lightGrey'} text={currentSliderData.text} />
+                                </div>
+                                <div className={styles.animateBtn}>
+                                    <Button className={styles.btn} style={{ display: "flex", justifyContent: "center" }} title='Explore' textSize={'sixteen'} btnSize={'avarage'} btnColor={'purple'} textColor={'textWhite'} borderRadius={'five'} />
                                 </div>
                             </div>
-                        )
-                    })}
+                            <img className={styles.backImage} src={currentSliderData.backImage} alt="" />
+                            <div className={styles.blendMode}></div>
+                        </div>
+                    </div>
+                )
+            })}
+            <div className={styles.cardBox}>
+                <div className={styles.content}>
+                    <div id="outDiv" ref={outerDiv} style={{
+                        transform: `translateX(${translateX}px)`,
+                    }} className={styles.contentInContent} >
+                        {SliderData.map((i, index) => {
+                            return (
+                                <div
+                                    onClick={NextSlider}
+                                    ref={inerDiv}
+                                    key={index}
+                                    id='inerDiv'
+                                    className={`${styles.card} ${currentSliderData.id === i.id ? styles.currenCard : styles.card}`}
+                                >
+                                    <div className={styles.cardBlendMode}></div>
+                                    <img className={styles.cardImage} src={i.cardImage} alt="" />
+                                    <div className={styles.cardText}>
+                                        <Text text={i.title} textType={'middle'} textSize={'eighteen'} textColor={'white'} />
+                                        <Text style={{ marginTop: "8px" }} text={i.location} textType={'middle'} textSize={'fourteen'} textColor={'lightGrey'} />
+                                    </div>
+                                </div>
+                            )
+                        })}
+                    </div>
                 </div>
                 <div className={styles.btnBox}>
-                    <ArrowBtn onPress={() => BackSlider(currentSliderData.id)} onNext={() => NextSlider(currentSliderData.id)} />
+                    <div className={styles.containerBox}>
+                        <button className={styles.button} onClick={BackSlider}>
+                            <RiArrowLeftSLine size={26} color={COLORS.white} />
+                        </button>
+                        <button className={styles.button} onClick={NextSlider}>
+                            <RiArrowRightSLine size={26} color={COLORS.white} />
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

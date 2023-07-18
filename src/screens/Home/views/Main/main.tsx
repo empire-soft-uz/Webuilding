@@ -27,10 +27,10 @@ const Main = () => {
 
   return (
     <>
-      {/* <AdvencedSlider /> */}
+      <AdvencedSlider />
       <div className={styles.container}>
         <div className={styles.banner}>
-          <SwiperComp />
+          {/* <SwiperComp /> */}
           {/* <Carousel /> */}
           <div className={styles.infoBox}>
             <div className={styles.infoCard}>

@@ -1,36 +1,115 @@
 .container {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    /* align-items: center; */
     width: 100%;
     height: 100vh;
     position: relative;
     transition: 0.4s;
 }
 
+.containerBox {
+    display: flex;
+    gap: 30px;
+}
+
+.button {
+    width: 40px;
+    height: 40px;
+    background-color: #b3afaf;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.containerBox .button:hover {
+    transform: scale(1.07);
+    cursor: pointer;
+}
+
+.slideContainer{
+    position: relative;
+}
+.slideContainer{
+    display: none;
+}
+.slideContainerActive{
+    display: block;
+}
+.slide{
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
 .backImage{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
     width: 100%;
     height: 100%;
-    position: absolute;
-    z-index: 1;
-    /* object-fit: cover; */
+    object-fit: cover;
+    animation: fadeIn .6s linear;
 }
+
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+        transform: scale(1.5);
+    }
+}
+
 .blendMode{
     width: 100%;
     height: 100%;
     position: absolute;
-    z-index: 2;
     background-color: rgba(0, 0, 0, .4);
     transition: 0.4s;
 }
 .textBox{
-    position: relative;
+    position: absolute;
     z-index: 2;
     width: 50%;
-    padding: 0 100px;
+    padding: 0 10%;
+    top: 50%;
+    transform: translate(0, -50%);
     display: flex;
     flex-direction: column;
     gap: 20px;
     transition: 0.5s;
+}
+.animateTitle{
+    height: 60px;
+    overflow: hidden;
+}
+.animateText{
+    height: 100%;
+    overflow: hidden;
+}
+.animateBtn{
+    height: 40px;
+    overflow: hidden;
+}
+.title{
+    animation: animate .5s linear;
+}
+.text{
+    animation: animate .4s linear;
+}
+.btn{
+    animation: animate .4s linear;
+}
+
+@keyframes animate {
+    0%{
+        opacity: 0;
+        transform: translateY(100px);
+    }
 }
 .cardBox{
     position: absolute;
@@ -39,17 +118,25 @@
     transform: translate(0, -50%);
     z-index: 2;
     max-width: 50% !important;
+    min-width: 50% !important;
     padding-right: 20px;
 }
 .content{
     position: relative;
+    overflow-x: scroll;
+}
+
+.contentInContent{
+    position: relative;
     display: flex;
     align-items: center;
     gap: 20px;
-    padding: 10px;
-    overflow-x: scroll;
-    border: 1px solid red;
     height: 340px;
+    transition: transform 0.5s;
+}
+
+.content::-webkit-scrollbar{
+    display: none;
 }
 
 .btnBox{
@@ -59,14 +146,13 @@
 
 .card{
     position: relative;
-    min-width: 200px;
+    min-width: 31% !important;
     height: 280px;
     border-radius: 10px;
     overflow: hidden;
-    transition: 0.5s;
+    transition: 0.4s linear;
 }
 .currenCard{
-    width: 220px;
     height: 320px;
 }
 .cardBlendMode{
@@ -90,4 +176,53 @@
     top: auto;
     bottom: 20px;
     left: 20px;
+}
+
+.lineBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    min-height: 70%;
+    z-index: 2;
+    left: 100px;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.line{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    background-color: #a8a7a7;
+}
+
+.dot{
+    min-width: 10px;
+    min-height: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #b4b4b4;
+    color: #fff;
+    position: relative;
+    cursor: pointer;
+    font-size: 12px;
+    transition: 0.3s;
+}
+.activeDot{
+    width: 16px;
+    height: 16px;
+    animation: ac 0.2s linear;
+}
+
+@keyframes ac {
+    0%{
+        opacity: 0;
+    }
 }
