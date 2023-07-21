@@ -1,9 +1,11 @@
 import { observer } from "mobx-react";
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
 import useRootStore from "../../../../Hooks/useRootStore";
 import Button from "../../../../components/Button/button";
 import FinishTimeFilter from "../../../../components/FinishTimeFilter/finishTimeFilter";
 import FloorFilter from "../../../../components/FloorFilter/floorFilter";
+import Footer from "../../../../components/Footer/footer";
 import PriceFilter from "../../../../components/PriceFilter/priceFilter";
 import ProductItem from "../../../../components/ProductItem/productItem";
 import RoomsSelect from "../../../../components/RoomsSelect/roomsSelect";
@@ -14,16 +16,16 @@ import { COLORS } from "../../../../constants/color";
 import { ProductData } from "../../../../constants/productData";
 import { APP_ROUTES } from "../../../../routes/app-router";
 import styles from "./main.module.css";
-import Footer from "../../../../components/Footer/footer";
-import styled from "styled-components";
-import { useRef } from "react";
+
 import SocialCard from "../../../../components/SocialCard/SocialCard";
 import { SocialData } from "../../../../constants/socialData";
-import Carousel from "../../../../components/Carousel/Carousel";
+
+import { useTranslation } from "react-i18next";
 import AdvencedSlider from "../../../../components/AdvencedSlider/AdvencedSlider";
 
 const Main = () => {
   const { toggle } = useRootStore().visibleStore;
+  const { t } = useTranslation();
 
   return (
     <>
@@ -81,6 +83,7 @@ const Main = () => {
             }}
           />
         </div>
+
         <Footer />
       </div>
     </>
@@ -117,9 +120,7 @@ export const ProductListOfMain = ({ classname }: { classname?: string }) => {
         );
       })}
       {SocialData.map((e, index) => {
-        return (
-          <SocialCard key={index} title={e.title} icon={e.icon} />
-        )
+        return <SocialCard key={index} title={e.title} icon={e.icon} />;
       })}
     </div>
   );

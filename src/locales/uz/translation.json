@@ -1,0 +1,44 @@
+{
+  "header": {
+    "phone": "Sizga qo'ng'iroq qilaylikmi",
+    "categoryData": {
+      "name1": "Uy",
+      "name2": "Dasturchilar",
+      "name3": "U biz (Kontaktlar)",
+      "name4": "Xarita"
+    }
+  },
+  "banner": {
+    "phone": "Sizga qo'ng'iroq qilaylikmi",
+    "categoryData": {
+      "name1": "Uy",
+      "name2": "Dasturchilar",
+      "name3": "U biz (Kontaktlar)",
+      "name4": "Xarita"
+    }
+  },
+  "btnTitle": "306 ta yangi binolarni ko'rish",
+  "filters": {
+    "roomsSelect": {
+      "rooms": "Xonalar",
+      "studio": "Studialar"
+    },
+    "priceFilter": {
+      "price": "Narxi, ming"
+    },
+    "sizeFilter": {
+      "area": "Maydoni, m²"
+    },
+    "finishTimeFilter": {
+      "lable": "Topshirish muddati"
+    },
+    "floor": "Qavat",
+    "from": "dan",
+    "upTo": "gacha"
+  },
+  "seeMap": "Xaritada ko'ring",
+  "workTime": "Ish vaqti 10:00 dan 20:00 gacha",
+  "callYouBack": "sizga qayta qo'ng'iroq qilasizmi?",
+  "searchArticle": "Maqola bo'yicha qidirish",
+  "newBuildings": ""
+}

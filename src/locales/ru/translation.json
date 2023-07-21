@@ -1,0 +1,34 @@
+{
+  "header": {
+    "phone": "Мы позвоним вам?",
+    "categoryData": {
+      "name1": "Главная",
+      "name2": "Застройщики",
+      "name3": "Он нас (Контакты)",
+      "name4": "Карта"
+    }
+  },
+  "btnTitle": "Посмотреть 306 новостроек",
+  "filters": {
+    "roomsSelect": {
+      "rooms": "Номера",
+      "studio": "студия"
+    },
+    "priceFilter": {
+      "price": "Цена, тыс."
+    },
+    "sizeFilter": {
+      "area": "Площадь, м²"
+    },
+    "finishTimeFilter": {
+      "lable": "Крайний срок подачи"
+    },
+    "floor": "Пол",
+    "from": "от",
+    "upTo": "вплоть до"
+  },
+  "seeMap": "Посмотреть на карте",
+  "workTime": "Режим работы с 10:00 до 20:00",
+  "callYouBack": "Перезвонить вам?",
+  "searchArticle": "Поиск по артикулу"
+}

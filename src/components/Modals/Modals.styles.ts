@@ -364,3 +364,94 @@ export const CartFilterNowContainer = styled.div`
     margin-bottom: 1.5rem;
   }
 `;
+export const LanguageNowContainer = styled.div`
+  position: absolute;
+  right: 30px;
+  top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  overflow-y: scroll;
+  border-radius: 10px;
+  padding: 10px;
+  width: 300px;
+  &.active {
+    z-index: 999;
+    opacity: 1;
+  }
+
+  &.none {
+    z-index: -999;
+    opacity: 0;
+  }
+
+  .language {
+    position: relative;
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 5px 5px 20px "#000";
+    width: 100%;
+
+  }
+  .button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top:20px;
+    width: 100%;
+    padding:0 15px;
+  }
+  .btn1 {
+    background-color: yellow;
+    border: 0.5px solid #fff;
+    cursor: pointer;
+    padding: 10px;
+    @media (min-width: ${RESPONSIVE.minPhone}) {
+      width: 120px;
+    }
+    @media (min-width: ${RESPONSIVE.phone}) {
+      width: 120px;
+    }
+    @media (min-width: ${RESPONSIVE.largeDevice}) {
+      width: 120px;
+      box-shadow: 5px 5px 0px "#000";
+    }
+  }
+  .btn1:active{
+    transform: scale(1.1,1.1);
+  }
+  .btn2 {
+    background-color: #101010;
+    border: 0.5px solid #fff;
+    cursor: pointer;
+    padding: 10px;
+    color: #fff;
+    @media (min-width: ${RESPONSIVE.minPhone}) {
+      width: 120px;
+    }
+    @media (min-width: ${RESPONSIVE.phone}) {
+      width: 150px;
+    }
+    @media (min-width: ${RESPONSIVE.largeDevice}) {
+      width: 120px;
+      box-shadow: 5px 5px 0px "#000";
+    }
+    scale(2, 3)
+  }
+  .btn2:active{
+    transform: scale(1.1,1.1);
+  }.title{
+    padding:0 10px;
+  }
+  .title h4{
+    color:black;
+    font-size:15px
+  }
+  .title p{
+    color:black;
+    font-size:13px;
+    margin-top:5px;
+  }
+`;

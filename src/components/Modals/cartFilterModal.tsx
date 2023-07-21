@@ -22,7 +22,12 @@ const CartFilterModal = () => {
   });
   return (
     <CartFilterNowContainer
-      className={appModals?.state.type === "cartfilter" ? "active" : "none"}
+      className={
+        appModals?.state.cartfilter.active &&
+        !appModals?.state.cartfilter.active
+          ? "active"
+          : "none"
+      }
     >
       <div className="filterBox">
         <div className="topBox">
