@@ -14,6 +14,7 @@ import ProcessBuilding from "../../../../components/ProcessBuilding/processBuild
 import ProductBanner from "./components/ProductBanner";
 import styles from "./product.module.css";
 import Invest from "../../../../components/Invest/invest";
+import YoutubeVideo from "../../../../components/YoutubeVideo/YoutubeVideo";
 
 const ProductPage = () => {
   const [scrollTop, setScrollTop] = useState(0);
@@ -38,6 +39,7 @@ const ProductPage = () => {
           <MainAdventages />
           <AboutProducer />
           <ProcessBuilding />
+          <YoutubeVideo />
           <Documents />
           <PlaceComment />
         </div>

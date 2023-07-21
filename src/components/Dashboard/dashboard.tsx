@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { CloseIcon, LogoIcon, MenuIcon, MobileIcon } from "../../assets/icons";
@@ -36,6 +36,10 @@ const Dashboard = () => {
   ];
   const [active, setActive] = useState(1);
   const [isClose, setIsClose] = useState(false);
+  const [scroll, setScroll] = useState(false);
+  useEffect(() => {
+    window.addEventListener("scroll", () => setScroll(window.scrollY > 50));
+  }, []);
 
   const navigate = useNavigate();
   const appModals = useAppModals();
@@ -65,7 +69,15 @@ const Dashboard = () => {
   );
 
   return (
-    <div style={{ position: "sticky", top: "0px", zIndex: 15 }}>
+    <div
+      style={{
+        transition: "0.4s linear",
+        position: scroll ? "fixed" : "absolute",
+        top: scroll ? "0" : "-300px",
+        zIndex: 11,
+        width: "100%",
+      }}
+    >
       <div className={styles.closeHeader}>
         <div className={styles.closeBox} onClick={() => Dashboard2()}>
           {isClose ? <CloseIcon /> : <MenuIcon />}

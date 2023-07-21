@@ -21,19 +21,18 @@ import SocialCard from "../../../../components/SocialCard/SocialCard";
 import { SocialData } from "../../../../constants/socialData";
 
 import { useTranslation } from "react-i18next";
-
+import AdvencedSlider from "../../../../components/AdvencedSlider/AdvencedSlider";
 
 const Main = () => {
   const { toggle } = useRootStore().visibleStore;
   const { t } = useTranslation();
 
   return (
-
     <>
-      {/* <AdvencedSlider /> */}
+      <AdvencedSlider />
       <div className={styles.container}>
         <div className={styles.banner}>
-          <SwiperComp />
+          {/* <SwiperComp /> */}
           {/* <Carousel /> */}
           <div className={styles.infoBox}>
             <div className={styles.infoCard}>
@@ -65,7 +64,6 @@ const Main = () => {
               src="https://domtut.uz/resources/uploads/property/ipak-yoli/main_1.jpg?r=1682593805"
               alt=""
               style={{ width: "100%", height: "100%" }}
-
             />
           </div>
         </AdsContainerForProducts>
@@ -122,9 +120,7 @@ export const ProductListOfMain = ({ classname }: { classname?: string }) => {
         );
       })}
       {SocialData.map((e, index) => {
-        return (
-          <SocialCard key={index} title={e.title} icon={e.icon} />
-        )
+        return <SocialCard key={index} title={e.title} icon={e.icon} />;
       })}
     </div>
   );

@@ -1,6 +1,7 @@
 import React, { CSSProperties, useState } from 'react'
-import { ArrowLeftIcon, ArrowRightIcon } from '../../assets/icons';
+import { RiArrowLeftSLine, RiArrowRightSLine } from "react-icons/ri"
 import styles from "./arrowBtn.module.css"
+import { COLORS } from '../../constants/color';
 interface Props {
     icon?: any;
     hoverIcon?: any;
@@ -21,10 +22,10 @@ const ArrowBtn: React.FC<Props> = ({
     return (
         <div className={styles.container}>
             <button className={styles.button} style={{ ...style }} onClick={onPress}>
-                <ArrowLeftIcon />
+                <RiArrowLeftSLine size={26} color={COLORS.white} />
             </button>
             <button className={styles.button} style={{ ...style }} onClick={onNext}>
-                <ArrowRightIcon />
+                <RiArrowRightSLine size={26} color={COLORS.white} />
             </button>
         </div>
     )
