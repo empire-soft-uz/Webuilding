@@ -16,7 +16,12 @@ const Advertising = () => {
   });
   return (
     <AdvertisingNowContainer
-      className={appModals?.state.type === "advertising" ? "active" : "none"}
+      className={
+        appModals?.state.advertising.active &&
+        !appModals?.state.advertising.neverWork
+          ? "active"
+          : "none"
+      }
     >
       <div className="imageBox">
         <div className="image">

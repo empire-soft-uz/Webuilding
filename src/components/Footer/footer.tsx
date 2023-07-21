@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./footer.module.css";
+import { useTranslation } from "react-i18next";
 const data = [
   {
     id: 0,
@@ -76,6 +77,7 @@ const Footer = () => {
   const handleChange = (event: { target: { value: any } }) => {
     console.log("onChange==", event.target.value);
   };
+  const { t } = useTranslation();
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
@@ -84,9 +86,7 @@ const Footer = () => {
             <div className={styles.footer_main_block}>
               <ul className={styles.footer__contacts}>
                 <li>
-                  <div className={styles.footer__worktime}>
-                    Режим работы с 10:00 до 20:00
-                  </div>
+                  <div className={styles.footer__worktime}>{t("workTime")}</div>
                 </li>
                 <li>
                   <a href="tel:+74953747347" className={styles.footer__phone}>
@@ -99,7 +99,7 @@ const Footer = () => {
                     className={styles.footer__callback}
                     data-dest="modal"
                   >
-                    Перезвонить вам?
+                    {t("callYouBack")}
                   </a>
                 </li>
               </ul>
@@ -150,7 +150,7 @@ const Footer = () => {
                 />
                 <input type="hidden" name="_method" value="POST" />
                 <div className={`${styles.footer__search} ${styles.label}`}>
-                  Поиск по артикулу
+                  {t("searchArticle")}
                 </div>
                 <div className={`${styles.footer__search} ${styles.form}`}>
                   <input

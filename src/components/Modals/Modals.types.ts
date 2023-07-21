@@ -1,17 +1,20 @@
 export type MVisibleType =
-  | "none"
   | "i_call_you_now"
   | "call_me_later"
   | "advertising"
-  | "cartfilter";
+  | "cartfilter"
+  | "language";
 
 export type ModalsState = {
-  type: MVisibleType;
+  [key in MVisibleType]: {
+    active: boolean;
+    neverWork: boolean;
+  };
 };
 
 export type ModalsContextType = {
   show(type: MVisibleType): void;
-  hide(): void;
+  hide(type?: MVisibleType): void;
   state: ModalsState;
 };
 export type ModalsProviderType = {

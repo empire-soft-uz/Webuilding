@@ -6,6 +6,7 @@ import Box from "@mui/material/Box";
 // import Slider from '../Slider/slider'
 import styles from "./priceFilter.module.css";
 import useRootState from "../../Hooks/useRootState";
+import { useTranslation } from "react-i18next";
 interface Props {
   label?: string;
   from?: string;
@@ -31,6 +32,7 @@ const PriceFilter: React.FC<Props> = ({ label, from, to }) => {
     newArr[i] = val as unknown as number;
     setValue(newArr);
   };
+  const { t } = useTranslation();
 
   return (
     <div className={styles.container}>
@@ -45,7 +47,7 @@ const PriceFilter: React.FC<Props> = ({ label, from, to }) => {
             type="text"
             value={value[0]}
           />
-          dan
+          {t("filters.from")}
         </p>
         <span className={styles.line}></span>
         <p className={styles.from}>
@@ -55,7 +57,7 @@ const PriceFilter: React.FC<Props> = ({ label, from, to }) => {
             type="text"
             value={value[1]}
           />
-          gacha
+          {t("filters.upTo")}
         </p>
       </div>
       <Slider

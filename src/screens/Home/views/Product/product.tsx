@@ -1,3 +1,4 @@
+import { SetStateAction, useState } from "react";
 import styled from "styled-components";
 import AboutProducer from "../../../../components/AboutProducer/aboutProducer";
 import CollapseContent from "../../../../components/CollapseContent/collapseContent";
@@ -6,7 +7,6 @@ import Deposits from "../../../../components/Deposits/deposits";
 import Documents from "../../../../components/Documents/documents";
 import Footer from "../../../../components/Footer/footer";
 import Infrastructure from "../../../../components/Infrastructure/infrastructure";
-
 import MainAdventages from "../../../../components/MainAdventages/mainAdventages";
 import PlaceComment from "../../../../components/PlaceComment/placeComment";
 import Procedure from "../../../../components/Procedure/procedure";
@@ -16,8 +16,16 @@ import styles from "./product.module.css";
 import Invest from "../../../../components/Invest/invest";
 
 const ProductPage = () => {
+  const [scrollTop, setScrollTop] = useState(0);
+
+  const handleScroll = (event: {
+    currentTarget: { scrollTop: SetStateAction<number> };
+  }) => {
+    setScrollTop(event.currentTarget.scrollTop);
+  };
+  console.log("scrollTop", scrollTop);
   return (
-    <div className={styles.container}>
+    <div className={styles.container} onScroll={handleScroll}>
       <ProductBanner />
       <AdsContainerForProducts>
         <div className="productList">

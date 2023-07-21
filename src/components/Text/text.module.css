@@ -1,69 +1,71 @@
 .bold {
-    font-family: "Montserrat6"
+  font-family: "Montserrat6";
 }
 .semiBold {
-    font-family: "Montserrat5"
+  font-family: "Montserrat5";
 }
 .middle {
-    font-family: "Montserrat4"
+  font-family: "Montserrat4";
 }
 .thin {
-    font-family: "Montserrat3"
+  font-family: "Montserrat3";
 }
-.black{
-    color: #000;
+.black {
+  color: #000;
 }
-.purple{
-    color: rgba(138, 63, 252, 1);
+.purple {
+  color: rgba(138, 63, 252, 1);
 }
-.darkGrey{
-    color: rgba(81, 80, 80, 1);
+.darkGrey {
+  color: rgba(81, 80, 80, 1);
 }
-.grey{
-    color: rgba(129, 130, 133, 0.8);
+.grey {
+  color: rgba(129, 130, 133, 0.8);
 }
-.lightGrey{
-    color: #d5d4d4;
+
+.lightGrey {
+  color: #d5d4d4;
 }
-.white{
-    color: #fff;
+
+.white {
+  color: #fff;
 }
-.blue{
-    color: rgba(39, 121, 246, 1);
+.blue {
+  color: rgba(39, 121, 246, 1);
 }
-.darkBlue{
-    color: #22365F;
+.darkBlue {
+  color: #22365f;
 }
 .fifty {
-    font-size: 50px;
+  font-size: 50px;
 }
-.thirtyFive{
-    font-size: 35px;
+.thirtyFive {
+  font-size: 35px;
 }
-.thirty{
-    font-size: 30px;
+.thirty {
+  font-size: 30px;
 }
-.twentyFour{
-    font-size: 24px;
+.twentyFour {
+  font-size: 24px;
 }
-.twenty{
-    font-size: 20px;
+.twenty {
+  font-size: 20px;
 }
-.eighteen{
-    font-size: 18px;
+.eighteen {
+  font-size: 18px;
 }
 .sixteen {
-    font-size: 16px;
+  font-size: 16px;
 }
 .fourteen {
-    font-size: 14px;
+  font-size: 14px;
 }
-.twelve{
-    font-size: 12px;
+.twelve {
+  font-size: 12px;
 }
 .ten {
-    font-size: 10px;
+  font-size: 10px;
 }
-.Cursor{
-    cursor: pointer;
+.Cursor {
+  cursor: pointer;
 }

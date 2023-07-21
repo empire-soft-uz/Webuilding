@@ -185,4 +185,47 @@
     color: black;
     margin-right: 20px;
   }
+  .bottomBox {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    width: 300px;
+  }
+  .language {
+    margin-left: 15px;
+    background-color: transparent;
+    width: 40px;
+    height: 30px;
+  }
+  .languageBtn {
+    width: 100%;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    border: 1px solid black;
+    cursor: pointer;
+  }
+  .languageBtn:active p {
+    transform: scale(1.2);
+  }
+  .languageModal {
+    position: absolute;
+    width: 40px;
+    height: 60px;
+    z-index: 12;
+    right: 0;
+    background-color: white;
+    bottom: -45px;
+    cursor: pointer;
+  }
+  .languageBtnModal {
+    width: 100%;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+  }
+  .languageBtnModal:active p {
+    transform: scale(1.2);
+  }
 }

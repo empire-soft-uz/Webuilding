@@ -1,20 +1,45 @@
-import { useCallback, useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useCallback, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 import { CloseIcon, LogoIcon, MenuIcon, MobileIcon } from "../../assets/icons";
-import { CategoryData } from "../../constants/categoryData";
 import { COLORS } from "../../constants/color";
 import { APP_ROUTES } from "../../routes/app-router";
 import BottomLine from "../BottomLine/bottomLine";
 import Dot from "../Dot/dot";
 import Text from "../Text/text";
 import styles from "./dashboard.module.css";
+import { useAppModals } from "../Modals";
 
 const Dashboard = () => {
+  const { t } = useTranslation();
+  const CategoryData = [
+    {
+      id: 1,
+      name: t("header.categoryData.name1"),
+      path: APP_ROUTES.MAIN,
+    },
+    {
+      id: 2,
+      name: t("header.categoryData.name2"),
+      path: APP_ROUTES.DEVELOPERS,
+    },
+    {
+      id: 3,
+      name: t("header.categoryData.name3"),
+      path: APP_ROUTES.ABOUT_US,
+    },
+    {
+      id: 4,
+      name: t("header.categoryData.name4"),
+      path: APP_ROUTES.Card,
+    },
+  ];
   const [active, setActive] = useState(1);
   const [isClose, setIsClose] = useState(false);
 
   const navigate = useNavigate();
-
+  const appModals = useAppModals();
+  const { i18n } = useTranslation();
   const Category = (item: any) => {
     setActive(item);
     setIsClose(false);
@@ -27,6 +52,16 @@ const Dashboard = () => {
       if (path && path !== null) navigate(path);
     },
     [navigate]
+  );
+
+  const [languageModal, setLanguageModal] = useState(false);
+
+  const onCloseModal = useCallback(
+    (name?: any) => {
+      i18n.changeLanguage(name);
+      setLanguageModal(false);
+    },
+    [appModals]
   );
 
   return (
@@ -94,28 +129,55 @@ const Dashboard = () => {
             })}
           </div>
         </div>
+
         <div className={styles.bottomBox}>
-          <Text
-            textType={"middle"}
-            textSize={"sixteen"}
-            textColor={"darkGrey"}
-            cursor={"none"}
-            text={"+998 ( 99 ) 310 37 63"}
-          />
-          <a
-            href="tel:+998993103763"
-            style={{ textDecoration: "none" }}
-            target="_blank"
-          >
+          <div className={styles.phone}>
             <Text
-              style={{ marginTop: "10px" }}
               textType={"middle"}
-              textSize={"fourteen"}
-              textColor={"purple"}
-              cursor={"Cursor"}
-              text={"Sizga qo'ng'iroq qilaylikmi?"}
+              textSize={"sixteen"}
+              textColor={"darkGrey"}
+              cursor={"none"}
+              text={"+998 ( 99 ) 310 37 63"}
             />
-          </a>
+            <a
+              href="tel:+998993103763"
+              style={{ textDecoration: "none" }}
+              target="_blank"
+            >
+              <Text
+                style={{ marginTop: "10px" }}
+                textType={"middle"}
+                textSize={"fourteen"}
+                textColor={"purple"}
+                cursor={"Cursor"}
+                text={t("header.phone")}
+              />
+            </a>
+          </div>
+          <div className={styles.language}>
+            <button
+              className={styles.languageBtn}
+              onClick={() => setLanguageModal((a) => !a)}
+            >
+              <p>uz</p>
+            </button>
+          </div>
+          {languageModal ? (
+            <div className={styles.languageModal}>
+              <button
+                className={styles.languageBtnModal}
+                onClick={() => onCloseModal("uz")}
+              >
+                <p>uz</p>
+              </button>
+              <button
+                className={styles.languageBtnModal}
+                onClick={() => onCloseModal("ru")}
+              >
+                <p>ru</p>
+              </button>
+            </div>
+          ) : null}
         </div>
       </div>
 
