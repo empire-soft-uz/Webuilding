@@ -22,6 +22,7 @@ import { ProductListOfMain } from "../Main/main";
 import { AboutUsContainer } from "./AboutUs.styled";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Footer from "../../../../components/Footer/footer";
+import FooterCard from "../../../../components/FooterCard/FooterCard";
 
 const AboutUs = () => {
   const renderBgImg = useCallback(
@@ -402,7 +403,7 @@ const AboutUs = () => {
   const renderFooter = useCallback(
     () => (
       <div className="footer">
-        <Footer />
+        <FooterCard />
       </div>
     ),
     []

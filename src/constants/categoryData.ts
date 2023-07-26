@@ -13,7 +13,7 @@ export const CategoryData = [
 	},
 	{
 		id: 3,
-		name: 'Он нас (Контакты)',
+		name: 'О нас (Контакты)',
 		path: APP_ROUTES.ABOUT_US,
 	},
 	{

@@ -22,6 +22,8 @@ import { SocialData } from "../../../../constants/socialData";
 
 import { useTranslation } from "react-i18next";
 import AdvencedSlider from "../../../../components/AdvencedSlider/AdvencedSlider";
+import PerfectCarusel from "../../../../components/PerfectCarusel/PerfectCarusel";
+import FooterCard from "../../../../components/FooterCard/FooterCard";
 
 const Main = () => {
   const { toggle } = useRootStore().visibleStore;
@@ -29,7 +31,8 @@ const Main = () => {
 
   return (
     <>
-      <AdvencedSlider />
+      {/* <AdvencedSlider /> */}
+      <PerfectCarusel />
       <div className={styles.container}>
         <div className={styles.banner}>
           {/* <SwiperComp /> */}
@@ -83,8 +86,7 @@ const Main = () => {
             }}
           />
         </div>
-
-        <Footer />
+        <FooterCard />
       </div>
     </>
   );

@@ -9,47 +9,45 @@ import useRootStore from '../../Hooks/useRootStore'
 import { observer } from 'mobx-react-lite'
 import { RiArrowLeftSLine, RiArrowRightSLine } from "react-icons/ri"
 import { COLORS } from '../../constants/color';
+import { toJS } from 'mobx'
 
 const AdvencedSlider = () => {
     const outerDiv = useRef<HTMLDivElement>(null)
     const inerDiv = useRef<HTMLDivElement>(null)
     const [translateX, setTranslateX] = useState(0)
-    const { currentSliderData, getSliderData, nextSilader, backSilader } = useRootStore().sliderStore
+
+    const { currentSliderData, getSliderData, sliderData, nextSilader, backSilader, current } = useRootStore().sliderStore
+
+    console.log(sliderData.length)
+    console.log("current", toJS(current))
+    console.log("currentSliderData",toJS(currentSliderData))
+    console.log("SliderData",toJS(sliderData))
     const NextSlider = () => {
-        if (currentSliderData.id < SliderData.length) {
-            getSliderData(currentSliderData.id + 1)
-            setTranslateX(-(inerDiv.current?.clientWidth! + 20) * nextSilader())
-        }
+        getSliderData(currentSliderData.id + 1)
+        setTranslateX(-(inerDiv.current?.clientWidth! + 20) * nextSilader())
     }
 
     const BackSlider = () => {
         if (currentSliderData.id > 1) {
-            getSliderData(currentSliderData.id - 1)
             setTranslateX(-(inerDiv.current?.clientWidth! + 20) * backSilader())
+            getSliderData(currentSliderData.id - 1)
         }
     }
+    
     return (
         <div className={styles.container}>
             <div className={styles.lineBox}>
                 <div className={styles.line}>
-                    <div className={`${styles.dot} ${currentSliderData.id === 1 ? styles.activeDot : ""}`}>
-                        {currentSliderData.id === 1 ? 1 : ""}
-                    </div>
-                    <div className={`${styles.dot} ${currentSliderData.id === 2 ? styles.activeDot : ""}`}>
-                        {currentSliderData.id === 2 ? 2 : ""}
-                    </div>
-                    <div className={`${styles.dot} ${currentSliderData.id === 3 ? styles.activeDot : ""}`}>
-                        {currentSliderData.id === 3 ? 3 : ""}
-                    </div>
-                    <div className={`${styles.dot} ${currentSliderData.id === 4 ? styles.activeDot : ""}`}>
-                        {currentSliderData.id === 4 ? 4 : ""}
-                    </div>
-                    <div className={`${styles.dot} ${currentSliderData.id === 5 ? styles.activeDot : ""}`}>
-                        {currentSliderData.id === 5 ? 5 : ""}
-                    </div>
+                    {SliderData.map((e, index) => {
+                        return (
+                            <div key={index} className={`${styles.dot} ${currentSliderData.name === e.name ? styles.activeDot : ""}`}>
+                                {currentSliderData.name === e.name ? currentSliderData.name : ""}
+                            </div>
+                        )
+                    })}
                 </div>
             </div>
-            {SliderData.map((e, index) => {
+            {sliderData.map((e, index) => {
                 return (
                     <div className={`${styles.slideContainer} ${e.id === currentSliderData.id ? styles.slideContainerActive : ""}`} key={index}>
                         <div className={styles.slide}>
@@ -75,7 +73,7 @@ const AdvencedSlider = () => {
                     <div id="outDiv" ref={outerDiv} style={{
                         transform: `translateX(${translateX}px)`,
                     }} className={styles.contentInContent} >
-                        {SliderData.map((i, index) => {
+                        {sliderData.map((i, index) => {
                             return (
                                 <div
                                     onClick={NextSlider}

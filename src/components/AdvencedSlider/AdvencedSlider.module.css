@@ -226,3 +226,64 @@
         opacity: 0;
     }
 }
+
+@media (min-width: 120px) {
+    .cardBox{
+        position: absolute;
+        top: auto;
+        bottom: 20%;
+        left: 10%;
+        transform: translate(0, 0);
+        z-index: 2;
+        max-width: 80% !important;
+        min-width: 80% !important;
+        padding-right: 20px;
+    }
+    .card{
+        position: relative;
+        min-width: 49% !important;
+        height: 200px;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: 0.4s linear;
+    }
+    .contentInContent{
+        gap: 10px;
+        height: 240px;
+    }
+    .btnBox{
+        top: 10px;
+    }
+    .currenCard{
+        height: 220px;
+    }
+    .lineBox{
+        display: flex;
+        height: 2px;
+        min-width: 80%;
+        bottom: 0;
+        left: 10%;
+        right: auto;
+        transform: translate(0,0);
+    }
+    .line{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        height: 2px;
+        width: 100%;
+    }
+    .textBox{
+        position: absolute;
+        z-index: 2;
+        width: 80%;
+        padding: 0 0;
+        left: 10%;
+        top: 50px;
+        transform: translate(0,0);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        transition: 0.5s;
+    }   
+}
