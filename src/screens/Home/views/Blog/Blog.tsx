@@ -10,6 +10,7 @@ import Footer from '../../../../components/Footer/footer';
 import { APP_ROUTES } from '../../../../routes/app-router';
 import { BlogContainer } from './Blog.styled';
 import styles from './main.module.css';
+import FooterCard from '../../../../components/FooterCard/FooterCard';
 
 export const mocData = [
 	{
@@ -130,7 +131,7 @@ export default observer(() => {
 					}}
 				/>
 			</div>
-			<Footer />
+			<FooterCard />
 		</div>
 	);
 });

@@ -1,0 +1,56 @@
+.container{
+    padding: 40px 0 60px 0;
+}
+.content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.title{
+    margin-bottom: 20px;
+}
+
+.cardBox{
+    width: 32%;
+    height: 100%;
+}
+.card{
+    margin: 6px 0;
+}
+.item{
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 5px 0;
+}
+.socialBtns{
+    display: flex;
+    gap: 6px;
+}
+.sIcon {
+    width: 40px;
+    height: 30px;
+    object-fit: contain;
+}
+.url{
+    text-decoration: none;
+}
+.downLoadBtns{
+    display: flex;
+    align-items: center;
+    padding-left: 34%;
+    gap: 15px;
+}
+.qrCodeBox{
+    width: 100px;
+    height: 100px;
+}
+.qrCodeBox img{
+    width: 100%;
+    height: 100%;
+}
+.protect{
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+}

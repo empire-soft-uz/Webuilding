@@ -5,6 +5,7 @@ import { ProductData } from "../../../../../constants/productData";
 import { APP_ROUTES } from "../../../../../routes/app-router";
 import styles from "./developersInfo.module.css";
 import { useLocation, useNavigate } from "react-router-dom";
+import FooterCard from "../../../../../components/FooterCard/FooterCard";
 const DevelopersInfo = () => {
   const navigation = useNavigate();
 
@@ -153,7 +154,7 @@ const DevelopersInfo = () => {
         </div>
         <ProductListOfMain />
       </div>
-      <Footer />
+      <FooterCard />
     </div>
   );
 };

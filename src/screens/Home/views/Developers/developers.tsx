@@ -1,4 +1,5 @@
 import Footer from "../../../../components/Footer/footer";
+import FooterCard from "../../../../components/FooterCard/FooterCard";
 import DevelopersList from "./Components/DevelopersList/developersList";
 import SearchDeveloper from "./Components/Search/searchDeveloper";
 import SectionDivider from "./Components/SectionDivider/sectionDivider";
@@ -9,7 +10,7 @@ const Developers = () => {
       <SearchDeveloper />
       <DevelopersList />
       <SectionDivider />
-      <Footer />
+      <FooterCard />
     </div>
   );
 };

@@ -4,6 +4,7 @@ import Footer from "../../../../components/Footer/footer";
 import YandexMap from "../../../../components/YandexMap/yandexMap";
 import styles from "./card.module.css";
 import { useAppModals } from "../../../../components/Modals";
+import FooterCard from "../../../../components/FooterCard/FooterCard";
 
 const CardDashboard = () => {
   const data = [
@@ -29,7 +30,7 @@ const CardDashboard = () => {
         <YandexMap data={data} />
       </div>
       <div className={styles.footer}>
-        <Footer />
+        <FooterCard />
       </div>
     </div>
   );

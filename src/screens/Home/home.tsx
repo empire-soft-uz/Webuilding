@@ -58,13 +58,13 @@ const HomeView = () => {
 
   return (
     <div className={styles.container} onScroll={handleScroll}>
-      <div className={styles.topAdvertising}>
+      {/* <div className={styles.topAdvertising}>
         <img
           className={styles.topImage}
           src="https://yangiuylar.uz/wp-content/uploads/2022/07/kislorod32.jpg?v=1659158295"
           alt=""
         />
-      </div>
+      </div> */}
       <Dashboard />
       <Outlet />
       <FilterModal />

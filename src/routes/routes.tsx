@@ -12,6 +12,7 @@ import CardDashboard from '../screens/Home/views/Card/cardDashboard';
 import Blog from '../screens/Home/views/Blog/Blog';
 import { Dashboard } from '@mui/icons-material';
 import BlogItem from '../screens/Home/views/Blog/BlogItem/BlogItem';
+import Jobs from '../screens/Home/views/Jobs/Jobs';
 const Router = () => {
 	return (
 		<BrowserRouter>
@@ -31,6 +32,10 @@ const Router = () => {
 					<Route
 						path={APP_ROUTES.DEVELOPERS}
 						element={<Developers />}
+					/>
+					<Route
+						path={APP_ROUTES.JOBS}
+						element={<Jobs />}
 					/>
 					<Route
 						path={APP_ROUTES.BUILDER}

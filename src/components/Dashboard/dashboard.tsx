@@ -38,7 +38,9 @@ const Dashboard = () => {
   const [isClose, setIsClose] = useState(false);
   const [scroll, setScroll] = useState(false);
   useEffect(() => {
-    window.addEventListener("scroll", () => setScroll(window.scrollY > 50));
+    window.addEventListener("scroll", () =>
+      setScroll(window.scrollY > 1)
+    );
   }, []);
 
   const navigate = useNavigate();

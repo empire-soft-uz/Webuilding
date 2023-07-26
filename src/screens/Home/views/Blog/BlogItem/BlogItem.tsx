@@ -14,6 +14,7 @@ import { BiLogoLinkedin, BiSolidPrinter, BiLogoGmail } from 'react-icons/bi';
 import { BsTwitter } from 'react-icons/bs';
 import { FaFacebookSquare } from 'react-icons/fa';
 import { IconButton } from '@mui/material';
+import FooterCard from '../../../../../components/FooterCard/FooterCard';
 
 export default observer(() => {
 	const { toggle } = useRootStore().visibleStore;
@@ -184,7 +185,7 @@ export default observer(() => {
 					}}
 				/>
 			</div>
-			<Footer />
+			<FooterCard />
 		</div>
 	);
 });

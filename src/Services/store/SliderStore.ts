@@ -1,8 +1,10 @@
-import { makeAutoObservable, runInAction } from "mobx";
+import { makeAutoObservable, runInAction, toJS } from "mobx";
 import { find } from "lodash";
 import { SliderData, SliderDataInitial, SliderDataType } from "../../constants/SliderData";
 
 export default class SliderStore {
+    sliderData: SliderDataType[] = SliderData;
+    
     constructor() {
         makeAutoObservable(this)
     }
@@ -11,21 +13,24 @@ export default class SliderStore {
     current = 0
 
     nextSilader = () => {
-        runInAction(() => {
-            this.current = this.current + 1
-        })  
+            const arr = [...this.sliderData];
+            this.sliderData = [...this.sliderData, {...arr[this.current], id:this.sliderData.length + 1}];
+            this.current++;
         return this.current
     }
 
     backSilader = () => {
-        runInAction(() => {
-            this.current = this.current - 1
-        })
+        this.current--;
         return this.current
     }
 
     getSliderData = (id: number) => {
-        this.currentSliderData = find(SliderData, { id }) as SliderDataType
+        this.currentSliderData = find(this.sliderData, { id }) as SliderDataType
+    }
+
+    // 
+    setSliderData = (data:any) => {
+        this.sliderData = data;
     }
 
 }
