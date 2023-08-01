@@ -4,6 +4,7 @@
 .content{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap !important;
 }
 
 .title{
@@ -11,6 +12,8 @@
 }
 
 .cardBox{
+    display: flex;
+    flex-direction: column;
     width: 32%;
     height: 100%;
 }
@@ -38,6 +41,7 @@
 .downLoadBtns{
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     padding-left: 34%;
     gap: 15px;
 }
@@ -53,4 +57,29 @@
     padding-top: 40px;
     display: flex;
     justify-content: center;
+}
+
+@media(max-width: 576px){
+    .cardBox{
+        width: 100% !important;
+    }
+}
+
+@media(max-width: 767px){
+    .content{
+        flex-wrap: wrap !important;
+    }
+    .cardBox{
+        width: 48%;
+        margin-top: 20px;
+    }
+    .downLoadBtns{
+        padding-left: 0% !important;
+    }
+}
+
+@media(max-width: 1200px){
+    .protect{
+        padding-bottom: 40px;
+    }
 }

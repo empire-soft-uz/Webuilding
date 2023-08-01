@@ -104,7 +104,6 @@ const PerfectCarusel = () => {
                             </div>
                         </div>
                     </div>
-                    
                 ))}
             </div>
             <div className="buttons">

@@ -9,5 +9,7 @@ export enum APP_ROUTES {
 	Card = '/card',
 	BLOG = '/blog',
 	BLOG_ITEM = '/blog/:id',
-	JOBS = 'jobs'
+	JOBS = '/jobs',
+	COOPERATION = '/cooperation',
+	TRANSACTIONS = '/transactions'
 }

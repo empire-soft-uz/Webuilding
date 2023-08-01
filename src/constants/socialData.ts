@@ -75,7 +75,7 @@ export const FooterSecondData = [
     {
         id: 2,
         title: "Сотрудничество",
-        link: ""
+        link: "/cooperation"
     },
     {
         id: 3,
@@ -85,7 +85,7 @@ export const FooterSecondData = [
     {
         id: 4,
         title: "Гарантия безопасности сделки",
-        link: ""
+        link: "/transactions"
     },
     {
         id: 5,

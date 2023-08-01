@@ -24,10 +24,18 @@ import { useTranslation } from "react-i18next";
 import AdvencedSlider from "../../../../components/AdvencedSlider/AdvencedSlider";
 import PerfectCarusel from "../../../../components/PerfectCarusel/PerfectCarusel";
 import FooterCard from "../../../../components/FooterCard/FooterCard";
+import { useEffect, useState } from "react";
 
 const Main = () => {
   const { toggle } = useRootStore().visibleStore;
   const { t } = useTranslation();
+
+  const [scroll, setScroll] = useState(false);
+  useEffect(() => {
+    window.addEventListener("scroll", () =>
+      setScroll(window.scrollY > 1)
+    );
+  }, []);
 
   return (
     <>
@@ -70,7 +78,12 @@ const Main = () => {
             />
           </div>
         </AdsContainerForProducts>
-        <div className={styles.aboveBox}>
+          <div className={styles.socialBox}>
+            {SocialData.map((e, index) => {
+              return <SocialCard key={index} title={e.title} icon={e.icon} />;
+            })}
+          </div>
+        <div className={styles.aboveBox} style={{ bottom: scroll  ? "0" : "-20vh"}}>
           <Button
             textSize={"fourteen"}
             btnSize={"filter"}
@@ -95,6 +108,7 @@ const Main = () => {
 export const ProductListOfMain = ({ classname }: { classname?: string }) => {
   const navigation = useNavigate();
   return (
+    <>
     <div className={`${styles.productBox} ${classname}`}>
       {ProductData.map((e, index) => {
         return (
@@ -121,10 +135,8 @@ export const ProductListOfMain = ({ classname }: { classname?: string }) => {
           />
         );
       })}
-      {SocialData.map((e, index) => {
-        return <SocialCard key={index} title={e.title} icon={e.icon} />;
-      })}
-    </div>
+      </div>
+    </>
   );
 };
 
