@@ -73,7 +73,7 @@ const Dashboard = () => {
   return (
     <div
       style={{
-        transition: "0.4s linear",
+        transition: "0.4s ease-in-out",
         position: scroll ? "fixed" : "absolute",
         top: scroll ? "0" : "-300px",
         zIndex: 11,

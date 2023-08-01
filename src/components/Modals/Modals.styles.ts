@@ -246,7 +246,7 @@ export const ICallYouNowContainer = styled.div`
   }
 `;
 export const AdvertisingNowContainer = styled.div`
-  position: absolute;
+  position: fixed;
   left: 0;
   right: 0;
   top: 0;

@@ -8,6 +8,13 @@
   width: 100%;
   padding: 0 3vw;
 }
+.socialBox{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 3%;
+  margin-top: 30px;
+}
 
 .banner {
   padding: 5vh 0 0 0;
@@ -64,6 +71,7 @@
     bottom: 0;
     left: 0;
     z-index: 12;
+    transition: 0.4s ease-in-out;
   }
 }
 
