@@ -1,4 +1,4 @@
-import { SetStateAction, useState } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 import styled from "styled-components";
 import AboutProducer from "../../../../components/AboutProducer/aboutProducer";
 import CollapseContent from "../../../../components/CollapseContent/collapseContent";
@@ -16,9 +16,15 @@ import styles from "./product.module.css";
 import Invest from "../../../../components/Invest/invest";
 import YoutubeVideo from "../../../../components/YoutubeVideo/YoutubeVideo";
 import FooterCard from "../../../../components/FooterCard/FooterCard";
+import Dashboard from "../../../../components/Dashboard/dashboard";
+import useRootStore from "../../../../Hooks/useRootStore";
 
 const ProductPage = () => {
   const [scrollTop, setScrollTop] = useState(0);
+  const { getProduct } = useRootStore().oneProductStore
+  useEffect(() => {
+    getProduct()
+  }, [])
 
   const handleScroll = (event: {
     currentTarget: { scrollTop: SetStateAction<number> };
@@ -27,35 +33,38 @@ const ProductPage = () => {
   };
   console.log("scrollTop", scrollTop);
   return (
-    <div className={styles.container} onScroll={handleScroll}>
-      <ProductBanner />
-      <AdsContainerForProducts>
-        <div className="productList">
-          <Deposits />
-          <CollapseContent />
-          <CommentBox />
-          <Infrastructure />
-          <Procedure />
-          <Invest />
-          <MainAdventages />
-          <AboutProducer />
-          <ProcessBuilding />
-          <YoutubeVideo />
-          <Documents />
-          <PlaceComment />
-        </div>
+    <>
+      <Dashboard onScroll />
+      <div className={styles.container} onScroll={handleScroll}>
+        <ProductBanner />
+        <AdsContainerForProducts>
+          <div className="productList">
+            <Deposits />
+            <CollapseContent />
+            {/* <CommentBox /> */}
+            <Infrastructure />
+            <Procedure />
+            {/* <Invest /> */}
+            <MainAdventages /> 
+            <AboutProducer />
+            <ProcessBuilding />
+            <YoutubeVideo />
+            <Documents />
+            {/* <PlaceComment /> */}
+          </div>
 
-        <div className="rightAdsBox">
-          <img
-            src="https://domtut.uz/resources/uploads/property/ipak-yoli/main_1.jpg?r=1682593805"
-            alt=""
-            style={{ width: "100%", height: "100%" }}
-          />
-        </div>
-      </AdsContainerForProducts>
+          <div className="rightAdsBox">
+            <img
+              src="https://domtut.uz/resources/uploads/property/ipak-yoli/main_1.jpg?r=1682593805"
+              alt=""
+              style={{ width: "100%", height: "100%" }}
+            />
+          </div>
+        </AdsContainerForProducts>
 
-      <FooterCard />
-    </div>
+        <FooterCard />
+      </div>
+    </>
   );
 };
 

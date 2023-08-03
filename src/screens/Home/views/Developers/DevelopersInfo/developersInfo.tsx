@@ -6,11 +6,13 @@ import { APP_ROUTES } from "../../../../../routes/app-router";
 import styles from "./developersInfo.module.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import FooterCard from "../../../../../components/FooterCard/FooterCard";
+import Dashboard from "../../../../../components/Dashboard/dashboard";
 const DevelopersInfo = () => {
   const navigation = useNavigate();
 
   const ProductListOfMain = () => {
     return (
+      
       <div className={styles.productBox}>
         {ProductData.map((e, index) => {
           return (
@@ -41,6 +43,8 @@ const DevelopersInfo = () => {
     );
   };
   return (
+    <>
+      <Dashboard onScroll />
     <div className={styles.container}>
       <div className={styles.box}>
         <div className={styles.image_box}>
@@ -156,6 +160,7 @@ const DevelopersInfo = () => {
       </div>
       <FooterCard />
     </div>
+    </>
   );
 };
 export default DevelopersInfo;

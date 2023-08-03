@@ -1,9 +1,13 @@
 import React from 'react'
+import Dashboard from '../../../../components/Dashboard/dashboard'
+import FooterCard from '../../../../components/FooterCard/FooterCard'
 import Text from '../../../../components/Text/text'
 import styles from "./Jobs.module.css"
 
 const Jobs = () => {
   return (
+    <>
+      <Dashboard onScroll />
       <div className={styles.container}>
           <div className={styles.textBox}>
             <Text textType={'middle'} textSize={'eighteen'} textColor={'black'}  text="Застройщики: Ключевой фактор успеха на рынке новостроек" />
@@ -19,8 +23,10 @@ const Jobs = () => {
             <Text textType={'middle'} textSize={'sixteen'} textColor={'grey'} text="Выбирая наш сайт для поиска жилья, вы можете быть уверены в том, что каждый застройщик — это надежный партнер, который поможет вам обрести дом вашей мечты." />
             <Text textType={'middle'} textSize={'sixteen'} textColor={'grey'} text="Надежные застройщики играют ключевую роль в создании высококачественных новостроек и долгосрочных отношений с клиентами. Их профессионализм, опыт и социальная ответственность обеспечивают успех на рынке недвижимости и удовлетворение клиентов." />
             <Text textType={'middle'} textSize={'sixteen'} textColor={'grey'} text="Мы гордимся работать с теми застройщиками, которые соответствуют высоким стандартам качества, и уверены, что каждый клиент найдет на нашем сайте новостройку своей мечты. Выбирайте качество и надежность — выбирайте новостройки на нашем сайте!" />
-          </div>
+        </div>
+        <FooterCard />
     </div>
+    </>
   )
 }
 

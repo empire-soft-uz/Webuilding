@@ -23,10 +23,13 @@ import { AboutUsContainer } from "./AboutUs.styled";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Footer from "../../../../components/Footer/footer";
 import FooterCard from "../../../../components/FooterCard/FooterCard";
+import Dashboard from "../../../../components/Dashboard/dashboard";
 
 const AboutUs = () => {
   const renderBgImg = useCallback(
     () => (
+      <>
+        <Dashboard onScroll />
       <div className="bg-img">
         <img
           alt="background imag"
@@ -36,6 +39,7 @@ const AboutUs = () => {
 
         <h3 className="bg-img__title">О компании</h3>
       </div>
+      </>
     ),
     []
   );

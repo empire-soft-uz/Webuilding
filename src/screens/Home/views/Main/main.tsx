@@ -25,6 +25,7 @@ import AdvencedSlider from "../../../../components/AdvencedSlider/AdvencedSlider
 import PerfectCarusel from "../../../../components/PerfectCarusel/PerfectCarusel";
 import FooterCard from "../../../../components/FooterCard/FooterCard";
 import { useEffect, useState } from "react";
+import Dashboard from "../../../../components/Dashboard/dashboard";
 
 const Main = () => {
   const { toggle } = useRootStore().visibleStore;
@@ -40,6 +41,7 @@ const Main = () => {
   return (
     <>
       {/* <AdvencedSlider /> */}
+      <Dashboard onScroll={scroll} />
       <PerfectCarusel />
       <div className={styles.container}>
         <div className={styles.banner}>
@@ -107,6 +109,12 @@ const Main = () => {
 
 export const ProductListOfMain = ({ classname }: { classname?: string }) => {
   const navigation = useNavigate();
+  const { oneProduct, setOneProduct } = useRootStore().oneProductStore
+
+  const getOneProduct = async (item: any) => {
+    setOneProduct(item)
+    navigation(APP_ROUTES.PRODUCT)
+  }
   return (
     <>
     <div className={`${styles.productBox} ${classname}`}>
@@ -124,7 +132,7 @@ export const ProductListOfMain = ({ classname }: { classname?: string }) => {
             price={e.price}
             time={e.process}
             symbolDotIcon={e.symbolDotIcon}
-            onPress={() => navigation(APP_ROUTES.PRODUCT)}
+            onPress={() => getOneProduct(e)}
             minexpense={e.minExpense}
             studios={e.studios}
             oneRoom={e.oneRoom}

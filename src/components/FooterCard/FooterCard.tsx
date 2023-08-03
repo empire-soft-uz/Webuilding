@@ -66,7 +66,7 @@ const FooterCard = () => {
         })}
       </div>
       </div>
-      <div className={styles.downLoadBtns}>
+      {/* <div className={styles.downLoadBtns}>
         <AppStoreButton
           theme={"dark"}
           url={iOSUrl}
@@ -85,7 +85,7 @@ const FooterCard = () => {
         <div className={styles.qrCodeBox}>
           <img src="/qrcode.png" alt="" />
         </div>
-      </div>
+      </div> */}
       <div className={styles.protect}>
         <Text textType={'middle'} textSize={'sixteen'} textColor={'grey'} text="2023© Компания Weebuilding. Все права защищены. При использовании материалов гиперссылка объязательна" />
       </div>

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { FONTS, RESPONSIVE } from "../../../../constants/constants";
 
 export const AboutUsContainer = styled.div`
-  /* padding-top: 20px; */
+  padding-top: 100px;
   background: #ffffff;
   min-height: 100%;
   height: 100%;

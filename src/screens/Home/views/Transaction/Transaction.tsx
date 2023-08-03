@@ -1,9 +1,13 @@
 import React from 'react'
+import Dashboard from '../../../../components/Dashboard/dashboard'
+import FooterCard from '../../../../components/FooterCard/FooterCard'
 import Text from '../../../../components/Text/text'
 import styles from "./Transaction.module.css"
 
 const Transactions = () => {
-  return (
+    return (
+        <>
+            <Dashboard onScroll />
       <div className={styles.container}>
           <div className={styles.textBox}>
               <Text textType={'middle'} textSize={'eighteen'} textColor={'black'} text="Гарантия безопасности сделки: Ваша защита при покупке новостройки" />
@@ -20,8 +24,10 @@ const Transactions = () => {
               <Text textType={'middle'} textSize={'sixteen'} textColor={'grey'} text="Мы гарантируем, что наша забота о вас не заканчивается с момента совершения сделки. Мы всегда рады помочь вам после покупки новостройки, ответить на вопросы, предоставить необходимую информацию и поддержку." />
               <Text textType={'middle'} textSize={'sixteen'} textColor={'grey'} text="На нашем сайте вы найдете только проверенные и надежные объекты от всех застройщиков в городе. Мы делаем все возможное, чтобы обеспечить безопасность сделки и ваше спокойствие при выборе нового жилья." />
               <Text textType={'middle'} textSize={'sixteen'} textColor={'grey'} text="Покупка новостройки - это ваше будущее, и мы стремимся сделать этот процесс приятным и уверенным. Доверьтесь нам, и вы обретете свой уголок счастья безопасно и надежно!" />
-          </div>
+                </div>
+                <FooterCard />
       </div>
+      </>
   )
 }
 
