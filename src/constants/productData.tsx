@@ -195,7 +195,7 @@ export const ProductData: ProductDataType[] = [
                 image: ASSETS.pr4
             },
         ],
-        company: "Murad building",
+        company: "Namuna development",
         price: "35 000 $ dan",
         homeCount: "717 xonadon",
         process: "1-chorak 2023",

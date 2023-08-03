@@ -5,6 +5,7 @@ import YandexMap from "../../../../components/YandexMap/yandexMap";
 import styles from "./card.module.css";
 import { useAppModals } from "../../../../components/Modals";
 import FooterCard from "../../../../components/FooterCard/FooterCard";
+import Dashboard from "../../../../components/Dashboard/dashboard";
 
 const CardDashboard = () => {
   const data = [
@@ -16,6 +17,8 @@ const CardDashboard = () => {
   const appModals = useAppModals();
 
   return (
+    <>
+      <Dashboard onScroll />
     <div className={styles.container}>
       <div className={styles.filterBox}>
         <button
@@ -29,10 +32,11 @@ const CardDashboard = () => {
       <div className={styles.map} id="map">
         <YandexMap data={data} />
       </div>
+     </div>
       <div className={styles.footer}>
         <FooterCard />
       </div>
-    </div>
+    </>
   );
 };
 export default observer(CardDashboard);

@@ -51,7 +51,7 @@ const BannerForProduct: React.FC<Props> = ({
             <img className={styles.image} src={imgUrl} alt="" />
             <div className={styles.main}>
                 <div className={styles.aboveBox}>
-                    <div className={styles.blurBox}>
+                    {/* <div className={styles.blurBox}>
                         <div>
                             <div className={styles.breadcrumbs}>
                                 {
@@ -81,7 +81,7 @@ const BannerForProduct: React.FC<Props> = ({
                                 <Button className='button' textSize={'fourteen'} btnSize={'middle'} btnColor={'purple'} textColor={'textWhite'} borderRadius={'five'} title='Kvartirani tanlang' />
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </Conatiner>

@@ -3,7 +3,7 @@ import { COLORS, addAlpha } from "../../constants/color";
 import { FONTS, RESPONSIVE } from "../../constants/constants";
 
 export const CallMeLaterModalContainer = styled.div`
-  position: absolute;
+  position: fixed;
   left: 0;
   right: 0;
   top: 0;
@@ -154,7 +154,7 @@ export const CallMeLaterModalContainer = styled.div`
   }
 `;
 export const ICallYouNowContainer = styled.div`
-  position: absolute;
+  position: fixed;
   left: 0;
   right: 0;
   top: 0;

@@ -8,7 +8,7 @@ export default class VisibleStore {
     constructor() {
         makeAutoObservable(this)
     }
-
+    
     visiable: modal = {
         filterModal: false
     }

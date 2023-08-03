@@ -23,6 +23,7 @@
     "@types/yandex-maps": "^2.1.29",
     "babel-plugin-styled-components": "^2.1.1",
     "date-fns": "^2.30.0",
+    "firebase": "^10.1.0",
     "i18next": "^23.2.11",
     "lodash": "^4.17.21",
     "mobx": "^6.9.0",

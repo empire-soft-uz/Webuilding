@@ -12,8 +12,12 @@ const data = [
   { id: 1, locatsiya1: 41.318025, locatsiya2: 69.279018 },
   { id: 2, locatsiya1: 41.314354, locatsiya2: 69.26548 },
   { id: 3, locatsiya1: 41.309733, locatsiya2: 69.254216 },
+  { id: 4, locatsiya1: 41.310152, locatsiya2: 69.245404 },
 ];
 const Infrastructure = () => {
+  const FilterData = () => {
+    
+  }
   return (
     <div className={styles.container}>
       <div className={styles.title}>
@@ -31,36 +35,6 @@ const Infrastructure = () => {
           text="Maktab"
           btnType={"primary"}
           img={ASSETS.schoolBuilding}
-        />
-        <SimpleBtn
-          dotColor={COLORS.black}
-          text="Maktab"
-          btnType={"primary"}
-          img={ASSETS.babyFace}
-        />
-        <SimpleBtn
-          dotColor={COLORS.black}
-          text="Maktab"
-          btnType={"primary"}
-          img={ASSETS.stethoscope}
-        />
-        <SimpleBtn
-          dotColor={COLORS.black}
-          text="Maktab"
-          btnType={"primary"}
-          img={ASSETS.soccerBall}
-        />
-        <SimpleBtn
-          dotColor={COLORS.black}
-          text="Maktab"
-          btnType={"primary"}
-          img={ASSETS.cycling}
-        />
-        <SimpleBtn
-          dotColor={COLORS.black}
-          text="Maktab"
-          btnType={"primary"}
-          img={ASSETS.holiday}
         />
       </div>
       <div className={styles.security}>

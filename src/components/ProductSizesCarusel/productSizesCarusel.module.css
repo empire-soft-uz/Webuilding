@@ -1,17 +1,27 @@
 .container {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    overflow-x: scroll;
 }
 
 .container::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 .carousel {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  overflow-x: scroll;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.line {
+    height: 500px;
+    width: 1.5px;
+    background-color: #EFF3F9 !important;
+}
+
+.drawer {
+    background-color: red;
 }

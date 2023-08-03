@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { CloseIcon, LogoIcon, MenuIcon, MobileIcon } from "../../assets/icons";
 import { COLORS } from "../../constants/color";
 import { APP_ROUTES } from "../../routes/app-router";
@@ -9,8 +9,13 @@ import Dot from "../Dot/dot";
 import Text from "../Text/text";
 import styles from "./dashboard.module.css";
 import { useAppModals } from "../Modals";
+interface Props{
+  onScroll?: boolean
+}
 
-const Dashboard = () => {
+const Dashboard: React.FC<Props> = ({
+  onScroll=false
+}) => {
   const { t } = useTranslation();
   const CategoryData = [
     {
@@ -36,12 +41,6 @@ const Dashboard = () => {
   ];
   const [active, setActive] = useState(1);
   const [isClose, setIsClose] = useState(false);
-  const [scroll, setScroll] = useState(false);
-  useEffect(() => {
-    window.addEventListener("scroll", () =>
-      setScroll(window.scrollY > 1)
-    );
-  }, []);
 
   const navigate = useNavigate();
   const appModals = useAppModals();
@@ -74,8 +73,8 @@ const Dashboard = () => {
     <div
       style={{
         transition: "0.4s ease-in-out",
-        position: scroll ? "fixed" : "absolute",
-        top: scroll ? "0" : "-300px",
+        position: onScroll ? "fixed" : "absolute",
+        top: onScroll ? "0" : "-300px",
         zIndex: 11,
         width: "100%",
       }}
@@ -92,13 +91,13 @@ const Dashboard = () => {
             text="Webuilding"
           />
         </div>
-        <a href="tel:+998 93 533 13 35" className={styles.contact}>
+        <a href="tel:+998 93 230 05 00" className={styles.contact}>
           <div className={styles.number}>
             <Text
               textType={"middle"}
               textSize={"fourteen"}
               textColor={"purple"}
-              text="+998 93 533 13 35"
+              text="+998 93 230 05 00"
             />
           </div>
           <MobileIcon />
@@ -151,12 +150,11 @@ const Dashboard = () => {
               textSize={"sixteen"}
               textColor={"darkGrey"}
               cursor={"none"}
-              text={"+998 ( 99 ) 310 37 63"}
+              text={"+998 (93) 230 05 00"}
             />
             <a
-              href="tel:+998993103763"
+              href="tel:+998932300500"
               style={{ textDecoration: "none" }}
-              target="_blank"
             >
               <Text
                 style={{ marginTop: "10px" }}

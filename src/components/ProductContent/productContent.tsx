@@ -52,7 +52,7 @@ const ProductContent = () => {
                 {
                     BannerData.map((e, index) => {
                         return (
-                            <img src={e.image} alt="" />
+                            <img key={index} src={e.image} alt="" />
                         )
                     })
                 }

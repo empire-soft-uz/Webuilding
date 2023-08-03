@@ -65,7 +65,6 @@ const HomeView = () => {
           alt=""
         />
       </div> */}
-      <Dashboard />
       <Outlet />
       <FilterModal />
     </div>

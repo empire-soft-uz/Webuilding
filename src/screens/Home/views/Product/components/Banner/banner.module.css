@@ -22,7 +22,7 @@
     width: 50%;
     border-radius: 20px 0px 0px 20px;
     height: 100%;
-    backdrop-filter: blur(2.5px);
+    /* backdrop-filter: blur(2.5px); */
     padding: 30px 40px;
     border-radius: 20px;
 }

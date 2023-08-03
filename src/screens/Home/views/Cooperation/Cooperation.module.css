@@ -1,6 +1,7 @@
 .container{
     padding: 5%;
     height: 100%;
+    padding-top: 130px;
 }
 .textBox{
     display: flex;

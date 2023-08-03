@@ -1,9 +1,13 @@
 import React from 'react'
+import Dashboard from '../../../../components/Dashboard/dashboard'
+import FooterCard from '../../../../components/FooterCard/FooterCard'
 import Text from '../../../../components/Text/text'
 import styles from "./Cooperation.module.css"
 
 const Cooperation = () => {
-  return (
+    return (
+        <>
+            <Dashboard onScroll />
       <div className={styles.container}>
           <div className={styles.textBox}>
               <Text textType={'middle'} textSize={'eighteen'} textColor={'black'} text="Сотрудничество: Партнерство для успешного будущего" />
@@ -24,7 +28,9 @@ const Cooperation = () => {
               <Text textType={'middle'} textSize={'sixteen'} textColor={'grey'} text="Если вы заинтересованы в сотрудничестве или имеете иные предложения, пожалуйста, свяжитесь с нами по адресу [адрес электронной почты] или заполните форму обратной связи на нашем сайте." />
               <Text textType={'middle'} textSize={'sixteen'} textColor={'grey'} text="Мы с нетерпением ждем возможности сотрудничества с вами !" />
           </div>
+          <FooterCard />
       </div>
+      </>
   )
 }
 
