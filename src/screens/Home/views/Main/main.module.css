@@ -59,9 +59,9 @@
 		justify-content: center;
 		margin-bottom: 10vh;
 	}
-	.infoBox {
+	/* .infoBox {
 		display: none;
-	}
+	} */
 	.aboveBox {
 		position: fixed;
 		display: flex;

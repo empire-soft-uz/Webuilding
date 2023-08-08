@@ -8,155 +8,93 @@ import { ProductData } from '../../../../constants/productData';
 import { APP_ROUTES } from '../../../../routes/app-router';
 import styles from './main.module.css';
 
-import { Box, MenuItem, Select, TextField } from '@mui/material';
+import { Box, MenuItem } from '@mui/material';
 import Chip from '@mui/material/Chip';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import OutlinedInput from '@mui/material/OutlinedInput';
-import { SelectChangeEvent } from '@mui/material/Select';
 import { Theme, useTheme } from '@mui/material/styles';
 import { map, take } from 'lodash';
 import * as React from 'react';
-import { useCallback, useState } from 'react';
+import { useState } from 'react';
 import FooterCard from '../../../../components/FooterCard/FooterCard';
 import PerfectCarusel from '../../../../components/PerfectCarusel/PerfectCarusel';
 import SocialCard from '../../../../components/SocialCard/SocialCard';
 import { SocialData } from '../../../../constants/socialData';
 import { selectOptions } from './Main.data';
-import { MainInputContainer, MostPopularContainer } from './Main.styled';
+import {
+	ContainerOfSelect,
+	IInput,
+	MostPopularContainer,
+	ISelect as Select,
+} from './Main.styled';
 
 const Main = () => {
 	const [option1, setOption1] = useState(selectOptions.first[0]);
 	const [option2, setOption2] = useState(selectOptions.second[0]);
 	const [option3, setOption3] = useState(selectOptions.third[0]);
 
-	const renderMainSelecters = useCallback(
-		() => (
-			<MainInputContainer>
-				<Select
-					className='main__select'
-					value={option1}
-					name='first'
-					sx={{
-						width: 200,
-						borderRadius: 0,
-						height: 56,
-						color: COLORS.purple,
-
-						'& *': {
-							borderColor: `${COLORS.purple} !important`,
-							color: `${COLORS.purple} !important`,
-						},
-					}}
-					onChange={(event) => setOption1(event.target.value)}>
-					{map(selectOptions.first, (item) => (
-						<MenuItem
-							key={item}
-							value={item}
-							sx={{ color: COLORS.purple }}>
-							{item}
-						</MenuItem>
-					))}
-				</Select>
-				<Select
-					value={option2}
-					name='second'
-					sx={{
-						width: 200,
-						borderRadius: 0,
-						height: 56,
-						color: COLORS.purple,
-						'& *': {
-							borderColor: `${COLORS.purple} !important`,
-							color: `${COLORS.purple} !important`,
-						},
-					}}
-					onChange={(event) => setOption2(event.target.value)}>
-					{map(selectOptions.second, (item) => (
-						<MenuItem
-							key={item}
-							value={item}
-							sx={{ color: COLORS.purple }}>
-							{item}
-						</MenuItem>
-					))}
-				</Select>
-				<Select
-					value={option3}
-					name='third'
-					sx={{
-						width: 200,
-						borderRadius: 0,
-						height: 56,
-						color: COLORS.purple,
-						'& *': {
-							borderColor: `${COLORS.purple} !important`,
-							color: `${COLORS.purple} !important`,
-						},
-					}}
-					onChange={(event) => setOption3(event.target.value)}>
-					{map(selectOptions.third, (item) => (
-						<MenuItem
-							key={item}
-							value={item}
-							sx={{ color: COLORS.purple }}>
-							{item}
-						</MenuItem>
-					))}
-				</Select>
-				<MultipleSelectChip />
-				<TextField
-					color='primary'
-					placeholder='Цена от'
-					style={{
-						borderRadius: 0,
-					}}
-					sx={{
-						height: '50px',
-						width: 150,
-						color: COLORS.purple,
-						'& *': {
-							borderColor: `${COLORS.purple} !important`,
-							color: `${COLORS.purple} !important`,
-						},
-					}}
-				/>
-				<TextField
-					color='primary'
-					placeholder='до'
-					style={{
-						borderRadius: 0,
-					}}
-					sx={{
-						height: '50px',
-						width: 150,
-						boxSizing: 'border-box',
-						color: COLORS.purple,
-						'& *': {
-							borderColor: `${COLORS.purple} !important`,
-							color: `${COLORS.purple} !important`,
-						},
-					}}
-				/>
-				<p className='curreny'>сум</p>
-			</MainInputContainer>
-		),
-		[option1, option2, option3]
-	);
-
 	return (
 		<>
 			<PerfectCarusel />
 
 			<div className={styles.container}>
-				<div className={styles.banner}>
-					<div className={styles.infoBox}>
-						<div className={styles.infoCard}>
-							{renderMainSelecters()}
-						</div>
-						<ViewMap />
+				<ContainerOfSelect>
+					<div className='selectContainer'>
+						<Select
+							className='main__select'
+							value={option1}
+							name='first'
+							onChange={(event: any) =>
+								setOption1(event.target.value)
+							}>
+							{map(selectOptions.first, (item) => (
+								<MenuItem
+									key={item}
+									value={item}
+									sx={{ color: COLORS.purple }}>
+									{item}
+								</MenuItem>
+							))}
+						</Select>
+						<Select
+							value={option2}
+							name='second'
+							onChange={(event: any) =>
+								setOption2(event.target.value)
+							}>
+							{map(selectOptions.second, (item) => (
+								<MenuItem
+									key={item}
+									value={item}
+									sx={{ color: COLORS.purple }}>
+									{item}
+								</MenuItem>
+							))}
+						</Select>
+						<Select
+							value={option3}
+							name='third'
+							onChange={(event: any) =>
+								setOption3(event.target.value)
+							}>
+							{map(selectOptions.third, (item) => (
+								<MenuItem
+									key={item}
+									value={item}
+									sx={{ color: COLORS.purple }}>
+									{item}
+								</MenuItem>
+							))}
+						</Select>
+						<MultipleSelectChip />
 					</div>
-				</div>
+					<div className='inputContainer'>
+						<IInput color='primary' placeholder='Цена от' />
+						<IInput color='primary' placeholder='до' />
+					</div>
+					<ViewMap />
+				</ContainerOfSelect>
 				<MostPopularContainer>
 					<h2 className='title'>
 						Самые популярные новостройки в Ташкенте
@@ -277,7 +215,7 @@ export function MultipleSelectChip() {
 	const theme = useTheme();
 	const [personName, setPersonName] = React.useState<string[]>([]);
 
-	const handleChange = (event: SelectChangeEvent<typeof personName>) => {
+	const handleChange = (event: any) => {
 		const {
 			target: { value },
 		} = event;
@@ -290,13 +228,18 @@ export function MultipleSelectChip() {
 	return (
 		<div>
 			<FormControl
-				sx={{
-					width: 250,
+				sx={() => ({
+					[theme.breakpoints.up('xs')]: {
+						width: '100%',
+					},
+					[theme.breakpoints.up('lg')]: {
+						width: 300,
+					},
 					'& *': {
 						borderColor: `${COLORS.purple} !important`,
 						color: `${COLORS.purple} !important`,
 					},
-				}}>
+				})}>
 				<InputLabel id='demo-multiple-chip-label'>комната</InputLabel>
 				<Select
 					labelId='demo-multiple-chip-label'
@@ -316,14 +259,14 @@ export function MultipleSelectChip() {
 							}}
 						/>
 					}
-					renderValue={(selected) => (
+					renderValue={(selected: any) => (
 						<Box
 							sx={{
 								display: 'flex',
 								flexWrap: 'wrap',
 								gap: 0.5,
 							}}>
-							{selected.map((value) => (
+							{selected.map((value: any) => (
 								<Chip
 									key={value}
 									label={value}
