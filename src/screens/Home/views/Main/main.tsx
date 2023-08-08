@@ -219,10 +219,7 @@ export function MultipleSelectChip() {
 		const {
 			target: { value },
 		} = event;
-		setPersonName(
-			// On autofill we get a stringified value.
-			typeof value === 'string' ? value.split(',') : value
-		);
+		setPersonName(typeof value === 'string' ? value.split(',') : value);
 	};
 
 	return (
