@@ -1,7 +1,7 @@
 .container {
     display: flex;
     justify-content: space-between;
-    height: 100%;
+    width: 100%;
     overflow-x: scroll;
 }
 
@@ -12,16 +12,40 @@
 .carousel {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
-    height: 100%;
+    width: 100%;
+}
+.item {
+    display: flex;
 }
 
 .line {
     height: 500px;
     width: 1.5px;
-    background-color: #EFF3F9 !important;
+    background-color: #eff3f9 !important;
 }
 
 .drawer {
     background-color: red;
 }
+
+/* @media (min-width: 120px) {
+    .container {
+        width: 300px;
+    }
+}
+
+@media (min-width: 576px) {
+    .container {
+        width: 500px;
+    }
+}
+@media (min-width: 767px) {
+    .container {
+        width: 700px;
+    }
+}
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+} */

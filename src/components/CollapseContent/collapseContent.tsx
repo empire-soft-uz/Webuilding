@@ -1,78 +1,81 @@
-import { MenuItem, Select } from '@mui/material'
-import React from 'react'
-import styled from 'styled-components'
-import { COLORS } from '../../constants/color'
-import Collapse from '../Collapse/collapse'
-import Text from '../Text/text'
-import styles from "./collapseContent.module.css"
+import { MenuItem, Select } from "@mui/material";
+import { observer } from "mobx-react-lite";
+import React from "react";
+import styled from "styled-components";
+import { COLORS } from "../../constants/color";
+import { ProductBodyData } from "../../constants/productData";
+import useRootStore from "../../Hooks/useRootStore";
+import Collapse from "../Collapse/collapse";
+import Text from "../Text/text";
+import styles from "./collapseContent.module.css";
 
 const CollapseContent = () => {
-
-    const [value, setValue] = React.useState('all');
-
+    const { oneProduct, selectBody, setSelectedBody } =
+        useRootStore().oneProductStore;
     return (
         <Container className={styles.container}>
             <Text
-                className='title'
-                textType={'middle'}
-                textSize={'twenty'}
-                textColor={'black'}
-                cursor={'none'}
-                text={'JK “Yangi choshtepa” ishlab chiqaruvchidan 56 ta xonadon'}
+                className="title"
+                textType={"middle"}
+                textSize={"twenty"}
+                textColor={"black"}
+                cursor={"none"}
+                text={"JK Modern Sergeli ishlab chiqaruvchidan 56 ta xonadon"}
                 style={{ marginBottom: "20px" }}
             />
             {/* <DropdownMenu option='Barcha korpus' textColor={COLORS.purple} textSize='16px' /> */}
-            <div className='selectBox'>
-                <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    sx={{
-                        color: COLORS.purple,
-                        "& fieldset": {
-                            border: "none",
-                        },
-                        '.MuiSvgIcon-root ': {
-                            fill: "#8A3FFC !important",
-                        }
-                    }}
-                    value={value}
-                    onChange={(e) => setValue(e.target.value)}
-                    className='select'
+            <div className="selectBox">
+                <select
+                    onChange={(e) => setSelectedBody(e.target.value as never)}
                 >
-                    <MenuItem value={'all'}>Barcha korpus</MenuItem>
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
-                </Select>
+                    {ProductBodyData.map((e, index) => {
+                        return (
+                            <option
+                                // onChange={() => setSelectedBody(e)}
+                                key={index}
+                                value={e.name}
+                            >
+                                {e.name}
+                            </option>
+                        );
+                    })}
+                </select>
             </div>
             <Text
-                className='mainText'
-                textType={'middle'}
-                textSize={'fourteen'}
-                textColor={'black'}
-                cursor={'none'}
-                text={'2023-yil II-B da yetkazish'}
+                className="mainText"
+                textType={"middle"}
+                textSize={"fourteen"}
+                textColor={"black"}
+                cursor={"none"}
+                text={oneProduct.finishTime}
                 style={{ margin: "10px 0 20px 0" }}
             />
             <Collapse />
         </Container>
-    )
-}
+    );
+};
 
-export default CollapseContent
-
+export default observer(CollapseContent);
 
 const Container = styled.div`
     width: 100%;
     height: auto;
 
     .selectBox {
-        #demo-simple-select {
-            width: 110px;
-            padding: 0 !important;
-            padding-right: 32px !important;
-        }
+        width: 80px;
+        height: 30px;
         margin-bottom: 20px;
+        select {
+            width: 100%;
+            height: 100%;
+            border: none;
+            outline: none;
+            color: ${COLORS.purple};
+            option {
+                width: 100%;
+                height: 100%;
+            }
+        }
     }
 
     @media (max-width: 768px) {
@@ -102,5 +105,4 @@ const Container = styled.div`
             margin-bottom: 10px !important;
         }
     }
-
-`
+`;

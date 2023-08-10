@@ -7,11 +7,15 @@ import styles from "./FooterCard.module.css"
 //@ts-ignore
 import { GooglePlayButton, AppGalleryButton, AppStoreButton } from "react-mobile-app-button";
 import { useNavigate } from 'react-router-dom'
+import { useAppModals } from '../Modals'
+import { observer } from 'mobx-react-lite'
 
 const FooterCard = () => {
   const APKUrl = "https://play.google.com/store/apps/details?id=host.exp.exponent";
   const iOSUrl = "https://apps.apple.com/us/app/expo-go/id982107779";
   const navigation = useNavigate()
+  const appModals = useAppModals();
+  
   return (
     <div className={styles.container}>
       <div className={styles.content}>
@@ -23,7 +27,12 @@ const FooterCard = () => {
         {FooterFirstData.map((e, index) => {
           return (
             <div key={index} className={styles.card}>
-              <p className={styles.item}>{e.title}</p>
+              <p className={styles.item} onClick={() => e.isPress ? appModals?.show("call_me_later") : console.log("ssssss....")}>
+                {e.icon ? 
+                <img width={20} height={20} src={e.icon} alt="" /> : null
+                }
+                {e.title}
+              </p>
             </div>
           )
         })}
@@ -34,7 +43,6 @@ const FooterCard = () => {
         </div>
         {FooterSecondData.map((e, index) => {
           return (
-            <>
             <div key={index} className={styles.card}>
             <p onClick={() => navigation(`${e.link}`)} className={styles.item}>{e.title}</p>
             <div className={styles.socialBtns}>
@@ -49,7 +57,6 @@ const FooterCard = () => {
               })}
             </div>
             </div>
-            </>
           )
         })}
       </div>
@@ -93,4 +100,4 @@ const FooterCard = () => {
   )
 }
 
-export default FooterCard
+export default observer(FooterCard)

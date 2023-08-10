@@ -14,7 +14,11 @@ import { Dashboard } from '@mui/icons-material';
 import BlogItem from '../screens/Home/views/Blog/BlogItem/BlogItem';
 import Jobs from '../screens/Home/views/Jobs/Jobs';
 import Cooperation from '../screens/Home/views/Cooperation/Cooperation';
-import Transactions from '../screens/Home/views/Transaction/Transaction';
+import Guarantee from '../screens/Home/views/Guarantee/Guarantee';
+import Advertising from '../screens/Home/views/Advertising/Advertising';
+import Informations from '../screens/Home/views/Informations/Informations';
+import TermsOfUse from '../screens/Home/views/TermsOfUse/TermsOfUse';
+import AboutProject from '../screens/Home/views/AboutProject/AboutProject';
 const Router = () => {
 	return (
 		<BrowserRouter>
@@ -44,12 +48,28 @@ const Router = () => {
 						element={<Cooperation />}
 					/>
 					<Route
-						path={APP_ROUTES.TRANSACTIONS}
-						element={<Transactions />}
+						path={APP_ROUTES.GUARANTEE}
+						element={<Guarantee />}
 					/>
 					<Route
 						path={APP_ROUTES.BUILDER}
 						element={<DevelopersInfo />}
+					/>
+					<Route
+						path={APP_ROUTES.ADVERTISING}
+						element={<Advertising />}
+					/>
+					<Route
+						path={APP_ROUTES.INFORMATIONS}
+						element={<Informations />}
+					/>
+					<Route
+						path={APP_ROUTES.TERMSOFUSE}
+						element={<TermsOfUse />}
+					/>
+					<Route
+						path={APP_ROUTES.ABOUTPROJECT}
+						element={<AboutProject />}
 					/>
 					<Route
 						path={APP_ROUTES.ABOUT_US}

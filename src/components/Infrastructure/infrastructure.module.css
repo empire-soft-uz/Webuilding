@@ -1,35 +1,35 @@
 .container {
-  background-color: #fff;
-  width: 100%;
-  border-radius: 10px;
-  padding: 20px 0 0 0;
-  height: 80vh;
+    background-color: #fff;
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px 0 0 0;
+    height: 80vh;
 }
 
 .title {
-  padding: 0 30px;
+    padding: 0 30px;
 }
 
 .btnBox {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 15px;
-  margin-top: 30px;
-  padding: 0 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 15px;
+    margin-top: 30px;
+    padding: 0 30px;
 }
 
 .security {
-  display: flex;
-  flex-direction: column;
-  margin: 20px 0;
-  padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    padding: 0 30px;
 }
 
 .btn {
-  display: flex;
-  margin-top: 5px;
+    display: flex;
+    margin-top: 5px;
 }
 
 .mapBox {
-  height: 50vh;
+    height: 50vh;
 }

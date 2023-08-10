@@ -1,8 +1,9 @@
-import styled from 'styled-components'
-import { FinishPurpeIcon } from '../../assets/icons'
-import { ASSETS } from '../../constants/requireAssets'
-import Text from '../Text/text'
-import styles from "./collapseItem.module.css"
+import { observer } from "mobx-react-lite";
+import styled from "styled-components";
+import { FinishPurpeIcon } from "../../assets/icons";
+import { ASSETS } from "../../constants/requireAssets";
+import Text from "../Text/text";
+import styles from "./collapseItem.module.css";
 
 type PropsData = {
     data?: {
@@ -11,108 +12,64 @@ type PropsData = {
         text: string;
         price: string;
         area: string;
-        finish: boolean;
-    },
+        finish: string;
+    };
     end?: boolean;
-}
+};
 
-const CollapseItem = ({ end }: PropsData) => {
+const CollapseItem = ({ end, data }: PropsData) => {
     return (
         <Container>
             <div className={`mediaMin768 ${end ? styles.notBorderBottom : ""}`}>
                 <div className={styles.leftBox}>
-                    <img className={styles.img} src={ASSETS.room} alt="" />
+                    <img className={styles.img} src={data?.img} alt="" />
                     <Text
-                        textType={'middle'}
-                        textSize={'sixteen'}
-                        textColor={'black'}
-                        cursor={'Cursor'}
-                        text={'1-x xonali kvartira, 34.2  m2 , 4/9 qavat'}
+                        textType={"middle"}
+                        textSize={"sixteen"}
+                        textColor={"black"}
+                        cursor={"Cursor"}
+                        text={data?.text}
                     />
                 </div>
                 <div className={styles.rightBox}>
                     <Text
-                        textType={'middle'}
-                        textSize={'sixteen'}
-                        textColor={'darkBlue'}
-                        cursor={'Cursor'}
-                        text='35 000 $'
+                        textType={"middle"}
+                        textSize={"sixteen"}
+                        textColor={"darkBlue"}
+                        cursor={"Cursor"}
+                        text={data?.price}
                     />
                     <Text
-                        textType={'middle'}
-                        textSize={'sixteen'}
-                        textColor={'darkBlue'}
-                        cursor={'Cursor'}
-                        text={'21.6  m2 dan'}
+                        textType={"middle"}
+                        textSize={"sixteen"}
+                        textColor={"darkBlue"}
+                        cursor={"Cursor"}
+                        text={data?.area}
                     />
                     <div className={styles.finishBox}>
                         <FinishPurpeIcon />
                         <Text
-                            textType={'middle'}
-                            textSize={'sixteen'}
-                            textColor={'darkBlue'}
-                            cursor={'Cursor'}
-                            text={'Tugallandi'}
-                        />
-                    </div>
-                </div>
-            </div>
-            <div className="mediaMax768">
-                <img className={styles.img} src={ASSETS.room} alt="" />
-                <div className="main">
-                    <div className="topBox">
-                        <Text
-                            className='price'
-                            textType={'semiBold'}
-                            textSize={'sixteen'}
-                            textColor={'black'}
-                            cursor={'Cursor'}
-                            text='35 000 $'
-                        />
-                        <Text
-                            className='area'
-                            textType={'thin'}
-                            textSize={'sixteen'}
-                            textColor={'grey'}
-                            cursor={'Cursor'}
-                            text={'21.6  m2 dan'}
-                        />
-                    </div>
-                    <Text
-                        className='text'
-                        textType={'thin'}
-                        textSize={'sixteen'}
-                        textColor={'black'}
-                        cursor={'Cursor'}
-                        text={'1-x xonali kvartira, 34.2  m2 , 4/9 qavat'}
-                    />
-                    <div className={`${styles.finishBox} finishBox`}>
-                        <FinishPurpeIcon />
-                        <Text
-                            className='finish'
-                            textType={'thin'}
-                            textSize={'sixteen'}
-                            textColor={'darkBlue'}
-                            cursor={'Cursor'}
-                            text={'Tugallandi'}
+                            textType={"middle"}
+                            textSize={"sixteen"}
+                            textColor={"darkBlue"}
+                            cursor={"Cursor"}
+                            text={data?.finish}
                         />
                     </div>
                 </div>
             </div>
         </Container>
-    )
-}
+    );
+};
 
-export default CollapseItem
-
+export default observer(CollapseItem);
 
 const Container = styled.div`
-
     .mediaMin768 {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border-bottom: 1.5px solid #EFF3F9;
+        border-bottom: 1.5px solid #eff3f9;
         padding: 15px 0;
     }
 
@@ -132,7 +89,7 @@ const Container = styled.div`
 
         .mediaMax768 {
             width: 100%;
-            display:flex;
+            display: flex;
             flex-direction: row;
             gap: 20px;
             align-items: center;
@@ -170,7 +127,7 @@ const Container = styled.div`
                     gap: 6px;
                     align-items: center;
 
-                    svg{
+                    svg {
                         width: 15px;
                         height: 15px;
                     }
@@ -182,5 +139,4 @@ const Container = styled.div`
             }
         }
     }
-
-`
+`;

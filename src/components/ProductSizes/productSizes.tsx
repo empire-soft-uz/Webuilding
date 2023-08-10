@@ -9,20 +9,18 @@ interface Props {
     common: string | number,
     accommodation: string | number,
     kitchen: string | number,
-    roomsArea: string | number,
-    bodySizeFrom: string | number,
-    bodySizeTo: string | number
+    floor: string;
+    building: string
 }
 
 const ProductSizes: React.FC<Props> = ({
     accommodation,
-    bodySizeFrom,
-    bodySizeTo,
     common,
     image,
     kitchen,
     rooms,
-    roomsArea
+    building,
+    floor
 }) => {
     return (
         <div className={styles.container}>
@@ -101,30 +99,30 @@ const ProductSizes: React.FC<Props> = ({
                     textSize={'twelve'}
                     textColor={'black'}
                     cursor={'Cursor'}
-                    text={roomsArea}
+                    text={building}
                 />
                 <Text
                     textType={'middle'}
                     textSize={'twelve'}
                     textColor={'grey'}
                     cursor={'Cursor'}
-                    text="XONALAR MAYDONI"
+                    text="Bino"
                 />
             </div>
             <div className={styles.bottomBox}>
                 <Text
                     textType={'middle'}
                     textSize={'twelve'}
-                    textColor={'grey'}
+                    textColor={'black'}
                     cursor={'Cursor'}
-                    text={bodySizeFrom}
+                    text={floor}
                 />
                 <Text
                     textType={'middle'}
                     textSize={'twelve'}
-                    textColor={'black'}
+                    textColor={'grey'}
                     cursor={'Cursor'}
-                    text={bodySizeTo}
+                    text={"Qavat"}
                 />
             </div>
             <div className={styles.btnBox}>

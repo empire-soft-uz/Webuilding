@@ -1,101 +1,108 @@
-import { InstaIcon, TelegramIcon, YoutubeIcon } from '../assets/icons/index';
+import {
+    InstaIcon,
+    TelegramIcon,
+    YoutubeIcon,
+    LocationIcon,
+} from "../assets/icons/index";
+import { ASSETS } from "./requireAssets";
 
 export type SocialDataType = {
     id: number;
     title: string;
     icon: any;
     image: string;
-}[]
+}[];
 export const SocialDataInitial: SocialDataType = [
     {
         id: 0,
         title: "",
         icon: null,
         image: "",
-    }
-]
+    },
+];
 
 export const SocialData: SocialDataType = [
     {
         id: 1,
         title: "Instagram",
         icon: InstaIcon,
-        image: ""
+        image: "",
     },
     {
         id: 2,
         title: "Telegram",
         icon: TelegramIcon,
-        image: ""
+        image: "",
     },
     {
         id: 3,
         title: "Youtube",
         icon: YoutubeIcon,
-        image: ""
-    }
-]
+        image: "",
+    },
+];
 
 export const FooterFirstData = [
     {
         id: 1,
         title: "+998932300500",
-        link: ""
+        link: "",
     },
     {
         id: 2,
-        title: "Ташкент ООО",
-        link: ""
+        title: "Мы позвоним вам?",
+        link: "",
+        isPress: true,
     },
     {
         id: 3,
-        title: "'Weebuilding' (Оставить обратную связь)",
-        link: ""
+        title: "Ташкент ООО 'Weebuilding'",
+        link: "",
     },
     {
         id: 4,
+        icon: ASSETS.LocationIcon,
         title: `100059, г.Ташкент,
                 Яккасаройский район,
                 Ул. Шота Руставели, д.58`,
-        link: ""
+        link: "",
     },
     {
         id: 5,
         title: "Всё новостройки в вашем городе.",
-        link: ""
-    }
-      
-]
+        link: "",
+    },
+];
 export const FooterSecondData = [
     {
         id: 1,
         title: "О проекте",
-        link: ""
+        link: "/about-project",
     },
     {
         id: 2,
         title: "Сотрудничество",
-        link: "/cooperation"
+        link: "/cooperation",
     },
     {
         id: 3,
         title: "Застройщики",
-        link: "/developers"
+        link: "/developers",
     },
     {
         id: 4,
         title: "Гарантия безопасности сделки",
-        link: "/transactions"
+        link: "/guarantee",
     },
     {
         id: 5,
         title: "Вакансии",
-        link: "/jobs"
+        link: "/jobs",
     },
     {
         id: 6,
         title: "Реклама на сайте",
-        link: ""
+        link: "/advertising",
     },
     {
         id: 7,
@@ -103,60 +110,60 @@ export const FooterSecondData = [
             {
                 id: 1,
                 icon: "/instagram.png",
-                link: "instagram.com"
+                link: "instagram.com",
             },
             {
                 id: 2,
                 icon: "/telegram.png",
-                link: "telegram.org"
+                link: "telegram.org",
             },
             {
                 id: 3,
                 icon: "/facebook.png",
-                link: "facebook.com"
+                link: "facebook.com",
             },
             {
                 id: 4,
                 icon: "/whatsapp.png",
-                link: "whatsapp.com"
+                link: "whatsapp.com",
             },
             {
                 id: 5,
                 icon: "/youtube.png",
-                link: "youtube.com"
-            }
-        ]
-    }
-]
+                link: "youtube.com",
+            },
+        ],
+    },
+];
 export const FooterThirdData = [
     {
         id: 1,
         title: "О компании 'Weebuilding'",
-        link: "/about-us"
+        link: "/about-us",
     },
     {
         id: 2,
         title: "Пресс Центр",
-        link: ""
+        link: "",
     },
     {
         id: 3,
         title: "Отзывы клиентов",
-        link: ""
+        link: "",
     },
     {
         id: 4,
         title: "Правовая информация",
-        link: ""
+        link: "/informations",
     },
     {
         id: 5,
         title: "Пользовательское соглашение",
-        link: ""
+        link: "/terms-of-use",
     },
     {
         id: 6,
         title: "Политика обработки данных",
-        link: ""
-    }
-]
+        link: "",
+    },
+];

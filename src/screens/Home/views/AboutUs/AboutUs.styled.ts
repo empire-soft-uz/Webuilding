@@ -12,6 +12,13 @@ export const AboutUsContainer = styled.div`
     list-style: none;
   }
 
+  .textBox{
+    display: flex;
+    padding: 20px 5% 0 5%;
+    flex-direction: column;
+    gap: 20px;
+  }
+
   .base-padding-h {
     padding: 0 20px;
 

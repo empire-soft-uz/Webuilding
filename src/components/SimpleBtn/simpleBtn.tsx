@@ -1,6 +1,6 @@
-import React from 'react'
-import SymbolItem from '../SymbolItem/symbolItem'
-import styles from "./simpleBtn.module.css"
+import React from "react";
+import SymbolItem from "../SymbolItem/symbolItem";
+import styles from "./simpleBtn.module.css";
 interface Props {
     dotColor: string;
     text?: string;
@@ -11,7 +11,8 @@ interface Props {
     textColor?: string;
     textType?: string;
     minut?: string;
-    btnType: 'outline' | 'primary';
+    btnType: "outline" | "primary";
+    onPress?: () => void;
 }
 
 const SimpleBtn: React.FC<Props> = ({
@@ -24,16 +25,17 @@ const SimpleBtn: React.FC<Props> = ({
     textColor,
     textType,
     minut,
-    btnType
+    btnType,
+    onPress,
 }) => {
     return (
-        <div className={`${styles[btnType]}`}>
+        <div className={`${styles[btnType]}`} onClick={onPress}>
             <SymbolItem
                 dotColor={dotColor}
                 text={text}
                 icon={icon}
                 img={img}
-                dotBorder='fifty'
+                dotBorder="fifty"
                 dot={dot}
                 textSize={textSize}
                 textColor={textColor}
@@ -41,7 +43,7 @@ const SimpleBtn: React.FC<Props> = ({
             />
             <p className={styles.minut}>{minut}</p>
         </div>
-    )
-}
+    );
+};
 
-export default SimpleBtn
+export default SimpleBtn;
