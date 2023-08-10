@@ -4,15 +4,7 @@
     border-radius: 10px;
     overflow: hidden;
     position: relative;
-}
-
-.aboveBox {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
-    overflow: hidden;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0.18) 65.3%, rgba(0, 0, 0, 0.756) 100%);
+    background-color: #ddd;
 }
 
 .blurBox {
@@ -22,7 +14,7 @@
     width: 50%;
     border-radius: 20px 0px 0px 20px;
     height: 100%;
-    /* backdrop-filter: blur(2.5px); */
+    backdrop-filter: blur(2.5px);
     padding: 30px 40px;
     border-radius: 20px;
 }
@@ -30,8 +22,10 @@
 .image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 20px;
+    position: relative;
+    z-index: 100;
 }
 
 .simpleInfo {

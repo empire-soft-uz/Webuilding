@@ -2,9 +2,9 @@ import React from 'react'
 import Dashboard from '../../../../components/Dashboard/dashboard'
 import FooterCard from '../../../../components/FooterCard/FooterCard'
 import Text from '../../../../components/Text/text'
-import styles from "./Transaction.module.css"
+import styles from "./Guarantee.module.css"
 
-const Transactions = () => {
+const Guarantee = () => {
     return (
         <>
             <Dashboard onScroll />
@@ -31,4 +31,4 @@ const Transactions = () => {
   )
 }
 
-export default Transactions
+export default Guarantee

@@ -11,5 +11,9 @@ export enum APP_ROUTES {
 	BLOG_ITEM = '/blog/:id',
 	JOBS = '/jobs',
 	COOPERATION = '/cooperation',
-	TRANSACTIONS = '/transactions'
+	GUARANTEE = '/guarantee',
+	ADVERTISING = '/advertising',
+	INFORMATIONS = '/informations',
+	TERMSOFUSE = '/terms-of-use',
+	ABOUTPROJECT = '/about-project'
 }

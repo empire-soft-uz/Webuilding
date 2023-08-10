@@ -145,6 +145,10 @@ const Dashboard: React.FC<Props> = ({
 
         <div className={styles.bottomBox}>
           <div className={styles.phone}>
+          <a
+              href="tel:+998932300500"
+              style={{ textDecoration: "none" }}
+            >
             <Text
               textType={"middle"}
               textSize={"sixteen"}
@@ -152,19 +156,16 @@ const Dashboard: React.FC<Props> = ({
               cursor={"none"}
               text={"+998 (93) 230 05 00"}
             />
-            <a
-              href="tel:+998932300500"
-              style={{ textDecoration: "none" }}
-            >
-              <Text
+            </a>
+            <Text
                 style={{ marginTop: "10px" }}
                 textType={"middle"}
                 textSize={"fourteen"}
                 textColor={"purple"}
                 cursor={"Cursor"}
                 text={t("header.phone")}
-              />
-            </a>
+                onPress={() => appModals?.show("call_me_later")}
+            />
           </div>
           <div className={styles.language}>
             <button
