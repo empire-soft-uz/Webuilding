@@ -20,13 +20,13 @@ import styles from "./deposits.module.css";
 import { useAppModals } from "../Modals";
 import useRootState from "../../Hooks/useRootState";
 import { observer } from "mobx-react-lite";
+import useRootStore from "../../Hooks/useRootStore";
 
 const Deposits = () => {
     const appModals = useAppModals();
-    const {} = useRootState;
+    const { oneProduct } = useRootStore().oneProductStore;
     return (
-        <Container className={styles.container}>
-            <div className={styles.topBox}>
+        /* <div className={styles.topBox}>
                 <Text
                     textColor="darkGrey"
                     textSize="twelve"
@@ -34,11 +34,11 @@ const Deposits = () => {
                     cursor="none"
                     text="Depozitlar"
                 />
-            </div>
+            </div> 
             <div className={styles.depositItemBox}>
                 <DepositItem className="depositItem" />
-            </div>
-            <div className={styles.depositItemBox}>
+            </div> 
+             <div className={styles.depositItemBox}>
                 <div className={styles.priceBox}>
                     <div className={styles.price}>
                         <Text
@@ -78,11 +78,11 @@ const Deposits = () => {
                             />
                         </div>
                     </div>
-                    {/* <div>
+                     <div>
                         <BateryIcon />
-                    </div> */}
+                    </div> 
                 </div>
-            </div>
+            </div> 
             <div className={`${styles.featureBox}`}>
                 <div className={`${styles.features} featureItemsBox`}>
                     <Item
@@ -143,32 +143,31 @@ const Deposits = () => {
                         text="Barcha xususiyatlar"
                     />
                 </div>
-            </div>
-            <div className={`${styles.boxBottom} btnsBottomBox`}>
-                <div className={styles.bottom}>
-                    <div className={styles.priceBox}>
-                        <div className={styles.price}>
-                            <Text
-                                textColor="darkGrey"
-                                textSize="twelve"
-                                textType="middle"
-                                cursor="none"
-                                text="Ishlab chiquvchi"
-                            />
-                            <Text
-                                textColor="darkBlue"
-                                textSize="fourteen"
-                                textType="bold"
-                                cursor="none"
-                                text='"Domda" Guruhi'
-                            />
-                        </div>
-                        <div>
-                            <Organizator />
-                        </div>
+            </div> */
+        <div className={styles.container}>
+            <div className={styles.boxBottom}>
+                <div className={styles.organizatorBox}>
+                    <div className={styles.organizatorName}>
+                        <Text
+                            textColor="darkGrey"
+                            textSize="twenty"
+                            textType="middle"
+                            cursor="none"
+                            text="Ishlab chiquvchi"
+                        />
+                        <Text
+                            textColor="darkBlue"
+                            textSize="twentyFour"
+                            textType="bold"
+                            cursor="none"
+                            text={oneProduct.producerTeam}
+                        />
+                    </div>
+                    <div className={styles.organizator}>
+                        <Organizator />
                     </div>
                 </div>
-                <div className={`${styles.btnBox} btnsBox`}>
+                <div className={styles.btnBox}>
                     <Button
                         borderRadius="ten"
                         textSize="fourteen"
@@ -194,73 +193,8 @@ const Deposits = () => {
                     />
                 </div>
             </div>
-        </Container>
+        </div>
     );
 };
 
 export default observer(Deposits);
-
-const Container = styled.div`
-    @media (max-width: 992px) {
-        /* .depositItem div p:first-of-type {
-            font-size: 30px;
-        } */
-
-        .featureItemsBox {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-
-        .btnsBottomBox {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            padding-bottom: 20px;
-        }
-    }
-
-    @media (max-width: 576px) {
-        .btnsBottomBox .btnsBox {
-            width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-
-            button {
-                width: 40vw;
-                align-items: center;
-                svg {
-                    width: 16px;
-                    height: 16px;
-                }
-                p {
-                    font-size: 12px;
-                }
-            }
-        }
-    }
-
-    @media (max-width: 465px) {
-        .btnsBottomBox .btnsBox {
-            width: 100%;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 10px;
-
-            button {
-                width: 100%;
-                align-items: center;
-
-                svg {
-                    width: 16px;
-                    height: 16px;
-                }
-
-                p {
-                    font-size: 12px;
-                }
-            }
-        }
-    }
-`;

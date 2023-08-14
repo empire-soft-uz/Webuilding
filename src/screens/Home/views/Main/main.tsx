@@ -1,5 +1,5 @@
 import { observer } from "mobx-react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import useRootStore from "../../../../Hooks/useRootStore";
 import Button from "../../../../components/Button/button";
@@ -24,22 +24,43 @@ import { useTranslation } from "react-i18next";
 import AdvencedSlider from "../../../../components/AdvencedSlider/AdvencedSlider";
 import PerfectCarusel from "../../../../components/PerfectCarusel/PerfectCarusel";
 import FooterCard from "../../../../components/FooterCard/FooterCard";
-import { useEffect, useState } from "react";
+import {
+    SetStateAction,
+    useCallback,
+    useEffect,
+    useRef,
+    useState,
+} from "react";
 import Dashboard from "../../../../components/Dashboard/dashboard";
+import { useAppModals } from "../../../../components/Modals";
 
 const Main = () => {
-    const { toggle } = useRootStore().visibleStore;
+    const { toggle, visiable, show, hide } = useRootStore().visibleStore;
     const { t } = useTranslation();
-
-    const [scroll, setScroll] = useState(false);
+    const { pathname } = useLocation();
+    const appModals = useAppModals();
+    const [scrollTop, setScrollTop] = useState(0);
+    console.log("scroll", scrollTop);
+    console.log("pathname", pathname);
     useEffect(() => {
-        window.addEventListener("scroll", () => setScroll(window.scrollY > 1));
-    }, []);
+        setScrollTop(window.pageYOffset);
+        window.addEventListener("scroll", () => {
+            if (window.pageYOffset > 30 && pathname === "/main") {
+                show("header");
+            }
+            if (window.pageYOffset < 30 && pathname === "/main") {
+                hide("header");
+            }
+            if (window.pageYOffset > 300 && pathname === "/main") {
+                appModals?.show("language");
+            }
+        });
+    }, [window.pageYOffset, pathname]);
 
     return (
         <>
             {/* <AdvencedSlider /> */}
-            <Dashboard onScroll={scroll} />
+            <Dashboard onScroll={visiable.header} />
             <PerfectCarusel />
             <div className={styles.container}>
                 <div className={styles.banner}>
@@ -91,7 +112,7 @@ const Main = () => {
                 </div>
                 <div
                     className={styles.aboveBox}
-                    style={{ bottom: scroll ? "0" : "-20vh" }}
+                    style={{ bottom: visiable.header ? "0" : "-20vh" }}
                 >
                     <Button
                         textSize={"fourteen"}

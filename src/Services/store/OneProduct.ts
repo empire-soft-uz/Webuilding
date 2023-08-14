@@ -261,10 +261,16 @@ interface bodyType {
     bodySizeTo: string;
 }
 
+export type roomCountType = {
+    roomCount: string;
+};
+
 export default class OnePruduct {
     constructor() {
         makeAutoObservable(this);
     }
+
+    roomCount = [];
 
     oneProduct: ProductDataType = initialState as never;
 
@@ -292,6 +298,25 @@ export default class OnePruduct {
             return;
         }
         this.selectBody = this.oneProduct.body.filter((e) => e.key === key);
+    };
+
+    setRoomCount = (count: string) => {
+        if (!count) {
+            this.selectBody = this.oneProduct.body;
+            return;
+        }
+        if (this.roomCount.some((e) => e === count)) {
+            this.roomCount = this.roomCount.filter((e) => e !== count);
+        } else {
+            this.roomCount = [...this.roomCount, count as never];
+        }
+        if (count && this.roomCount.length > 0) {
+            this.selectBody = this.oneProduct.body.filter((e) =>
+                this.roomCount?.includes(e.rooms as never)
+            );
+        } else {
+            this.selectBody = this.oneProduct.body;
+        }
     };
 
     infrastructureFilter = (type: string) => {

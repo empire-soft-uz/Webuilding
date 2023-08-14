@@ -1,17 +1,17 @@
 .container {
-  padding: 0 3vw;
-  padding-bottom: 30px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 47px 0;
-  padding-top: 130px;
+    padding: 0 3vw;
+    padding-bottom: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 47px 0;
+    padding-top: 130px;
 }
 .ForProducts {
-  justify-content: space-around;
-  gap: 30px;
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr 250px;
-  grid-template-areas: "productList rightAdsBox";
+    justify-content: space-around;
+    gap: 30px;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 250px;
+    grid-template-areas: "productList rightAdsBox";
 }
