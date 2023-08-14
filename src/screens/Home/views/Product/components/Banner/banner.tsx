@@ -50,6 +50,14 @@ const BannerForProduct: React.FC<Props> = ({ imgUrl }) => {
     return (
         <Conatiner className={styles.container}>
             <img className={styles.image} src={imgUrl} alt="" />
+            <div className={styles.titleBox}>
+                <Text
+                    textType={"middle"}
+                    textSize={"thirty"}
+                    textColor={"white"}
+                    text="Modern sergeli"
+                />
+            </div>
             <div
                 className={styles.main}
                 style={{

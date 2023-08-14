@@ -61,6 +61,7 @@ const ProductPage = () => {
                         />
                     </div>
                 </AdsContainerForProducts>
+
                 <FooterCard />
             </div>
         </>

@@ -342,7 +342,7 @@ const CollapseView = () => {
                         }
                     >
                         <div className={styles.accordionDetails}>
-                            <CollapseFilter />
+                            {/* <CollapseFilter /> */}
                             {item.data.map((item, index) => {
                                 return (
                                     <CollapseItem data={item} end key={index} />

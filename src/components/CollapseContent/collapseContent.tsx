@@ -20,21 +20,14 @@ const CollapseContent = () => {
                 textSize={"twenty"}
                 textColor={"black"}
                 cursor={"none"}
-                text={"JK Modern Sergeli ishlab chiqaruvchidan 56 ta xonadon"}
+                text={`${oneProduct.company} ishlab chiquvchidan ${oneProduct.howManyBuilding} ta xonadon`}
                 style={{ marginBottom: "20px" }}
             />
-            {/* <DropdownMenu option='Barcha korpus' textColor={COLORS.purple} textSize='16px' /> */}
             <div className="selectBox">
-                <select
-                    onChange={(e) => setSelectedBody(e.target.value as never)}
-                >
+                <select>
                     {ProductBodyData.map((e, index) => {
                         return (
-                            <option
-                                // onChange={() => setSelectedBody(e)}
-                                key={index}
-                                value={e.name}
-                            >
+                            <option key={index} value={e.name}>
                                 {e.name}
                             </option>
                         );
